@@ -1,0 +1,40 @@
+# Clean URLs for BoatRent Cyprus (Apache + mod_rewrite)
+Options -MultiViews
+DirectoryIndex index.php
+
+# --- Security: never serve the database, dotfiles or PHP includes directly ---
+<FilesMatch "\.(sqlite|sqlite3|db)$">
+  Require all denied
+</FilesMatch>
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Block direct web access to the database folder and PHP includes
+  RewriteRule ^(data|includes)/ - [F,L]
+
+  # Serve existing files and directories as-is (css, js, images, admin, sitemap.php, robots.txt …)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Pretty sitemap alias
+  RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+  # Static pages
+  RewriteRule ^boats/?$   boats.php   [L,QSA]
+  RewriteRule ^about/?$   about.php   [L]
+  RewriteRule ^contact/?$ contact.php [L,QSA]
+  RewriteRule ^faq/?$     faq.php     [L]
+  RewriteRule ^blog/?$    blog.php    [L]
+
+  # Detail pages
+  RewriteRule ^blog/([A-Za-z0-9_-]+)/?$ blog-post.php?slug=$1 [L,QSA]
+  RewriteRule ^boat/([A-Za-z0-9_-]+)/?$ boat.php?slug=$1      [L,QSA]
+
+  # Single segment -> city page (must stay last)
+  RewriteRule ^([A-Za-z0-9_-]+)/?$ city.php?slug=$1 [L,QSA]
+</IfModule>

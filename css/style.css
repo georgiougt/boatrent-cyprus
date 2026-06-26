@@ -1,0 +1,123 @@
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+
+::selection { background: #12A4C9; color: #0D1A33; }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 1rem;
+  background: #12A4C9;
+  color: #0D1A33;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  z-index: 100;
+  font-weight: 600;
+}
+.skip-link:focus { left: 1rem; }
+
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(36px); transition: opacity .7s ease-out, transform .7s ease-out; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity .7s ease-out, transform .7s ease-out; }
+.reveal-left.is-visible { opacity: 1; transform: translateX(0); }
+.reveal-right { opacity: 0; transform: translateX(40px); transition: opacity .7s ease-out, transform .7s ease-out; }
+.reveal-right.is-visible { opacity: 1; transform: translateX(0); }
+
+.reveal-stagger > * { opacity: 0; transform: translateY(30px); transition: opacity .6s ease-out, transform .6s ease-out; }
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 80ms; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 160ms; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 240ms; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 320ms; }
+.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 400ms; }
+.reveal-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+
+/* Header scrolled state */
+#site-header.scrolled nav { padding-top: .55rem; padding-bottom: .55rem; }
+
+/* Animated wave divider — three foam layers scrolling at different speeds */
+.wave-divider { line-height: 0; height: 70px; }
+@media (min-width: 640px) { .wave-divider { height: 100px; } }
+
+.wave-svg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+/* Each layer tiles two identical paths (1440 wide) and slides one full
+   tile so the loop is seamless. */
+.wave-move { will-change: transform; }
+.wave-move--back  { animation: wave-scroll 22s linear infinite; }
+.wave-move--mid   { animation: wave-scroll 15s linear infinite reverse; }
+.wave-move--front { animation: wave-scroll 10s linear infinite; }
+
+.wave-svg--back  path { fill: rgba(210, 231, 239, 0.45); } /* frosted blue */
+.wave-svg--mid   path { fill: rgba(231, 247, 250, 0.70); } /* light cyan, soft */
+.wave-svg--front path { fill: #E7F7FA; }                   /* matches section below */
+
+@keyframes wave-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-1440px); }
+}
+
+/* Hero gradient overlay */
+.hero-overlay {
+  background: linear-gradient(180deg, rgba(13,26,51,.55) 0%, rgba(13,26,51,.35) 40%, rgba(13,26,51,.92) 100%);
+}
+
+/* Boat card image zoom handled by Tailwind group hover; keep ratio stable */
+.card-img { transition: transform .6s ease; }
+.group:hover .card-img { transform: scale(1.08); }
+
+/* Lightbox */
+#lightbox {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(13,26,51,.94);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transition: opacity .3s ease;
+}
+#lightbox.open { opacity: 1; visibility: visible; }
+
+/* Blog article typography */
+.prose-cyprus { color: #16395A; line-height: 1.75; font-size: 1.0625rem; }
+.prose-cyprus p { margin: 0 0 1.25rem; }
+.prose-cyprus h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #0D1A33;
+  margin: 2.25rem 0 0.9rem;
+  line-height: 1.25;
+}
+.prose-cyprus ul { margin: 0 0 1.25rem; padding-left: 1.25rem; list-style: none; }
+.prose-cyprus ul li { position: relative; padding-left: 1.4rem; margin-bottom: 0.5rem; }
+.prose-cyprus ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: #16A6A0;
+}
+.prose-cyprus a { color: #0C7A6E; text-decoration: underline; }
+.prose-cyprus a:hover { color: #16A6A0; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0D1A33; }
+::-webkit-scrollbar-thumb { background: #12A4C9; border-radius: 10px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal, .reveal-left, .reveal-right, .reveal-stagger > * { opacity: 1 !important; transform: none !important; }
+}

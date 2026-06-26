@@ -1,0 +1,12 @@
+# SQLite database — auto-created and seeded on first run.
+# Holds customer inquiries and the admin password hash; never commit it.
+/data/*.sqlite
+/data/*.sqlite3
+/data/*.db
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/

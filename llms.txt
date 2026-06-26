@@ -1,0 +1,35 @@
+# BoatRent Cyprus
+
+> BoatRent Cyprus is an online marketplace for renting yachts, catamarans, sailing boats, speedboats and fishing boats across Cyprus. Customers browse vessels by coastal town, send a free no-obligation inquiry for the boat they like, and the platform coordinates availability with licensed local operators. Charters are available crewed or self-drive, departing from Limassol, Paphos, Larnaca, Ayia Napa, Protaras and Latsi.
+
+Key facts:
+- Service area: Cyprus (Limassol, Paphos, Larnaca, Ayia Napa, Protaras, Latsi)
+- Vessel types: Luxury Yacht, Motor Yacht, Catamaran, Sailing Yacht, Speedboat, Fishing Boat
+- Booking model: inquiry-based — no upfront payment, no booking fees
+- Operators are licensed and insured for passenger charters in Cypriot waters
+
+## Main pages
+- [Home](https://boatrentcyprus.com/): Overview, vessel search and featured fleet.
+- [Browse the Fleet](https://boatrentcyprus.com/boats): All vessels with filters for town, type, group size, price and sort order.
+- [About](https://boatrentcyprus.com/about): How the marketplace works and what it stands for.
+- [FAQ](https://boatrentcyprus.com/faq): Answers on licences, booking, pricing, departure points and weather.
+- [Contact](https://boatrentcyprus.com/contact): Enquiry form and company contact details.
+
+## Destinations (per-city listings)
+- [Rent a boat in Limassol](https://boatrentcyprus.com/limassol): Cyprus' cosmopolitan marina capital.
+- [Rent a boat in Paphos](https://boatrentcyprus.com/paphos): Mythical coves and golden sunsets.
+- [Rent a boat in Larnaca](https://boatrentcyprus.com/larnaca): Relaxed shores and shipwreck dives.
+- [Rent a boat in Ayia Napa](https://boatrentcyprus.com/ayia-napa): Turquoise bays and party cruises.
+- [Rent a boat in Protaras](https://boatrentcyprus.com/protaras): Calm coves and family days out.
+- [Rent a boat in Latsi](https://boatrentcyprus.com/latsi): Gateway to the Blue Lagoon and Akamas.
+
+## Blog
+- [10 of the Best Boat Trip Destinations in Cyprus](https://boatrentcyprus.com/blog/best-boat-trip-destinations-cyprus): The most beautiful spots to drop anchor.
+- [Yacht vs Catamaran vs Speedboat: Which Should You Rent?](https://boatrentcyprus.com/blog/yacht-vs-catamaran-vs-speedboat): A plain-English guide to choosing a vessel.
+- [A Guide to the Blue Lagoon by Boat from Latsi](https://boatrentcyprus.com/blog/blue-lagoon-by-boat-latsi-akamas): Visiting the Blue Lagoon and Akamas.
+- [Do You Need a Licence to Rent a Boat in Cyprus?](https://boatrentcyprus.com/blog/do-you-need-a-licence-to-rent-a-boat-cyprus): Crewed vs self-drive licence rules.
+- [The Best Time of Year to Sail in Cyprus](https://boatrentcyprus.com/blog/best-time-to-sail-in-cyprus): Month-by-month weather and sea guide.
+
+## Optional
+- [Sitemap](https://boatrentcyprus.com/sitemap.xml): Full machine-readable list of all pages including every vessel.
+- [Robots](https://boatrentcyprus.com/robots.txt): Crawl directives.
