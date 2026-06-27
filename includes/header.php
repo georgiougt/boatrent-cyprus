@@ -7,7 +7,7 @@ $navCities = get_cities();
 $seoTitle   = isset($pageTitle) ? $pageTitle . ' | BoatRent Cyprus' : 'BoatRent Cyprus | Yacht & Boat Rentals';
 $seoDesc    = $pageDescription ?? 'Rent yachts, catamarans and speedboats across Cyprus — Limassol, Paphos, Larnaca, Ayia Napa, Protaras and Latsi. Browse the fleet and inquire in minutes.';
 $seoCanon   = $canonical ?? current_url();
-$seoRobots  = $robots ?? 'index, follow';
+$seoRobots  = $robots ?? (site_is_live() ? 'index, follow' : 'noindex, nofollow');
 $seoOgType  = $ogType ?? 'website';
 $seoImage   = $pageImage ?? 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=80';
 ?>

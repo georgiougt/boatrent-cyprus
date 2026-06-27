@@ -14,6 +14,24 @@ Then open **http://localhost:8011** in your browser. The `router.php` argument e
 
 The SQLite database is created and seeded automatically on first load at `data/boatrent.sqlite` (6 cities, 16 sample boats, 2 sample inquiries). To start fresh, delete that file and reload any page.
 
+## Deploying to Hostinger
+
+This runs on Hostinger shared hosting (LiteSpeed + PHP 8 + PDO SQLite) with no code changes.
+
+1. **PHP version** — in hPanel → *Advanced → PHP Configuration*, set PHP to **8.0+** and make sure `pdo_sqlite` is enabled (it is by default).
+2. **Upload the files** — put the contents of this folder into `public_html` (the domain's web root). Either:
+   - hPanel → *Git* → connect this repo and deploy, or
+   - upload via the File Manager / SFTP.
+   Note: `data/boatrent.sqlite` is gitignored and is **created automatically** on first visit.
+3. **Permissions** — the `data/` directory must be writable by PHP (typically already `755`/owned by your user). The bundled `data/.htaccess` blocks the database from web access.
+4. **Clean URLs** — handled by the bundled root `.htaccess` (no `router.php` needed in production; that file is only for the local dev server).
+5. **SSL** — enable Hostinger's free SSL for the domain.
+
+### Temporary domain & going live
+While on a Hostinger temporary `*.hostingersite.com` domain, every page is automatically `noindex` and `robots.txt` returns `Disallow: /`, so the temp domain stays out of Google. Canonical tags, Open Graph URLs and the sitemap use the live request host, so they're always correct.
+
+**When the real domain is ready:** set `LIVE_HOST` in `includes/config.php` to your domain (e.g. `boatrentcyprus.com`). Indexing, `robots.txt` (`Allow` + sitemap) and the meta tags switch on automatically — no other changes needed.
+
 ## Admin dashboard
 
 Visit **http://localhost:8011/admin/login.php**

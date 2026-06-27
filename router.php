@@ -56,6 +56,10 @@ if (array_key_exists($path, $pages)) {
     return true;
 }
 
+if ($path === 'robots.txt') {
+    $run('robots.php');
+    return true;
+}
 if ($path === 'sitemap.xml') {
     $run('sitemap.php');
     return true;

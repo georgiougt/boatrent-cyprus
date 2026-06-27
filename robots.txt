@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /admin/
-Disallow: /submit-inquiry.php
-
-Sitemap: https://boatrentcyprus.com/sitemap.xml

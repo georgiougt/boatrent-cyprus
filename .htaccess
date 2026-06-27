@@ -21,7 +21,8 @@ DirectoryIndex index.php
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # Pretty sitemap alias
+  # Dynamic robots + pretty sitemap alias
+  RewriteRule ^robots\.txt$ robots.php [L]
   RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
   # Static pages
