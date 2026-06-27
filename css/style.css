@@ -112,7 +112,56 @@ body { overflow-x: hidden; }
 ::-webkit-scrollbar-track { background: #0D1A33; }
 ::-webkit-scrollbar-thumb { background: #12A4C9; border-radius: 10px; }
 
+/* ---------- First-visit cinematic intro ---------- */
+html.intro-lock, html.intro-lock body { overflow: hidden !important; height: 100%; }
+
+#intro-overlay {
+  position: fixed; inset: 0; z-index: 200; overflow: hidden; background: #0D1A33;
+  animation: intro-out 0.9s cubic-bezier(.65,0,.35,1) 2.05s forwards;
+}
+#intro-overlay .intro-img,
+#intro-overlay .intro-video {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+}
+#intro-overlay .intro-img { transform: scale(1.14); animation: intro-zoom 3s ease-out forwards; }
+#intro-overlay .intro-video { opacity: 0; transition: opacity .6s ease; }
+#intro-overlay .intro-video.show { opacity: 1; }
+#intro-overlay .intro-vignette {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(120% 80% at 50% 42%, rgba(8,23,38,0) 28%, rgba(8,23,38,.5) 100%),
+    linear-gradient(180deg, rgba(13,26,51,.5) 0%, rgba(13,26,51,.12) 42%, rgba(13,26,51,.88) 100%);
+}
+#intro-overlay .intro-content {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center; padding: 1.5rem;
+}
+#intro-overlay .intro-mark { color: #C9A24A; opacity: 0; animation: intro-rise .9s ease-out .15s forwards; }
+#intro-overlay .intro-title {
+  font-family: 'Playfair Display', serif; color: #fff; font-weight: 700;
+  font-size: clamp(2rem, 6vw, 4rem); margin-top: .4rem;
+  opacity: 0; animation: intro-rise 1s ease-out .35s forwards;
+}
+#intro-overlay .intro-title span { color: #12A4C9; }
+#intro-overlay .intro-tag {
+  color: rgba(255,255,255,.78); font-size: clamp(.7rem, 2.4vw, .95rem);
+  letter-spacing: .3em; text-transform: uppercase; margin-top: .85rem;
+  opacity: 0; animation: intro-rise 1s ease-out .55s forwards;
+}
+#intro-overlay .intro-line {
+  margin-top: 1.6rem; width: min(220px, 60vw); height: 2px; border-radius: 2px;
+  background: rgba(255,255,255,.18); overflow: hidden;
+  opacity: 0; animation: intro-rise .6s ease-out .6s forwards;
+}
+#intro-overlay .intro-line span { display: block; height: 100%; width: 0; background: #C9A24A; animation: intro-load 1.7s ease-in-out .6s forwards; }
+
+@keyframes intro-zoom { to { transform: scale(1.26) translateY(-1.5%); } }
+@keyframes intro-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes intro-load { to { width: 100%; } }
+@keyframes intro-out { to { opacity: 0; visibility: hidden; transform: scale(1.08); } }
+
 @media (prefers-reduced-motion: reduce) {
+  #intro-overlay { display: none !important; }
   *, *::before, *::after {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;

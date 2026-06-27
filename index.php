@@ -11,6 +11,49 @@ $canonical = base_url() . '/';
 include __DIR__ . '/includes/header.php';
 ?>
 
+<!-- FIRST-VISIT CINEMATIC INTRO (drone shot -> homepage) -->
+<div id="intro-overlay" aria-hidden="true">
+  <img class="intro-img" src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=2400&q=80" alt="">
+  <!-- Optional: drop a clip at /videos/intro.mp4 and it plays automatically over the image -->
+  <video class="intro-video" muted playsinline preload="auto" tabindex="-1">
+    <source src="/videos/intro.mp4" type="video/mp4">
+  </video>
+  <div class="intro-vignette"></div>
+  <div class="intro-content">
+    <span class="intro-mark">
+      <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 17c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0 3-1 4.5 0"/>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 14l7-9 7 9M12 5v9"/>
+      </svg>
+    </span>
+    <div class="intro-title">BoatRent<span>.</span>Cyprus</div>
+    <p class="intro-tag">Your day on the Cyprus sea</p>
+    <div class="intro-line"><span></span></div>
+  </div>
+</div>
+<script>
+(function () {
+  var o = document.getElementById('intro-overlay');
+  if (!o) return;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var seen = false;
+  try { seen = localStorage.getItem('brc_seen_intro') === '1'; } catch (e) {}
+  if (seen || reduce) { if (o.parentNode) o.parentNode.removeChild(o); return; }
+  try { localStorage.setItem('brc_seen_intro', '1'); } catch (e) {}
+  document.documentElement.classList.add('intro-lock');
+  var v = o.querySelector('.intro-video');
+  if (v) {
+    v.addEventListener('loadeddata', function () { v.classList.add('show'); });
+    var p = v.play && v.play();
+    if (p && p.catch) p.catch(function () {});
+  }
+  setTimeout(function () {
+    document.documentElement.classList.remove('intro-lock');
+    if (o.parentNode) o.parentNode.removeChild(o);
+  }, 2950);
+})();
+</script>
+
 <!-- HERO -->
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
   <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=2000&q=80" alt="Luxury yacht moored on turquoise Cyprus waters" class="absolute inset-0 w-full h-full object-cover">
