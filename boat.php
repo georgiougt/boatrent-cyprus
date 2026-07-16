@@ -31,6 +31,8 @@ $ogType = 'product';
 
 $boatUrl = base_url() . '/boat/' . $boat['slug'];
 $canonical = $boatUrl;
+// Prefer the day rate for schema.org; fall back to any number in the headline label.
+$offerPrice = (int) $boat['price_day'] ?: (int) cy_price_num($boat['price_label'] ?? '');
 $structuredData = [
     '@context' => 'https://schema.org',
     '@type'    => 'Product',
@@ -41,15 +43,15 @@ $structuredData = [
     'brand'    => ['@type' => 'Brand', 'name' => 'BoatRent Cyprus'],
     'offers'   => [
         '@type'         => 'Offer',
-        'price'         => (string) (int) $boat['price_day'],
+        'price'         => (string) $offerPrice,
         'priceCurrency' => 'EUR',
         'availability'  => 'https://schema.org/InStock',
         'url'           => $boatUrl,
         'priceSpecification' => [
             '@type' => 'UnitPriceSpecification',
-            'price' => (string) (int) $boat['price_day'],
+            'price' => (string) $offerPrice,
             'priceCurrency' => 'EUR',
-            'unitText' => 'per day',
+            'unitText' => !empty($boat['price_day']) ? 'per day' : 'per charter',
         ],
     ],
 ];
@@ -130,6 +132,15 @@ echo json_ld([
           <svg class="w-4 h-4 text-brand-aqua" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           <?php echo e($boat['city_name']); ?>, Cyprus
         </p>
+        <?php
+        $meta = array_filter([
+            !empty($boat['builder']) ? 'Built by ' . $boat['builder'] : null,
+            !empty($boat['year']) ? 'Year ' . $boat['year'] : null,
+            !empty($boat['beam']) ? 'Beam ' . $boat['beam'] : null,
+        ]);
+        if ($meta): ?>
+        <p class="text-sm text-brand-navy/55 mt-1.5"><?php echo e(implode('  ·  ', $meta)); ?></p>
+        <?php endif; ?>
 
         <!-- Spec grid -->
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
@@ -138,7 +149,7 @@ echo json_ld([
             ['Guests', (int) $boat['capacity'], 'M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-5.13a4 4 0 11-8 0 4 4 0 018 0zm6 2a4 4 0 10-7.75 0'],
             ['Length', rtrim(rtrim(number_format((float) $boat['length_m'], 1), '0'), '.') . ' m', 'M4 4l16 16M4 4h6M4 4v6'],
             ['Cabins', (int) $boat['cabins'] ?: '—', 'M3 12h18M3 12V7a2 2 0 012-2h14a2 2 0 012 2v5'],
-            ['Year', $boat['year'] ?: '—', 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'],
+            ['Top speed', $boat['speed'] ?: '—', 'M13 10V3L4 14h7v7l9-11h-7z'],
           ];
           foreach ($specs as $sp): ?>
           <div class="bg-white rounded-xl border border-brand-navy/10 p-4 text-center">
@@ -180,13 +191,22 @@ echo json_ld([
     <aside class="lg:col-span-1">
       <div id="inquiry" class="lg:sticky lg:top-28 reveal-right">
         <div class="bg-white rounded-2xl border border-brand-navy/10 shadow-lg p-6">
-          <div class="flex items-end justify-between mb-1">
-            <p class="font-display text-3xl font-bold text-brand-ink"><?php echo money($boat['price_day']); ?></p>
-            <span class="text-brand-navy/50 text-sm">per day</span>
-          </div>
-          <?php if (!empty($boat['price_hour'])): ?>
-          <p class="text-brand-navy/50 text-sm mb-4">or from <?php echo money($boat['price_hour']); ?> / hour</p>
+          <p class="font-display text-3xl font-bold text-brand-ink leading-tight"><?php echo e(boat_price_label($boat)); ?></p>
+          <?php
+          $pricing = json_arr($boat['pricing'] ?? '');
+          if ($pricing): ?>
+          <dl class="mt-4 mb-4 divide-y divide-brand-navy/10 border-y border-brand-navy/10">
+            <?php foreach ($pricing as $k => $v): if ($v === '' || $v === null) continue; ?>
+            <div class="flex items-baseline justify-between py-2">
+              <dt class="text-sm text-brand-navy/60"><?php echo e(pricing_row_label((string) $k)); ?></dt>
+              <dd class="text-sm font-semibold text-brand-ink"><?php echo e((string) $v); ?></dd>
+            </div>
+            <?php endforeach; ?>
+          </dl>
           <?php else: ?><div class="mb-4"></div><?php endif; ?>
+          <?php if (!empty($boat['price_note'])): ?>
+          <p class="text-[11px] leading-snug text-brand-navy/45 mb-4"><?php echo e($boat['price_note']); ?></p>
+          <?php endif; ?>
 
           <?php if ($flashSuccess): ?>
           <div class="mb-4 bg-green-50 border border-green-200 text-green-700 text-sm rounded-xl px-4 py-3 flex items-start gap-2">

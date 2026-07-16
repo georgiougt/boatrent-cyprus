@@ -44,7 +44,8 @@ $cityTypes = $types->fetchAll(PDO::FETCH_COLUMN);
 // Stats for the SEO bento (all active boats in this city, unfiltered)
 $cityAllBoats  = get_boats(['city_id' => (int) $city['id']]);
 $cityBoatCount = count($cityAllBoats);
-$cityPriceFrom = $cityAllBoats ? min(array_map(fn($b) => (float) $b['price_day'], $cityAllBoats)) : 0;
+$cityDayPrices = array_filter(array_map(fn($b) => (float) $b['price_day'], $cityAllBoats), fn($p) => $p > 0);
+$cityPriceFrom = $cityDayPrices ? min($cityDayPrices) : 0;
 $citySeo       = get_city_seo()[$city['slug']] ?? null;
 
 include __DIR__ . '/includes/header.php';

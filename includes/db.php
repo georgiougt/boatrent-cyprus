@@ -64,6 +64,12 @@ function init_schema(PDO $pdo): void
             gallery       TEXT,            -- JSON array
             featured      INTEGER NOT NULL DEFAULT 0,
             status        TEXT NOT NULL DEFAULT 'active',  -- active | hidden
+            builder       TEXT,            -- shipyard / manufacturer
+            speed         TEXT,            -- cruising speed, e.g. 28 Knots
+            beam          TEXT,            -- hull beam, e.g. 16 ft
+            price_label   TEXT,            -- headline price string, e.g. 8800 per day
+            pricing       TEXT,            -- JSON map of rate options (half day, full day, weekly)
+            price_note    TEXT,            -- fine print (APA, fuel, etc.)
             created_at    TEXT NOT NULL DEFAULT (datetime('now'))
         );
 
@@ -89,6 +95,22 @@ function init_schema(PDO $pdo): void
             password_hash TEXT NOT NULL
         );
     ");
+
+    // Migrate older databases: add charter-yacht columns if they don't exist yet.
+    $boatCols = array_column($pdo->query('PRAGMA table_info(boats)')->fetchAll(), 'name');
+    $newCols = [
+        'builder'     => 'TEXT',
+        'speed'       => 'TEXT',
+        'beam'        => 'TEXT',
+        'price_label' => 'TEXT',
+        'pricing'     => 'TEXT',
+        'price_note'  => 'TEXT',
+    ];
+    foreach ($newCols as $col => $type) {
+        if (!in_array($col, $boatCols, true)) {
+            $pdo->exec("ALTER TABLE boats ADD COLUMN {$col} {$type}");
+        }
+    }
 
     // Ensure a default admin exists (username: admin / password: admin123).
     $count = (int) $pdo->query('SELECT COUNT(*) FROM admins')->fetchColumn();
@@ -117,80 +139,113 @@ function seed_data(PDO $pdo): void
         $cityIds[$row['slug']] = (int) $row['id'];
     }
 
-    // image pools per category (Unsplash)
-    // All IDs below verified to render as boats/sea in-browser.
-    $img = [
-        'yacht'      => 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1100&q=80',
-        'yacht2'     => 'https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=1100&q=80',
-        'catamaran'  => 'https://images.unsplash.com/photo-1500627964684-141351970a7f?auto=format&fit=crop&w=1100&q=80',
-        'sailing'    => 'https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=1100&q=80',
-        'speedboat'  => 'https://images.unsplash.com/photo-1593351415075-3bac9f45c877?auto=format&fit=crop&w=1100&q=80',
-        'fishing'    => 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1100&q=80',
-    ];
-    $gallery = json_encode([
-        'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1100&q=80',
-        'https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=1100&q=80',
-        'https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=1100&q=80',
-    ]);
-
-    $boats = [
-        // name, city slug, type, capacity, length, cabins, year, crewed, price_hour, price_day, featured, image, features
-        ['Azure Princess', 'limassol', 'Luxury Yacht', 12, 24.0, 4, 2021, 1, 450, 3200, 1, $img['yacht'], ['Captain & crew', 'Sun deck & jacuzzi', 'Water toys', 'Premium sound system', 'Air conditioning', 'Catering available']],
-        ['Sea Breeze 38', 'limassol', 'Motor Yacht', 10, 11.6, 2, 2019, 1, 220, 1500, 1, $img['yacht2'], ['Skipper included', 'Snorkelling gear', 'Bluetooth audio', 'Shaded cockpit', 'Fridge & cooler']],
-        ['Mediterraneo Cat', 'limassol', 'Catamaran', 16, 13.5, 4, 2020, 1, 280, 1900, 0, $img['catamaran'], ['Stable twin-hull', 'Large net lounging', 'Freshwater shower', 'Paddle boards', 'BBQ on board']],
-        ['Wind Dancer', 'paphos', 'Sailing Yacht', 8, 12.2, 3, 2018, 1, 160, 1100, 1, $img['sailing'], ['Skippered sailing', 'Sea-cave routes', 'Snorkelling stop', 'Cool box', 'Bimini shade']],
-        ['Aphrodite Pearl', 'paphos', 'Luxury Yacht', 10, 18.0, 3, 2022, 1, 380, 2600, 0, $img['yacht'], ['Crew of 2', 'Sunset cruises', 'Premium bar', 'Swim platform', 'Air conditioning']],
-        ['Coral Chaser', 'paphos', 'Speedboat', 7, 8.5, 0, 2021, 0, 110, 720, 0, $img['speedboat'], ['Self-drive option', 'Fast & agile', 'Bimini top', 'Bluetooth speaker', 'Cooler box']],
-        ['Zenobia Star', 'larnaca', 'Motor Yacht', 9, 10.8, 2, 2017, 1, 190, 1300, 1, $img['yacht2'], ['Skipper included', 'Dive-site trips', 'Snorkelling gear', 'Shaded seating', 'Fridge']],
-        ['Salt Marina', 'larnaca', 'Catamaran', 14, 12.0, 3, 2019, 1, 240, 1650, 0, $img['catamaran'], ['Family friendly', 'Trampoline nets', 'Freshwater shower', 'SUP boards', 'Sound system']],
-        ['Blue Lagoon Express', 'ayia-napa', 'Speedboat', 8, 9.2, 0, 2022, 0, 130, 850, 1, $img['speedboat'], ['Self-drive option', 'Reach hidden caves', 'Bluetooth audio', 'Cooler', 'Bimini shade']],
-        ['Napa Sunset', 'ayia-napa', 'Luxury Yacht', 12, 20.0, 4, 2021, 1, 420, 2900, 1, $img['yacht'], ['Captain & crew', 'Party-ready deck', 'Premium sound', 'Water toys', 'Air conditioning', 'Bar service']],
-        ['Lagoon Hopper', 'ayia-napa', 'Catamaran', 18, 14.0, 4, 2020, 1, 300, 2100, 0, $img['catamaran'], ['Big group friendly', 'Shaded saloon', 'Freshwater shower', 'Snorkelling gear', 'BBQ']],
-        ['Fig Tree Breeze', 'protaras', 'Sailing Yacht', 8, 11.5, 2, 2018, 1, 150, 1050, 1, $img['sailing'], ['Skippered sailing', 'Calm-bay cruising', 'Snorkelling stop', 'Cool box', 'Bimini shade']],
-        ['Protaras Pearl', 'protaras', 'Motor Yacht', 10, 12.5, 2, 2020, 1, 210, 1450, 0, $img['yacht2'], ['Skipper included', 'Family day trips', 'Swim ladder', 'Fridge', 'Bluetooth audio']],
-        ['Akamas Explorer', 'latsi', 'Motor Yacht', 11, 13.0, 3, 2019, 1, 230, 1600, 1, $img['yacht2'], ['Blue Lagoon trips', 'Skipper included', 'Snorkelling gear', 'Shaded cockpit', 'Cooler & fridge']],
-        ['Blue Lagoon Lady', 'latsi', 'Catamaran', 16, 13.8, 4, 2021, 1, 290, 1950, 0, $img['catamaran'], ['Stable twin-hull', 'Akamas coastline', 'Freshwater shower', 'Paddle boards', 'Sound system']],
-        ['Latsi Angler', 'latsi', 'Fishing Boat', 6, 9.0, 1, 2017, 1, 120, 800, 0, $img['fishing'], ['Guided fishing', 'Rods & tackle', 'Skipper included', 'Cool box', 'Shaded cabin']],
-    ];
-
-    $stmt = $pdo->prepare("
-        INSERT INTO boats
-            (name, slug, city_id, type, capacity, length_m, cabins, year, crewed, price_hour, price_day, description, features, image_url, gallery, featured, status)
-        VALUES
-            (:name, :slug, :city_id, :type, :capacity, :length_m, :cabins, :year, :crewed, :price_hour, :price_day, :description, :features, :image_url, :gallery, :featured, 'active')
-    ");
-
-    foreach ($boats as $b) {
-        [$name, $citySlug, $type, $cap, $len, $cabins, $year, $crewed, $ph, $pd, $featured, $image, $features] = $b;
-        $desc = "The {$name} is a {$year} {$type} based in " . ucfirst(str_replace('-', ' ', $citySlug)) .
-            ", comfortably hosting up to {$cap} guests across {$len} metres. " .
-            ($crewed ? "Comes fully crewed so you can sit back and enjoy the Cyprus coastline. " : "Available for self-drive (licence required) or with an optional skipper. ") .
-            "Perfect for day charters, swimming stops in hidden bays, and unforgettable sunsets on the water.";
-        $stmt->execute([
-            ':name' => $name,
-            ':slug' => slugify($name),
-            ':city_id' => $cityIds[$citySlug],
-            ':type' => $type,
-            ':capacity' => $cap,
-            ':length_m' => $len,
-            ':cabins' => $cabins,
-            ':year' => $year,
-            ':crewed' => $crewed,
-            ':price_hour' => $ph,
-            ':price_day' => $pd,
-            ':description' => $desc,
-            ':features' => json_encode($features),
-            ':image_url' => $image,
-            ':gallery' => $gallery,
-            ':featured' => $featured,
-        ]);
-    }
+    // Load the real charter fleet from charter_yachts.json (single source of truth).
+    // Every vessel is a Limassol-based charter; fall back to the first city if needed.
+    $homeCityId = $cityIds['limassol'] ?? (int) reset($cityIds);
+    insert_charter_yachts($pdo, __DIR__ . '/../charter_yachts.json', $homeCityId);
 
     // A couple of sample inquiries so the dashboard isn't empty on first look.
     $pdo->prepare("INSERT INTO inquiries (boat_id, boat_name, name, email, phone, city, date_from, date_to, guests, message, status)
-        VALUES (1, 'Azure Princess', 'Daniel Hughes', 'daniel.h@example.com', '+44 7700 900123', 'Limassol', date('now','+10 day'), date('now','+10 day'), 8, 'Hi, we''d love a full-day charter with catering for a birthday. Is the date available?', 'new')")->execute();
+        VALUES (1, 'Princess 30M', 'Daniel Hughes', 'daniel.h@example.com', '+44 7700 900123', 'Limassol', date('now','+10 day'), date('now','+10 day'), 8, 'Hi, we''d love a full-day charter with catering for a birthday. Is the date available?', 'new')")->execute();
     $pdo->prepare("INSERT INTO inquiries (boat_id, boat_name, name, email, phone, city, date_from, date_to, guests, message, status)
-        VALUES (9, 'Blue Lagoon Express', 'Sofia Andreou', 'sofia.a@example.com', '+357 99 123456', 'Ayia Napa', date('now','+3 day'), date('now','+3 day'), 5, 'Looking to self-drive for a half day around the sea caves. Do we need a licence?', 'contacted')")->execute();
+        VALUES (2, 'Azimut 27 Grande', 'Sofia Andreou', 'sofia.a@example.com', '+357 99 123456', 'Limassol', date('now','+3 day'), date('now','+3 day'), 5, 'Looking to charter for a full day around the coast. Is catering available?', 'contacted')")->execute();
+}
+
+/**
+ * Parse charter_yachts.json into normalised boat rows and insert them, replacing
+ * any existing boats. Shared by first-run seeding and the standalone importer so
+ * the JSON stays the one source of truth for the fleet.
+ */
+function insert_charter_yachts(PDO $pdo, string $jsonPath, int $cityId): int
+{
+    $raw = @file_get_contents($jsonPath);
+    $yachts = $raw ? json_decode($raw, true) : null;
+    if (!is_array($yachts)) {
+        return 0;
+    }
+
+    // Flagship vessels to surface in the homepage "Featured" row.
+    $featuredNames = [
+        'Princess 30M', 'Princess 88', 'Falcon 86',
+        'Private Yacht 110ft', 'Sunseeker Manhattan 56', 'Azimut 27 Grande',
+    ];
+
+    $pdo->exec('DELETE FROM boats');
+
+    $stmt = $pdo->prepare("
+        INSERT INTO boats
+            (name, slug, city_id, type, capacity, length_m, cabins, year, crewed,
+             price_hour, price_day, description, features, image_url, gallery, featured,
+             status, builder, speed, beam, price_label, pricing, price_note)
+        VALUES
+            (:name, :slug, :city_id, :type, :capacity, :length_m, :cabins, :year, :crewed,
+             :price_hour, :price_day, :description, :features, :image_url, :gallery, :featured,
+             'active', :builder, :speed, :beam, :price_label, :pricing, :price_note)
+    ");
+
+    $count = 0;
+    foreach ($yachts as $y) {
+        $specs   = $y['specs'] ?? [];
+        $pricing = $y['detailedPricing'] ?? [];
+        $crew    = cy_int($specs['crew'] ?? null);
+        $stmt->execute([
+            ':name'        => $y['name'],
+            ':slug'        => slugify($y['name']),
+            ':city_id'     => $cityId,
+            ':type'        => $y['type'] ?? 'Motor Yacht',
+            ':capacity'    => cy_int($y['capacity'] ?? null) ?? 1,
+            ':length_m'    => cy_length_m($y['length'] ?? null),
+            ':cabins'      => cy_int($specs['cabins'] ?? null) ?? 0,
+            ':year'        => cy_int($specs['year'] ?? null),
+            ':crewed'      => $crew && $crew > 0 ? 1 : 0,
+            ':price_hour'  => null,
+            ':price_day'   => cy_price_num($pricing['fullDay'] ?? null),
+            ':description' => $y['description'] ?? '',
+            ':features'    => json_encode($y['features'] ?? []),
+            ':image_url'   => $y['image'] ?? '',
+            ':gallery'     => json_encode($y['gallery'] ?? []),
+            ':featured'    => in_array($y['name'], $featuredNames, true) ? 1 : 0,
+            ':builder'     => $specs['builder'] ?? null,
+            ':speed'       => $y['speed'] ?? null,
+            ':beam'        => $specs['beam'] ?? null,
+            ':price_label' => $y['price'] ?? null,
+            ':pricing'     => json_encode($pricing),
+            ':price_note'  => $y['priceNote'] ?? null,
+        ]);
+        $count++;
+    }
+    return $count;
+}
+
+/** Extract the first integer from a spec string ("12 Guests" → 12, "" → null). */
+function cy_int(?string $s): ?int
+{
+    if ($s !== null && preg_match('/\d+/', $s, $m)) {
+        return (int) $m[0];
+    }
+    return null;
+}
+
+/** Convert a length string to metres ("100 ft" → 30.5, "27 meters" → 27.0). */
+function cy_length_m(?string $s): ?float
+{
+    if (!$s || !preg_match('/([\d.]+)/', $s, $m)) {
+        return null;
+    }
+    $v = (float) $m[1];
+    if (stripos($s, 'ft') !== false || stripos($s, 'feet') !== false) {
+        $v *= 0.3048;
+    }
+    return round($v, 1);
+}
+
+/** Parse a euro price string to a number ("€11,900" → 11900.0, "Upon Request" → 0). */
+function cy_price_num(?string $s): float
+{
+    if (!$s || !preg_match('/([\d][\d,]*)/', $s, $m)) {
+        return 0.0;
+    }
+    return (float) str_replace(',', '', $m[1]);
 }
 
 function slugify(string $text): string

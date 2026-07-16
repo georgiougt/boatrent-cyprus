@@ -1,0 +1,828 @@
+[
+  {
+    "id": 1,
+    "name": "Princess 30M",
+    "type": "Motor Yacht",
+    "length": "100 ft",
+    "capacity": "12 Guests",
+    "speed": "25 Knots",
+    "image": "/assets/charter-optimized/princess-30.webp",
+    "category": "charter",
+    "price": "€95,000 / week*",
+    "detailedPricing": {
+      "weekly": "€95,000*",
+      "other": "Upon Request*"
+    },
+    "priceNote": "*Plus 35% APA. Fuel for day charters in the same city as the home port is included in the charter price. For fuel prices in other locations, please contact one of our charter experts.",
+    "description": "Experience the pinnacle of Mediterranean luxury with the Princess 30M, the ultimate choice for a yacht charter in Limassol. As a premier yacht for rent, this stunning vessel offers panoramic sea views, a premium flybridge, and an exquisite interior design. Whether you are looking to rent a boat in Limassol for an exclusive day cruise or seeking a luxurious yacht charter in Cyprus for a weekly getaway, the Princess 30M guarantees unmatched elegance, professional crew service, and a state-of-the-art layout. Secure this magnificent boat for rent and embark on a private journey tailored to your highest expectations.",
+    "specs": {
+      "builder": "Princess Yachts",
+      "year": "",
+      "cabins": "5 (3 Double, 2 Convertible)",
+      "crew": "5",
+      "beam": "22 ft"
+    },
+    "features": [
+      "Water Toy Collection",
+      "Panoramic Windows",
+      "Flybridge",
+      "Zero Speed Stabilizers"
+    ],
+    "gallery": [
+      "/assets/charter-gallery/princess-30m/image-4.webp",
+      "/assets/charter-gallery/princess-30m/image-5.webp",
+      "/assets/charter-gallery/princess-30m/image-6.webp",
+      "/assets/charter-gallery/princess-30m/image-7.webp",
+      "/assets/charter-gallery/princess-30m/image-8.webp",
+      "/assets/charter-gallery/princess-30m/image-9.webp",
+      "/assets/charter-gallery/princess-30m/image-10.webp",
+      "/assets/charter-gallery/princess-30m/image-11.webp",
+      "/assets/charter-gallery/princess-30m/image-12.webp",
+      "/assets/charter-gallery/princess-30m/image-13.webp",
+      "/assets/charter-gallery/princess-30m/image-14.webp",
+      "/assets/charter-gallery/princess-30m/image-15.webp",
+      "/assets/charter-gallery/princess-30m/image-16.webp",
+      "/assets/charter-gallery/princess-30m/image-17.webp",
+      "/assets/charter-gallery/princess-30m/image-18.webp",
+      "/assets/charter-gallery/princess-30m/image-19.webp",
+      "/assets/charter-gallery/princess-30m/image-20.webp",
+      "/assets/charter-gallery/princess-30m/image-21.webp",
+      "/assets/charter-gallery/princess-30m/image-22.webp",
+      "/assets/charter-gallery/princess-30m/image-23.webp",
+      "/assets/charter-gallery/princess-30m/image-24.webp",
+      "/assets/charter-gallery/princess-30m/image-25.webp",
+      "/assets/charter-gallery/princess-30m/image-26.webp",
+      "/assets/charter-gallery/princess-30m/image-27.webp",
+      "/assets/charter-gallery/princess-30m/image-1.webp",
+      "/assets/charter-gallery/princess-30m/image-2.webp",
+      "/assets/charter-gallery/princess-30m/image-3.webp"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Azimut 27 Grande",
+    "type": "Motor Yacht",
+    "length": "27 meters",
+    "capacity": "12 Guests",
+    "speed": "28 Knots",
+    "image": "/assets/charter-gallery/azimut-27-grande/image-16.webp",
+    "category": "charter",
+    "price": "€11,900 / day",
+    "detailedPricing": {
+      "halfDay": "N/A",
+      "fullDay": "€11,900",
+      "overnight": "€17,850",
+      "weekly": "€95,200*"
+    },
+    "description": "Experience Italian elegance and modern design with the Azimut 27 Grande, a masterpiece of luxury available for yacht charter in Cyprus. Featuring 5 exquisitely appointed cabins and expansive sun decks, this high-end yacht for rent is perfect for those who want to rent a boat in Limassol and explore the Mediterranean in style. Offering a perfect blend of high performance and sophisticated comfort, the Azimut 27 Grande stands out as a top-tier boat for rent. Discover the beauty of the Cypriot coastline with a bespoke yacht charter in Limassol, complete with a professional crew and world-class amenities.",
+    "specs": {
+      "builder": "Azimut",
+      "year": "2021",
+      "cabins": "5 EXQUISITELY APPOINTED",
+      "crew": "4",
+      "beam": "6.6 meters"
+    },
+    "features": [
+      "Alfresco Dining",
+      "Contemporary Design",
+      "Wide Decks",
+      "Jacuzzi"
+    ],
+    "gallery": [
+      "/assets/charter-gallery/azimut-27-grande/image-16.webp",
+      "/assets/charter-gallery/azimut-27-grande/image-1.webp",
+      "/assets/charter-gallery/azimut-27-grande/image-2.webp",
+      "/assets/charter-gallery/azimut-27-grande/image-3.webp",
+      "/assets/charter-gallery/azimut-27-grande/image-4.webp",
+      "/assets/charter-gallery/azimut-27-grande/image-5.webp",
+      "/assets/charter-gallery/azimut-27-grande/image-6.webp",
+      "/assets/charter-gallery/azimut-27-grande/image-7.webp",
+      "/assets/charter-gallery/azimut-27-grande/image-8.webp",
+      "/assets/charter-gallery/azimut-27-grande/image-9.webp",
+      "/assets/charter-gallery/azimut-27-grande/image-10.webp",
+      "/assets/charter-gallery/azimut-27-grande/image-11.webp",
+      "/assets/charter-gallery/azimut-27-grande/image-12.webp",
+      "/assets/charter-gallery/azimut-27-grande/image-13.webp",
+      "/assets/charter-gallery/azimut-27-grande/image-14.webp",
+      "/assets/charter-gallery/azimut-27-grande/image-15.webp"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Princess 88",
+    "type": "Motor Yacht",
+    "length": "88 ft",
+    "capacity": "12 Guests",
+    "speed": "30 Knots",
+    "image": "/assets/charter-gallery/princess-88/image-7.webp",
+    "category": "charter",
+    "price": "€8,800 / day",
+    "detailedPricing": {
+      "halfDay": "€8,300",
+      "fullDay": "€8,800",
+      "overnight": "€10,500",
+      "weekly": "Upon Request"
+    },
+    "description": "Book the spectacular Princess 88 for a premium yacht charter in Limassol and experience ultimate VIP cruising along the coast. Renowned for its drop-down sea balcony, spacious flybridge, and elegant wet bar, this vessel is the ideal choice for a luxury yacht charter in Cyprus. Whether you want to rent a boat in Cyprus for a corporate event or need an exclusive yacht for rent to celebrate a special occasion with family, the Princess 88 delivers exceptional comfort and stability. Choose this exceptional boat for rent and enjoy the highest standard of maritime luxury on the Mediterranean.",
+    "specs": {
+      "builder": "Princess Yachts",
+      "year": "",
+      "cabins": "4",
+      "crew": "3",
+      "beam": "20 ft"
+    },
+    "features": [
+      "Expansive Flybridge",
+      "Large Sunbeds",
+      "Modern Entertainment System",
+      "Water Toys"
+    ],
+    "gallery": [
+      "/assets/charter-gallery/princess-88/image-7.webp",
+      "/assets/charter-gallery/princess-88/image-1.webp",
+      "/assets/charter-gallery/princess-88/image-2.webp",
+      "/assets/charter-gallery/princess-88/image-3.webp",
+      "/assets/charter-gallery/princess-88/image-4.webp",
+      "/assets/charter-gallery/princess-88/image-5.webp",
+      "/assets/charter-gallery/princess-88/image-6.webp",
+      "/assets/charter-gallery/princess-88/image-8.webp",
+      "/assets/charter-gallery/princess-88/image-9.webp",
+      "/assets/charter-gallery/princess-88/image-10.webp",
+      "/assets/charter-gallery/princess-88/image-11.webp",
+      "/assets/charter-gallery/princess-88/image-12.webp",
+      "/assets/charter-gallery/princess-88/image-13.webp",
+      "/assets/charter-gallery/princess-88/image-14.webp",
+      "/assets/charter-gallery/princess-88/image-15.webp",
+      "/assets/charter-gallery/princess-88/image-16.webp",
+      "/assets/charter-gallery/princess-88/image-17.webp",
+      "/assets/charter-gallery/princess-88/image-18.webp",
+      "/assets/charter-gallery/princess-88/image-19.webp",
+      "/assets/charter-gallery/princess-88/image-20.webp"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Falcon 86",
+    "type": "Motor Yacht",
+    "length": "86 ft",
+    "capacity": "12 Guests",
+    "speed": "25 Knots",
+    "image": "/assets/charter-optimized/falcon-86.webp",
+    "category": "charter",
+    "price": "€7,400 / day",
+    "detailedPricing": {
+      "halfDay": "€6,800",
+      "fullDay": "€7,400",
+      "overnight": "€9,500",
+      "weekly": "€49,000"
+    },
+    "description": "Embrace timeless design and spacious elegance on the Falcon 86, a premier choice for private boat hire in Cyprus. Boasting large al fresco dining areas, an expansive flybridge, and refitted interiors, this classic motor yacht is perfect for family holidays and private charters. If you are looking to rent a boat in Limassol, this vessel offers the comfort and volume of a mega yacht. As a highly recommended yacht for rent, the Falcon 86 ensures a smooth sea voyage. Contact us today to secure this magnificent boat for rent for your next yacht charter in Cyprus.",
+    "specs": {
+      "builder": "Falcon",
+      "year": "2000 (Refit 2018)",
+      "cabins": "4 (3 Double, 1 Twin)",
+      "crew": "3",
+      "beam": "19 ft"
+    },
+    "features": [
+      "Flybridge",
+      "Entertainment System",
+      "Al Fresco Dining Area",
+      "Refitted Interior"
+    ],
+    "gallery": [
+      "/assets/charter-gallery/falcon-86/image-1.webp",
+      "/assets/charter-gallery/falcon-86/image-10.webp",
+      "/assets/charter-gallery/falcon-86/image-9.webp",
+      "/assets/charter-gallery/falcon-86/image-2.webp",
+      "/assets/charter-gallery/falcon-86/image-3.webp",
+      "/assets/charter-gallery/falcon-86/image-4.webp",
+      "/assets/charter-gallery/falcon-86/image-5.webp",
+      "/assets/charter-gallery/falcon-86/image-6.webp",
+      "/assets/charter-gallery/falcon-86/image-7.webp",
+      "/assets/charter-gallery/falcon-86/image-11.webp",
+      "/assets/charter-gallery/falcon-86/image-12.webp",
+      "/assets/charter-gallery/falcon-86/image-13.webp"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Ferretti 69",
+    "type": "Motor Yacht",
+    "length": "69 ft",
+    "capacity": "12 Guests",
+    "speed": "32 Knots",
+    "image": "/assets/charter-optimized/ferretti-69.webp",
+    "category": "charter",
+    "price": "€5,200 / day",
+    "detailedPricing": {
+      "halfDay": "€4,700",
+      "fullDay": "€5,200",
+      "overnight": "Upon Request"
+    },
+    "description": "Discover the perfect balance of performance and comfort with the Ferretti 69, an exceptional option for anyone looking to rent a boat in Limassol. Ideal for private day cruises and extended coastal charters, this spacious motor yacht guarantees an unforgettable experience. With its lavish furnishings and open-plan layout, it is highly sought after as a luxury yacht for rent. Whether you are planning a family day out or looking for a premium yacht charter in Cyprus, the Ferretti 69 provides smooth sailing and elegant comfort. Secure your next yacht charter in Limassol on this superb boat for rent.",
+    "specs": {
+      "builder": "Ferretti",
+      "year": "",
+      "cabins": "4 (2 Double, 2 Twin)",
+      "crew": "2",
+      "beam": "18 ft"
+    },
+    "features": [
+      "Lavish Furnishings",
+      "Outdoor Entertaining Area",
+      "Spacious Interiors"
+    ],
+    "gallery": [
+      "/assets/charter-gallery/ferretti-69/image-7.webp",
+      "/assets/charter-gallery/ferretti-69/image-3.webp",
+      "/assets/charter-gallery/ferretti-69/image-5.webp",
+      "/assets/charter-gallery/ferretti-69/image-6.webp",
+      "/assets/charter-gallery/ferretti-69/image-8.webp",
+      "/assets/charter-gallery/ferretti-69/image-1.webp",
+      "/assets/charter-gallery/ferretti-69/image-2.webp",
+      "/assets/charter-gallery/ferretti-69/image-4.webp"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Azimut 64",
+    "type": "Motor Yacht",
+    "length": "64 ft",
+    "capacity": "12 Guests",
+    "speed": "32 Knots",
+    "image": "/assets/charter-gallery/azimut-64/image-12.webp",
+    "category": "charter",
+    "price": "€5,300 / day",
+    "detailedPricing": {
+      "halfDay": "€4,900",
+      "fullDay": "€5,300",
+      "overnight": "€6,000",
+      "weekly": "Upon Request*"
+    },
+    "description": "Cruise the crystal-clear waters of the Mediterranean in ultimate style with the Azimut 64, a top-rated choice for a luxury yacht charter in Limassol. Featuring a spacious flybridge, modern saloon, and comfortable sunbeds, it is the perfect yacht for rent for private groups. If you are searching for a premium boat for rent or planning to rent a boat in Cyprus, this vessel combines sporty performance with refined Italian styling. Perfect for both half-day cruises and weekly charters, the Azimut 64 ensures a memorable yacht charter in Cyprus for you and your guests.",
+    "specs": {
+      "builder": "Azimut",
+      "year": "",
+      "cabins": "3",
+      "crew": "2",
+      "beam": "17.5 ft"
+    },
+    "features": [
+      "Expansive Flybridge",
+      "Sunbeds",
+      "Contemporary Interior"
+    ],
+    "gallery": [
+      "/assets/charter-gallery/azimut-64/image-12.webp",
+      "/assets/charter-gallery/azimut-64/image-2.webp",
+      "/assets/charter-gallery/azimut-64/image-3.webp",
+      "/assets/charter-gallery/azimut-64/image-4.webp",
+      "/assets/charter-gallery/azimut-64/image-5.webp",
+      "/assets/charter-gallery/azimut-64/image-6.webp",
+      "/assets/charter-gallery/azimut-64/image-7.webp",
+      "/assets/charter-gallery/azimut-64/image-8.webp",
+      "/assets/charter-gallery/azimut-64/image-9.webp",
+      "/assets/charter-gallery/azimut-64/image-10.webp",
+      "/assets/charter-gallery/azimut-64/image-11.webp",
+      "/assets/charter-gallery/azimut-64/image-1.webp"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Ferretti 550",
+    "type": "Motor Yacht",
+    "length": "55 ft",
+    "capacity": "12 Guests",
+    "speed": "30 Knots",
+    "image": "/assets/charter-optimized/ferretti-550.webp",
+    "category": "charter",
+    "price": "€4,000 / day",
+    "detailedPricing": {
+      "halfDay": "€3,700",
+      "fullDay": "€4,000",
+      "overnight": "€4,500",
+      "weekly": "€27,000"
+    },
+    "description": "Embark on a spectacular sea adventure aboard the Ferretti 550, a sleek and modern motor yacht designed for smooth cruising and refined comfort. This luxury yacht for rent in Limassol features bright, panoramic windows and beautiful outdoor dining spaces, making it perfect for private day trips and exclusive escapes. If you are looking to rent a boat in Limassol or organize a private yacht charter in Cyprus, the Ferretti 550 offers a premium experience with a dedicated crew. Book this exquisite boat for rent and enjoy a tailored yacht charter in Limassol.",
+    "specs": {
+      "builder": "Ferretti",
+      "year": "",
+      "cabins": "3 Double",
+      "crew": "2",
+      "beam": "16 ft"
+    },
+    "features": [
+      "Panoramic Windows",
+      "Outdoor Dining Area",
+      "Premium Sound System"
+    ],
+    "gallery": [
+      "/assets/charter-gallery/ferretti-550/image-9.webp",
+      "/assets/charter-gallery/ferretti-550/image-10.webp",
+      "/assets/charter-gallery/ferretti-550/image-11.webp",
+      "/assets/charter-gallery/ferretti-550/image-12.webp",
+      "/assets/charter-gallery/ferretti-550/image-13.webp",
+      "/assets/charter-gallery/ferretti-550/image-14.webp",
+      "/assets/charter-gallery/ferretti-550/image-15.webp",
+      "/assets/charter-gallery/ferretti-550/image-16.webp",
+      "/assets/charter-gallery/ferretti-550/image-17.webp",
+      "/assets/charter-gallery/ferretti-550/image-18.webp",
+      "/assets/charter-gallery/ferretti-550/image-20.webp",
+      "/assets/charter-gallery/ferretti-550/image-21.webp",
+      "/assets/charter-gallery/ferretti-550/image-22.webp",
+      "/assets/charter-gallery/ferretti-550/image-23.webp",
+      "/assets/charter-gallery/ferretti-550/image-24.webp"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Beneteau Monte Carlo 50 Fly",
+    "type": "Motor Yacht",
+    "length": "50 ft",
+    "capacity": "12 Guests",
+    "speed": "28 Knots",
+    "image": "/assets/charter-optimized/beneteau-monte-carlo-50-fly.webp",
+    "category": "charter",
+    "price": "€2,800 / day",
+    "detailedPricing": {
+      "halfDay": "€2,300",
+      "fullDay": "€2,800"
+    },
+    "description": "Enjoy a premium luxury experience aboard the fully refitted Beneteau Monte Carlo 50 Fly. This highly popular motor yacht is the perfect choice for anyone looking to rent a boat in Limassol for a scenic coastal cruise. Equipped with a spacious flybridge, built-in wet bar, and a panoramic saloon, it is ideal for day trips and private parties. As a top-rated yacht for rent, it ensures a smooth and elegant journey. Secure this beautiful boat for rent and elevate your holiday with a bespoke yacht charter in Cyprus and professional marine service.",
+    "specs": {
+      "builder": "Beneteau",
+      "year": "2010",
+      "cabins": "3 (2 Double, 1 Twin)",
+      "crew": "2",
+      "beam": "15 ft"
+    },
+    "features": [
+      "Flybridge with Wetbar",
+      "Bimini Shade",
+      "Panoramic Saloon"
+    ],
+    "gallery": [
+      "/assets/charter-gallery/beneteau-monte-carlo-50-fly/image-13.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-50-fly/image-14.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-50-fly/image-1.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-50-fly/image-2.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-50-fly/image-3.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-50-fly/image-5.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-50-fly/image-6.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-50-fly/image-7.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-50-fly/image-8.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-50-fly/image-9.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-50-fly/image-10.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-50-fly/image-11.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-50-fly/image-12.webp"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Fairline Targa 48 V",
+    "type": "Motor Yacht",
+    "length": "48 ft",
+    "capacity": "10 Guests",
+    "speed": "32 Knots",
+    "image": "/assets/charter-optimized/fairline-targa-48v.webp",
+    "category": "charter",
+    "price": "€2,400 / day",
+    "detailedPricing": {
+      "halfDay": "€2,000",
+      "fullDay": "€2,400",
+      "other": "Upon Request"
+    },
+    "description": "The stylish Fairline Targa 48V is a top-performing motor yacht and an excellent choice for private boat hire in Cyprus. Featuring a spacious open cockpit, large sunbeds, and a modern dining area, it provides a superb option for a yacht charter in Limassol. If you want to rent a boat in Limassol for an active day of swimming, sunbathing, or fast cruising, this vessel delivers both speed and luxury. Choose this premium boat for rent and enjoy a memorable, personalized yacht charter in Cyprus along the beautiful Mediterranean coast.",
+    "specs": {
+      "builder": "Fairline",
+      "year": "",
+      "cabins": "2 Double",
+      "crew": "1",
+      "beam": "14 ft"
+    },
+    "features": [
+      "Sea Taxi",
+      "Spacious Cockpit",
+      "Modern Galley"
+    ],
+    "gallery": [
+      "/assets/charter-gallery/fairline-targa-48v/image-1.webp",
+      "/assets/charter-gallery/fairline-targa-48v/image-2.webp",
+      "/assets/charter-gallery/fairline-targa-48v/image-5.webp",
+      "/assets/charter-gallery/fairline-targa-48v/image-4.webp",
+      "/assets/charter-gallery/fairline-targa-48v/image-6.webp",
+      "/assets/charter-gallery/fairline-targa-48v/image-7.webp",
+      "/assets/charter-gallery/fairline-targa-48v/image-8.webp",
+      "/assets/charter-gallery/fairline-targa-48v/image-9.webp",
+      "/assets/charter-gallery/fairline-targa-48v/image-10.webp",
+      "/assets/charter-gallery/fairline-targa-48v/image-3.webp"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Fairline Targa 48",
+    "type": "Motor Yacht",
+    "length": "48 ft",
+    "capacity": "10 Guests",
+    "speed": "30 Knots",
+    "image": "/assets/charter-optimized/fairline-targa-48.webp",
+    "category": "charter",
+    "price": "€2,400 / day",
+    "detailedPricing": {
+      "halfDay": "€2,000",
+      "fullDay": "€2,400",
+      "other": "Upon Request"
+    },
+    "description": "Charter the fully refitted Fairline Targa 48 and explore the crystal-blue waters of Cyprus in complete comfort. Boasting expansive sunbathing areas and a sleek golden hull, this luxury yacht charter in Limassol is ideal for family outings and group day trips. Whether you are looking to rent a boat in Cyprus or find a sporty yacht for rent for coastal cruising, this vessel combines modern design with outstanding performance. Experience the beauty of the Limassol coastline with a premium boat for rent that is fully equipped for your relaxation.",
+    "specs": {
+      "builder": "Fairline",
+      "year": "",
+      "cabins": "2 Double",
+      "crew": "1",
+      "beam": "14 ft"
+    },
+    "features": [
+      "Sea Taxi",
+      "Golden Hull",
+      "Spacious Sunbeds"
+    ],
+    "gallery": [
+      "/assets/charter-gallery/fairline-targa-48/image-8.webp",
+      "/assets/charter-gallery/fairline-targa-48/image-1.webp",
+      "/assets/charter-gallery/fairline-targa-48/image-2.webp",
+      "/assets/charter-gallery/fairline-targa-48/image-3.webp",
+      "/assets/charter-gallery/fairline-targa-48/image-4.webp",
+      "/assets/charter-gallery/fairline-targa-48/image-5.webp",
+      "/assets/charter-gallery/fairline-targa-48/image-6.webp",
+      "/assets/charter-gallery/fairline-targa-48/image-7.webp"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Azimut 47",
+    "type": "Motor Yacht",
+    "length": "47 ft",
+    "capacity": "12 Guests",
+    "speed": "34 Knots",
+    "image": "/assets/charter-optimized/azimut-atlantis-47.webp",
+    "category": "charter",
+    "price": "€1,800 / day",
+    "detailedPricing": {
+      "halfDay": "€1,500",
+      "fullDay": "€1,800"
+    },
+    "description": "The Azimut 47 brings sporty performance and elegant Italian styling to the world of Cyprus boat rentals. Featuring a convenient hydraulic swim platform, open sun decks, and a comfortable cockpit, it is the prime choice for a private yacht charter in Limassol. If you want to rent a boat in Limassol for a quick coastal trip, a snorkeling adventure, or a sunset cruise, this yacht for rent offers exceptional handling and comfort. Book this high-quality boat for rent for a bespoke yacht charter in Cyprus.",
+    "specs": {
+      "builder": "Azimut",
+      "year": "",
+      "cabins": "2 Double",
+      "crew": "1",
+      "beam": "14 ft"
+    },
+    "features": [
+      "Sea Taxi",
+      "Hydraulic Swim Platform",
+      "Spacious Sunbeds"
+    ],
+    "gallery": [
+      "/assets/charter-gallery/azimut-47/image-17.webp",
+      "/assets/charter-gallery/azimut-47/image-19.webp",
+      "/assets/charter-gallery/azimut-47/image-16.webp",
+      "/assets/charter-gallery/azimut-47/image-13.webp",
+      "/assets/charter-gallery/azimut-47/image-14.webp",
+      "/assets/charter-gallery/azimut-47/image-15.webp",
+      "/assets/charter-gallery/azimut-47/image-18.webp",
+      "/assets/charter-gallery/azimut-47/image-20.webp",
+      "/assets/charter-gallery/azimut-47/image-21.webp",
+      "/assets/charter-gallery/azimut-47/image-22.webp",
+      "/assets/charter-gallery/azimut-47/image-23.webp",
+      "/assets/charter-gallery/azimut-47/image-24.webp",
+      "/assets/charter-gallery/azimut-47/image-25.webp",
+      "/assets/charter-gallery/azimut-47/image-26.webp"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Beneteau Monte Carlo 42",
+    "type": "Motor Yacht",
+    "length": "42 ft",
+    "capacity": "10 Guests",
+    "speed": "30 Knots",
+    "image": "/assets/charter-optimized/beneteau-monte-carlo-42.webp",
+    "category": "charter",
+    "price": "€2,400 / day",
+    "detailedPricing": {
+      "halfDay": "€2,000",
+      "fullDay": "€2,400"
+    },
+    "description": "Rent the stylish Beneteau Monte Carlo 42 for a premium Mediterranean escape with family or close friends. Perfectly sized for intimate day trips and coastal cruising, this luxury boat hire in Cyprus features comfortable double cabins, a well-equipped galley, and a spacious cockpit. For those looking to rent a boat in Limassol or seeking an elegant yacht for rent, the Beneteau Monte Carlo 42 offers a smooth, stable ride and high-end details. Elevate your holiday with an exclusive yacht charter in Limassol on this beautiful boat for rent.",
+    "specs": {
+      "builder": "Beneteau",
+      "year": "2010",
+      "cabins": "2 Double",
+      "crew": "1",
+      "beam": "13 ft"
+    },
+    "features": [
+      "Sea Taxi",
+      "Comfortable Cockpit",
+      "Premium Sound System"
+    ],
+    "gallery": [
+      "/assets/charter-gallery/beneteau-monte-carlo-42/image-1.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-42/image-6.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-42/image-7.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-42/image-2.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-42/image-3.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-42/image-4.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-42/image-5.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-42/image-8.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-42/image-9.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-42/image-10.webp"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Private Yacht 110ft",
+    "type": "Motor Yacht",
+    "length": "110 ft",
+    "capacity": "12 Guests",
+    "speed": "24 Knots",
+    "image": "/assets/charter-optimized/private-yacht-110.webp",
+    "category": "charter",
+    "price": "Upon Request*",
+    "detailedPricing": {
+      "fullDay": "Upon Request*"
+    },
+    "description": "Elevate your Cyprus holidays to the absolute maximum with our 110ft Private Yacht, the ultimate megayacht experience in the Mediterranean. Featuring a luxury top-deck jacuzzi, three spacious decks, and 6 elegant cabins, it is the pinnacle of VIP boat rent in Cyprus. If you are looking for an exclusive yacht charter in Limassol or need a world-class yacht for rent to host corporate events or high-end celebrations, this custom motor yacht provides unparalleled service with a professional crew of five. Book this magnificent boat for rent for a bespoke yacht charter in Cyprus.",
+    "specs": {
+      "builder": "Custom",
+      "year": "",
+      "cabins": "6",
+      "crew": "5",
+      "beam": "23 ft"
+    },
+    "features": [
+      "Jacuzzi",
+      "Expansive Sun Decks",
+      "Gourmet Kitchen",
+      "6 Luxury Cabins"
+    ],
+    "gallery": [
+      "/assets/charter-gallery/private-yacht-110-ft/image-1.webp",
+      "/assets/charter-gallery/private-yacht-110-ft/image-2.webp",
+      "/assets/charter-gallery/private-yacht-110-ft/image-3.webp",
+      "/assets/charter-gallery/private-yacht-110-ft/image-4.webp",
+      "/assets/charter-gallery/private-yacht-110-ft/image-5.webp",
+      "/assets/charter-gallery/private-yacht-110-ft/image-6.webp",
+      "/assets/charter-gallery/private-yacht-110-ft/image-7.webp",
+      "/assets/charter-gallery/private-yacht-110-ft/image-8.webp",
+      "/assets/charter-gallery/private-yacht-110-ft/image-9.webp",
+      "/assets/charter-gallery/private-yacht-110-ft/image-10.webp",
+      "/assets/charter-gallery/private-yacht-110-ft/image-11.webp",
+      "/assets/charter-gallery/private-yacht-110-ft/image-12.webp",
+      "/assets/charter-gallery/private-yacht-110-ft/image-13.webp",
+      "/assets/charter-gallery/private-yacht-110-ft/image-14.webp",
+      "/assets/charter-gallery/private-yacht-110-ft/image-15.webp"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Sunseeker Manhattan 56",
+    "type": "Motor Yacht",
+    "length": "56 ft",
+    "capacity": "12 Guests",
+    "speed": "28 Knots",
+    "image": "/assets/charter-optimized/sunseeker-manhattan-56.webp",
+    "category": "charter",
+    "price": "€31,000 / week*",
+    "detailedPricing": {
+      "halfDay": "Upon Request *",
+      "fullDay": "Upon Request *",
+      "overnight": "Upon Request *",
+      "weekly": "€31,000*",
+      "other": "Upon Request"
+    },
+    "description": "Rent the prestigious Sunseeker Manhattan 56 for a seamless luxury experience on the Mediterranean. This modern, stylish yacht is a top choice for a private yacht charter in Limassol, featuring an expansive flybridge, large swim platform, and a beautifully designed interior. Whether you want to rent a boat in Cyprus for a day or plan an exclusive weekly yacht charter in Cyprus, this motor yacht offers the perfect balance of luxury and performance. Choose this premium boat for rent and enjoy a customized cruise with our professional crew.",
+    "specs": {
+      "builder": "Sunseeker",
+      "year": "",
+      "cabins": "3 (2 Double, 1 Twin)",
+      "crew": "2",
+      "beam": "16 ft"
+    },
+    "features": [
+      "Expansive Flybridge",
+      "Large Swim Platform",
+      "Sleek Modern Interior"
+    ],
+    "gallery": [
+      "/assets/charter-gallery/sunseeker-manhattan-56/image-13.webp",
+      "/assets/charter-gallery/sunseeker-manhattan-56/image-7.webp",
+      "/assets/charter-gallery/sunseeker-manhattan-56/image-8.webp",
+      "/assets/charter-gallery/sunseeker-manhattan-56/image-9.webp",
+      "/assets/charter-gallery/sunseeker-manhattan-56/image-10.webp",
+      "/assets/charter-gallery/sunseeker-manhattan-56/image-11.webp",
+      "/assets/charter-gallery/sunseeker-manhattan-56/image-1.webp",
+      "/assets/charter-gallery/sunseeker-manhattan-56/image-2.webp",
+      "/assets/charter-gallery/sunseeker-manhattan-56/image-3.webp",
+      "/assets/charter-gallery/sunseeker-manhattan-56/image-4.webp",
+      "/assets/charter-gallery/sunseeker-manhattan-56/image-5.webp",
+      "/assets/charter-gallery/sunseeker-manhattan-56/image-6.webp"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Beneteau Monte Carlo 52",
+    "type": "Motor Yacht",
+    "length": "52 ft",
+    "capacity": "12 Guests",
+    "speed": "28 Knots",
+    "image": "/assets/charter-optimized/beneteau-monte-carlo-52.webp",
+    "category": "charter",
+    "price": "€3,700 / day",
+    "detailedPricing": {
+      "halfDay": "€3,200",
+      "fullDay": "€3,700",
+      "overnight": "€4,000",
+      "weekly": "€19,000"
+    },
+    "description": "The Beneteau Monte Carlo 52 is your ideal choice for a relaxing and entertaining boat charter in Cyprus. Featuring a state-of-the-art sound system, a spacious dining flybridge, and a hydraulic swim platform, it is the perfect yacht for rent for social gatherings and family cruises. If you are looking to rent a boat in Limassol or organize a premium yacht charter in Limassol, this modern motor yacht offers unmatched comfort and panoramic views from its saloon. Experience a luxury yacht charter in Cyprus on this exceptional boat for rent.",
+    "specs": {
+      "builder": "Beneteau",
+      "year": "2022",
+      "cabins": "3 Double",
+      "crew": "2",
+      "beam": "16 ft"
+    },
+    "features": [
+      "Hydraulic Platform",
+      "Flybridge Dining",
+      "Panoramic Saloon"
+    ],
+    "gallery": [
+      "/assets/charter-gallery/beneteau-monte-carlo-52/image-1.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-52/image-2.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-52/image-3.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-52/image-5.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-52/image-6.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-52/image-9.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-52/image-10.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-52/image-11.webp",
+      "/assets/charter-gallery/beneteau-monte-carlo-52/image-12.webp"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Princess 62",
+    "type": "Motor Yacht",
+    "length": "62 ft",
+    "capacity": "12 Guests",
+    "speed": "30 Knots",
+    "image": "/assets/charter-optimized/princess-62.webp",
+    "category": "charter",
+    "price": "€4,750 / day",
+    "detailedPricing": {
+      "halfDay": "€4,300",
+      "fullDay": "€4,750",
+      "overnight": "€5,700"
+    },
+    "description": "Host the perfect sea getaway aboard the Princess 62, a premier choice for a luxury yacht charter in Cyprus. Equipped with a flybridge wet bar and BBQ, wide decks, and beautifully styled interiors, it is the ultimate boat rent in Limassol for entertaining friends or family. Whether you are looking for a private yacht for rent to celebrate a special occasion or planning to rent a boat in Cyprus for a sunset cruise, the Princess 62 ensures a luxurious and comfortable voyage on the Mediterranean. Book this outstanding boat for rent today.",
+    "specs": {
+      "builder": "Princess Yachts",
+      "year": "",
+      "cabins": "3",
+      "crew": "2",
+      "beam": "15.5 ft"
+    },
+    "features": [
+      "Flybridge Bar",
+      "Sunbeds",
+      "Contemporary Interior"
+    ],
+    "gallery": [
+      "/assets/charter-gallery/princess-62/image-48.webp",
+      "/assets/charter-gallery/princess-62/image-33.webp",
+      "/assets/charter-gallery/princess-62/image-34.webp",
+      "/assets/charter-gallery/princess-62/image-32.webp",
+      "/assets/charter-gallery/princess-62/image-21.webp",
+      "/assets/charter-gallery/princess-62/image-22.webp",
+      "/assets/charter-gallery/princess-62/image-23.webp",
+      "/assets/charter-gallery/princess-62/image-24.webp",
+      "/assets/charter-gallery/princess-62/image-25.webp",
+      "/assets/charter-gallery/princess-62/image-26.webp",
+      "/assets/charter-gallery/princess-62/image-27.webp",
+      "/assets/charter-gallery/princess-62/image-28.webp",
+      "/assets/charter-gallery/princess-62/image-29.webp",
+      "/assets/charter-gallery/princess-62/image-1.webp",
+      "/assets/charter-gallery/princess-62/image-2.webp",
+      "/assets/charter-gallery/princess-62/image-3.webp",
+      "/assets/charter-gallery/princess-62/image-5.webp",
+      "/assets/charter-gallery/princess-62/image-7.webp",
+      "/assets/charter-gallery/princess-62/image-8.webp",
+      "/assets/charter-gallery/princess-62/image-9.webp",
+      "/assets/charter-gallery/princess-62/image-10.webp",
+      "/assets/charter-gallery/princess-62/image-11.webp",
+      "/assets/charter-gallery/princess-62/image-12.webp",
+      "/assets/charter-gallery/princess-62/image-14.webp",
+      "/assets/charter-gallery/princess-62/image-15.webp",
+      "/assets/charter-gallery/princess-62/image-16.webp",
+      "/assets/charter-gallery/princess-62/image-17.webp",
+      "/assets/charter-gallery/princess-62/image-18.webp",
+      "/assets/charter-gallery/princess-62/image-19.webp",
+      "/assets/charter-gallery/princess-62/image-36.webp",
+      "/assets/charter-gallery/princess-62/image-37.webp",
+      "/assets/charter-gallery/princess-62/image-38.webp",
+      "/assets/charter-gallery/princess-62/image-39.webp",
+      "/assets/charter-gallery/princess-62/image-40.webp",
+      "/assets/charter-gallery/princess-62/image-41.webp",
+      "/assets/charter-gallery/princess-62/image-42.webp",
+      "/assets/charter-gallery/princess-62/image-43.webp",
+      "/assets/charter-gallery/princess-62/image-44.webp",
+      "/assets/charter-gallery/princess-62/image-45.webp",
+      "/assets/charter-gallery/princess-62/image-46.webp",
+      "/assets/charter-gallery/princess-62/image-47.webp",
+      "/assets/charter-gallery/princess-62/image-49.webp"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Cranchi Fifty 8 Fly",
+    "type": "Motor Yacht",
+    "length": "58 ft",
+    "capacity": "12 Guests",
+    "speed": "30 Knots",
+    "image": "/assets/charter-optimized/cranchi-fifty-8-fly.webp",
+    "category": "charter",
+    "price": "€4,000 / day",
+    "detailedPricing": {
+      "halfDay": "€3,500",
+      "fullDay": "€4,000",
+      "overnight": "€4,500",
+      "weekly": "€27,000"
+    },
+    "description": "The Cranchi Fifty 8 Fly offers a sporty yet highly luxurious yacht charter in Cyprus, combining Italian design with exceptional cruising capabilities. Equipped with a top-deck grill, spacious sunbeds, and modern cabins, it is a top choice for private yacht hire and coastal day trips. If you want to rent a boat in Limassol or are searching for a high-performance yacht for rent, this motor yacht delivers speed, stability, and elegance. Experience the best of the Mediterranean with a customized yacht charter in Limassol on this premium boat for rent.",
+    "specs": {
+      "builder": "Cranchi",
+      "year": "",
+      "cabins": "3",
+      "crew": "2",
+      "beam": "17 ft"
+    },
+    "features": [
+      "Modern Engineering",
+      "Sleek Profile",
+      "Comfortable Cabins"
+    ],
+    "gallery": [
+      "/assets/charter-gallery/cranchi-fifty-8-fly/image-1.webp",
+      "/assets/charter-gallery/cranchi-fifty-8-fly/image-2.webp",
+      "/assets/charter-gallery/cranchi-fifty-8-fly/image-3.webp",
+      "/assets/charter-gallery/cranchi-fifty-8-fly/image-4.webp",
+      "/assets/charter-gallery/cranchi-fifty-8-fly/image-5.webp",
+      "/assets/charter-gallery/cranchi-fifty-8-fly/image-6.webp",
+      "/assets/charter-gallery/cranchi-fifty-8-fly/image-7.webp",
+      "/assets/charter-gallery/cranchi-fifty-8-fly/image-8.webp",
+      "/assets/charter-gallery/cranchi-fifty-8-fly/image-9.webp",
+      "/assets/charter-gallery/cranchi-fifty-8-fly/image-10.webp",
+      "/assets/charter-gallery/cranchi-fifty-8-fly/image-11.webp",
+      "/assets/charter-gallery/cranchi-fifty-8-fly/image-12.webp"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Navan C30 (Sea Taxi)",
+    "type": "Sea Taxi / Cruiser",
+    "length": "30 ft",
+    "capacity": "12 Guests",
+    "speed": "40 Knots",
+    "image": "/assets/charter-optimized/navan-c30.webp",
+    "category": "charter",
+    "price": "€600 (2 Hours)",
+    "detailedPricing": {
+      "twoHours": "€600",
+      "threeHours": "€800",
+      "fourHours": "€900"
+    },
+    "description": "Fast, sleek, and comfortable, the Navan C30 (Sea Taxi) offers premium private boat transfers and speedy coastal trips. It is the best choice for quick boat hire in Limassol, sea taxi services, and fast-paced yacht rentals in Limassol. If you need to rent a boat in Cyprus for a rapid transfer between coastal cities, or want an exciting day trip along the shoreline, this modern cruiser provides enclosed cabin comfort and high speed. Choose this unique boat for rent for an efficient and luxurious yacht charter in Cyprus.",
+    "specs": {
+      "builder": "Navan",
+      "year": "2023",
+      "cabins": "1",
+      "crew": "1",
+      "beam": "9.5 ft"
+    },
+    "features": [
+      "Sea Taxi Service",
+      "Enclosed Cabin",
+      "Fast Transfer"
+    ],
+    "gallery": [
+      "/assets/charter-gallery/sea-taxi/image-1.webp",
+      "/assets/charter-gallery/sea-taxi/image-2.webp",
+      "/assets/charter-gallery/sea-taxi/image-3.webp",
+      "/assets/charter-gallery/sea-taxi/image-4.webp"
+    ]
+  }
+]

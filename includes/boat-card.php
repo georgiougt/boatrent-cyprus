@@ -44,12 +44,10 @@
       <?php endif; ?>
     </ul>
 
-    <div class="mt-auto pt-5 flex items-end justify-between">
+    <div class="mt-auto pt-5 flex items-end justify-between gap-3">
       <div>
-        <p class="text-2xl font-display font-semibold text-brand-ink"><?php echo money($boat['price_day']); ?><span class="text-sm font-body font-normal text-brand-navy/50">/day</span></p>
-        <?php if (!empty($boat['price_hour'])): ?>
-        <p class="text-xs text-brand-navy/50">from <?php echo money($boat['price_hour']); ?>/hour</p>
-        <?php endif; ?>
+        <p class="text-xl font-display font-semibold text-brand-ink leading-tight"><?php echo e(boat_price_label($boat)); ?></p>
+        <p class="text-xs text-brand-navy/50">up to <?php echo (int) $boat['capacity']; ?> guests</p>
       </div>
       <a href="/boat/<?php echo e($boat['slug']); ?>" class="inline-flex items-center gap-1.5 bg-brand-navy hover:bg-brand-ink text-white text-sm font-semibold px-4 py-2.5 rounded-full transition-colors duration-200 cursor-pointer">
         View

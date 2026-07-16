@@ -42,6 +42,35 @@ function money($amount): string
     return '€' . number_format((float) $amount, 0, '.', ',');
 }
 
+/** Headline price for cards & detail pages: the stored label, or a sensible fallback. */
+function boat_price_label(array $boat): string
+{
+    $label = trim((string) ($boat['price_label'] ?? ''));
+    if ($label !== '') {
+        return $label;
+    }
+    if (!empty($boat['price_day']) && (float) $boat['price_day'] > 0) {
+        return money($boat['price_day']) . ' / day';
+    }
+    return 'On request';
+}
+
+/** Human labels for the detailedPricing keys stored on a boat. */
+function pricing_row_label(string $key): string
+{
+    $labels = [
+        'halfDay'     => 'Half day',
+        'fullDay'     => 'Full day',
+        'overnight'   => 'Overnight',
+        'weekly'      => 'Weekly',
+        'twoHours'    => '2 hours',
+        'threeHours'  => '3 hours',
+        'fourHours'   => '4 hours',
+        'other'       => 'Other',
+    ];
+    return $labels[$key] ?? ucfirst(preg_replace('/(?<!^)([A-Z])/', ' $1', $key));
+}
+
 /** Decode a JSON column safely to an array. */
 function json_arr(?string $json): array
 {
