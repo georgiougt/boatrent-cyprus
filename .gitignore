@@ -10,3 +10,7 @@ Thumbs.db
 *.log
 .vscode/
 .idea/
+
+# Node / build tooling (compiled css/tailwind.css IS committed)
+/node_modules/
+npm-debug.log*

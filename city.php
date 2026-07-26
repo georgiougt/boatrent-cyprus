@@ -13,7 +13,7 @@ if (!$city) {
 }
 
 $cityName = $city['name'];
-$pageTitle = 'Rent a Boat or Yacht in ' . $cityName;
+$pageTitle = 'Yacht Charter & Boat Rental in ' . $cityName . ' ' . date('Y');
 $pageDescription = 'Rent a boat or yacht in ' . $cityName . ', Cyprus. Charter luxury yachts, catamarans, sailing boats and speedboats in ' . $cityName . ' — ' . rtrim($city['tagline'], '.') . '. Browse the fleet and inquire today.';
 $pageKeywords = strtolower(
     'rent boat ' . $cityName . ', rent yacht ' . $cityName . ', charter yacht ' . $cityName . ', ' .

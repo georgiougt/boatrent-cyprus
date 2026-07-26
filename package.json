@@ -1,0 +1,13 @@
+{
+  "name": "boatrent-cyprus",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BoatRent Cyprus — yacht & boat rental marketplace",
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.js -i css/tailwind-input.css -o css/tailwind.css --minify",
+    "watch:css": "tailwindcss -c tailwind.config.js -i css/tailwind-input.css -o css/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

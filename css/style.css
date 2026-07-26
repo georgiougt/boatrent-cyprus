@@ -1,3 +1,26 @@
+/* ---- Self-hosted fonts (variable woff2, latin) ---- */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('/assets/fonts/playfair-display-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('/assets/fonts/playfair-display-italic-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url('/assets/fonts/plus-jakarta-sans-latin.woff2') format('woff2');
+}
+
 html { scroll-behavior: smooth; }
 body { overflow-x: hidden; }
 
@@ -61,6 +84,35 @@ body { overflow-x: hidden; }
 @keyframes wave-scroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-1440px); }
+}
+
+/* Between-section animated wave dividers (colour set per instance via --wave-fill) */
+.section-wave { position: relative; height: 56px; line-height: 0; overflow: hidden; }
+@media (min-width: 640px) { .section-wave { height: 90px; } }
+.section-wave .wave-svg--back  path { fill: var(--wave-fill); opacity: .4; }
+.section-wave .wave-svg--mid   path { fill: var(--wave-fill); opacity: .65; }
+.section-wave .wave-svg--front path { fill: var(--wave-fill); }
+
+/* ---------- Custom cursor: rotating ship's wheel (desktop only, added by JS) ---------- */
+@media (pointer: fine) {
+  html.has-custom-cursor, html.has-custom-cursor * { cursor: none !important; }
+  #cursor-dot, #cursor-wheel {
+    position: fixed; left: 0; top: 0; pointer-events: none; z-index: 9999;
+    opacity: 0; transition: opacity .25s ease; will-change: transform;
+  }
+  #cursor-dot { width: 6px; height: 6px; border-radius: 9999px; background: #E2B24A; box-shadow: 0 0 0 1px rgba(8,23,38,.35); }
+  #cursor-wheel { width: 34px; height: 34px; transition: width .22s ease, height .22s ease, opacity .25s ease; }
+  #cursor-wheel svg {
+    width: 100%; height: 100%; display: block;
+    color: #E2B24A;                                   /* brass helm — contrasts the teal buttons */
+    filter: drop-shadow(0 1px 1.5px rgba(8,23,38,.5)); /* keeps it visible on light backgrounds too */
+    animation: wheel-rot 9s linear infinite;
+    transition: color .22s ease;
+  }
+  #cursor-wheel.is-hover { width: 46px; height: 46px; }
+  #cursor-wheel.is-hover svg { color: #F2C65C; animation-duration: 3.5s; }
+  #cursor-wheel.is-down svg { animation-duration: 1.1s; }
+  @keyframes wheel-rot { to { transform: rotate(360deg); } }
 }
 
 /* Hero gradient overlay */
@@ -160,8 +212,55 @@ html.intro-lock, html.intro-lock body { overflow: hidden !important; height: 100
 @keyframes intro-load { to { width: 100%; } }
 @keyframes intro-out { to { opacity: 0; visibility: hidden; transform: scale(1.08); } }
 
+/* ---------- Premium CTA buttons: gradient + subtle motion ---------- */
+/* Scoped to real buttons/links so badges, chips and avatars stay flat. */
+a.bg-brand-gold, button.bg-brand-gold,
+a.bg-brand-navy, button.bg-brand-navy {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+  transition: transform .28s cubic-bezier(.2,.7,.3,1), box-shadow .28s ease, background-position .55s ease;
+}
+a.bg-brand-gold, button.bg-brand-gold {
+  background-image: linear-gradient(135deg, #34BEDC 0%, #12A4C9 55%, #0E93BC 100%);
+  box-shadow: 0 6px 16px -3px rgba(18,164,201,.42);
+}
+a.bg-brand-navy, button.bg-brand-navy {
+  background-image: linear-gradient(135deg, #1B4467 0%, #10314F 55%, #0B1B30 100%);
+  box-shadow: 0 6px 16px -3px rgba(13,26,51,.38);
+}
+/* light sheen that sweeps across on hover (sits above the gradient, below the text) */
+a.bg-brand-gold::before, button.bg-brand-gold::before,
+a.bg-brand-navy::before, button.bg-brand-navy::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: -65%;
+  width: 45%;
+  z-index: -1;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.38), transparent);
+  transform: skewX(-18deg);
+  transition: left .6s ease;
+  pointer-events: none;
+}
+a.bg-brand-gold:hover, button.bg-brand-gold:hover,
+a.bg-brand-navy:hover, button.bg-brand-navy:hover {
+  transform: translateY(-2px);
+  background-position: 100% 100%;
+}
+a.bg-brand-gold:hover, button.bg-brand-gold:hover { box-shadow: 0 12px 24px -5px rgba(18,164,201,.5); }
+a.bg-brand-navy:hover, button.bg-brand-navy:hover { box-shadow: 0 12px 24px -5px rgba(13,26,51,.52); }
+a.bg-brand-gold:hover::before, button.bg-brand-gold:hover::before,
+a.bg-brand-navy:hover::before, button.bg-brand-navy:hover::before { left: 120%; }
+a.bg-brand-gold:active, button.bg-brand-gold:active,
+a.bg-brand-navy:active, button.bg-brand-navy:active { transform: translateY(0); box-shadow: 0 4px 12px -4px rgba(13,26,51,.4); }
+
 @media (prefers-reduced-motion: reduce) {
   #intro-overlay { display: none !important; }
+  a.bg-brand-gold, button.bg-brand-gold, a.bg-brand-navy, button.bg-brand-navy { transition: none !important; }
+  a.bg-brand-gold:hover, button.bg-brand-gold:hover, a.bg-brand-navy:hover, button.bg-brand-navy:hover { transform: none !important; }
+  a.bg-brand-gold::before, button.bg-brand-gold::before, a.bg-brand-navy::before, button.bg-brand-navy::before { display: none !important; }
   *, *::before, *::after {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;

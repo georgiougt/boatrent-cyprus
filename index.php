@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Rent a Yacht or Boat in Cyprus';
+$pageTitle = 'Yacht Charter & Boat Rental in Cyprus';
 $pageDescription = 'Rent a yacht or boat in Cyprus with BoatRent Cyprus. Charter yachts, catamarans and speedboats in Limassol, Paphos, Larnaca, Ayia Napa, Protaras and Latsi — browse the fleet and inquire in minutes.';
 $pageKeywords = 'rent yacht cyprus, rent boat cyprus, charter yacht cyprus, yacht charter cyprus, boat rental cyprus, rent a yacht cyprus, yacht hire cyprus, rent yacht limassol, rent boat limassol, rent yacht paphos, rent yacht larnaca, rent yacht ayia napa';
 require_once __DIR__ . '/includes/functions.php';
@@ -169,6 +169,8 @@ include __DIR__ . '/includes/header.php';
   </div>
 </section>
 
+<?php section_wave('#ffffff', '#E7F7FA'); // sand -> white ?>
+
 <!-- FEATURED FLEET -->
 <section class="bg-white py-20 px-6">
   <div class="max-w-7xl mx-auto">
@@ -188,6 +190,8 @@ include __DIR__ . '/includes/header.php';
     </div>
   </div>
 </section>
+
+<?php section_wave('#0D1A33', '#ffffff'); // white -> ink ?>
 
 <!-- HOW IT WORKS -->
 <section class="bg-brand-ink text-white py-20 px-6 relative overflow-hidden">
@@ -218,6 +222,8 @@ include __DIR__ . '/includes/header.php';
   </div>
 </section>
 
+<?php section_wave('#E7F7FA', '#0D1A33'); // ink -> sand ?>
+
 <!-- TESTIMONIALS -->
 <section class="bg-brand-sand py-20 px-6">
   <div class="max-w-7xl mx-auto">
@@ -244,6 +250,8 @@ include __DIR__ . '/includes/header.php';
     </div>
   </div>
 </section>
+
+<?php section_wave('#ffffff', '#E7F7FA'); // sand -> white ?>
 
 <!-- FAQ -->
 <section class="bg-white py-20 px-6">

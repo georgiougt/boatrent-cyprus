@@ -9,7 +9,8 @@ $seoDesc    = $pageDescription ?? 'Rent yachts, catamarans and speedboats across
 $seoCanon   = $canonical ?? current_url();
 $seoRobots  = $robots ?? (site_is_live() ? 'index, follow' : 'noindex, nofollow');
 $seoOgType  = $ogType ?? 'website';
-$seoImage   = $pageImage ?? 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=80';
+$seoImage   = $pageImage ?? (base_url() . '/images/princess-30m/image-4.webp');
+$seoCanonPath = parse_url($seoCanon, PHP_URL_PATH) ?: '/';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +23,14 @@ $seoImage   = $pageImage ?? 'https://images.unsplash.com/photo-1567899378494-47b
 <?php endif; ?>
 <meta name="robots" content="<?php echo e($seoRobots); ?>">
 <link rel="canonical" href="<?php echo e($seoCanon); ?>">
+
+<!-- hreflang: only locales flagged live in site_locales() are emitted, so we
+     never point crawlers at pages that don't exist yet. ru/el flip on once
+     their localized routes are built. -->
+<?php foreach (site_locales() as $lc): if (empty($lc['live'])) continue; ?>
+<link rel="alternate" hreflang="<?php echo e($lc['hreflang']); ?>" href="<?php echo e(base_url() . $lc['prefix'] . ($seoCanonPath === '/' ? '/' : $seoCanonPath)); ?>">
+<?php endforeach; ?>
+<link rel="alternate" hreflang="x-default" href="<?php echo e(base_url() . ($seoCanonPath === '/' ? '/' : $seoCanonPath)); ?>">
 
 <!-- Open Graph -->
 <meta property="og:type" content="<?php echo e($seoOgType); ?>">
@@ -38,67 +47,57 @@ $seoImage   = $pageImage ?? 'https://images.unsplash.com/photo-1567899378494-47b
 <meta name="twitter:description" content="<?php echo e($seoDesc); ?>">
 <meta name="twitter:image" content="<?php echo e($seoImage); ?>">
 
-<!-- Site-wide organisation schema -->
-<?php echo json_ld([
+<!-- Site-wide business schema (LocalBusiness / TravelAgency) -->
+<?php
+$biz = business();
+$dayNames = ['Mo'=>'Monday','Tu'=>'Tuesday','We'=>'Wednesday','Th'=>'Thursday','Fr'=>'Friday','Sa'=>'Saturday','Su'=>'Sunday'];
+echo json_ld([
     '@context' => 'https://schema.org',
-    '@type'    => 'TravelAgency',
-    'name'     => 'BoatRent Cyprus',
-    'description' => 'Marketplace for yacht, catamaran and speedboat rentals across Cyprus.',
+    '@type'    => ['TravelAgency', 'LocalBusiness'],
+    '@id'      => base_url() . '/#business',
+    'name'     => $biz['name'],
+    'legalName'=> $biz['legalName'],
+    'description' => 'Yacht, catamaran and speedboat charters across Cyprus — Limassol, Paphos, Larnaca, Ayia Napa, Protaras and Latsi.',
     'url'      => base_url() . '/',
     'logo'     => base_url() . '/images/logo.png',
     'image'    => $seoImage,
-    'areaServed' => 'Cyprus',
+    'telephone'=> $biz['phone'],
+    'email'    => $biz['email'],
+    'priceRange' => $biz['priceRange'],
+    'currenciesAccepted' => 'EUR',
+    'areaServed' => ['@type' => 'Country', 'name' => 'Cyprus'],
     'address'  => [
         '@type' => 'PostalAddress',
-        'addressLocality' => 'Limassol',
-        'addressCountry'  => 'CY',
+        'streetAddress'   => $biz['street'],
+        'addressLocality' => $biz['locality'],
+        'addressRegion'   => $biz['region'],
+        'postalCode'      => $biz['postcode'],
+        'addressCountry'  => $biz['country'],
     ],
-    'telephone' => '+357 25 000 000',
-    'email'     => 'hello@boatrentcyprus.com',
-    'sameAs'    => ['https://instagram.com', 'https://facebook.com'],
+    'geo' => [
+        '@type' => 'GeoCoordinates',
+        'latitude'  => $biz['lat'],
+        'longitude' => $biz['lng'],
+    ],
+    'openingHoursSpecification' => [
+        '@type'     => 'OpeningHoursSpecification',
+        'dayOfWeek' => array_values(array_map(fn($d) => $dayNames[$d], $biz['hours'])),
+        'opens'     => $biz['opens'],
+        'closes'    => $biz['closes'],
+    ],
+    'sameAs'    => $biz['sameAs'],
 ]); ?>
 <?php
 if (!empty($structuredData)) {
     echo is_array($structuredData) ? json_ld($structuredData) : $structuredData;
 }
 ?>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          brand: {
-            ink:   '#0D1A33',
-            navy:  '#16395A',
-            navy2: '#1F567C',
-            gold:  '#12A4C9',
-            goldL: '#46C2E0',
-            aqua:  '#1ECEB6',
-            aquaD: '#0C7A6E',
-            sand:  '#E7F7FA',
-            foam:  '#D2E7EF',
-          }
-        },
-        fontFamily: {
-          display: ['"Playfair Display"', 'serif'],
-          body: ['"Plus Jakarta Sans"', 'sans-serif'],
-        },
-        keyframes: {
-          fadeUp: { '0%': { opacity: 0, transform: 'translateY(34px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
-          floaty: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
-        },
-        animation: {
-          'fade-up': 'fadeUp 0.7s ease-out forwards',
-          floaty: 'floaty 6s ease-in-out infinite',
-        }
-      }
-    }
-  }
-</script>
+<!-- Self-hosted fonts (no third-party render-blocking requests) -->
+<link rel="preload" href="/assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- Compiled Tailwind (built from tailwind.config.js via `npm run build:css`) -->
+<link rel="stylesheet" href="/css/tailwind.css">
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="bg-brand-sand text-brand-ink font-body antialiased">
