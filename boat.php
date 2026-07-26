@@ -294,10 +294,17 @@ echo json_ld([
 
 <!-- LIGHTBOX -->
 <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <button id="lightbox-close" type="button" aria-label="Close" class="absolute top-6 right-6 h-11 w-11 flex items-center justify-center rounded-full bg-white/10 hover:bg-brand-gold hover:text-brand-ink text-white transition-colors duration-200 cursor-pointer">
+  <button id="lightbox-close" type="button" aria-label="Close" class="absolute top-6 right-6 z-10 h-11 w-11 flex items-center justify-center rounded-full bg-white/10 hover:bg-brand-gold hover:text-brand-ink text-white transition-colors duration-200 cursor-pointer">
     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
   </button>
+  <button id="lightbox-prev" type="button" aria-label="Previous image" class="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-10 h-12 w-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-brand-gold hover:text-brand-ink text-white transition-colors duration-200 cursor-pointer">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+  </button>
   <img id="lightbox-img" src="" alt="" class="max-h-[82vh] max-w-[90vw] w-auto rounded-xl object-contain">
+  <button id="lightbox-next" type="button" aria-label="Next image" class="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-10 h-12 w-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-brand-gold hover:text-brand-ink text-white transition-colors duration-200 cursor-pointer">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+  </button>
+  <div id="lightbox-count" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/85 text-sm font-medium bg-white/10 rounded-full px-3.5 py-1.5"></div>
 </div>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>
