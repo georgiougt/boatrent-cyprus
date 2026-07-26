@@ -104,8 +104,8 @@ if (!empty($structuredData)) {
 <?php endif; ?>
 
 <!-- Compiled Tailwind (built from tailwind.config.js via `npm run build:css`) -->
-<link rel="stylesheet" href="/css/tailwind.css">
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="<?php echo e(asset('/css/tailwind.css')); ?>">
+<link rel="stylesheet" href="<?php echo e(asset('/css/style.css')); ?>">
 </head>
 <body class="bg-brand-sand text-brand-ink font-body antialiased">
 

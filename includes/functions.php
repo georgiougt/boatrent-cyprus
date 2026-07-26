@@ -19,6 +19,17 @@ function current_url(): string
     return base_url() . strtok($_SERVER['REQUEST_URI'] ?? '/', '#');
 }
 
+/**
+ * Cache-busting URL for a local static asset (CSS/JS). Appends ?v=<mtime> so
+ * that changing the file content changes its URL — browsers and any CDN cache
+ * fetch the new version instead of serving a stale one after a deploy.
+ */
+function asset(string $path): string
+{
+    $v = @filemtime(__DIR__ . '/..' . $path);
+    return $path . ($v ? '?v=' . $v : '');
+}
+
 /** Render a JSON-LD <script> block from an associative array. */
 function json_ld(array $data): string
 {
