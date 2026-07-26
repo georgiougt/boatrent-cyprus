@@ -56,6 +56,7 @@ function adminNav(string $page, string $current, string $href, string $label, st
       echo adminNav('index.php', $adminPage, '/admin/index.php', 'Dashboard', 'M3 12l9-9 9 9M5 10v10a1 1 0 001 1h12a1 1 0 001-1V10');
       echo adminNav('boats.php', $adminPage, '/admin/boats.php', 'Boats', 'M3 17c1.5 1 3 1 4.5 0s3-1 4.5 0 3 1 4.5 0 3-1 4.5 0M5 14l7-9 7 9');
       echo adminNav('inquiries.php', $adminPage, '/admin/inquiries.php', 'Inquiries', 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', $stats['new']);
+      echo adminNav('import-fleet.php', $adminPage, '/admin/import-fleet.php', 'Import Fleet', 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15');
       ?>
       <div class="pt-3 mt-3 border-t border-white/10">
         <?php echo adminNav('', $adminPage, '/index.php', 'View Website', 'M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'); ?>
