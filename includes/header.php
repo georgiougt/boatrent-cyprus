@@ -140,6 +140,7 @@ if (!empty($structuredData)) {
           </div>
         </li>
         <li><a href="/boats" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer <?php echo $currentPage === 'boats.php' ? 'text-brand-gold' : ''; ?>">Fleet</a></li>
+        <li><a href="/routes" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer <?php echo in_array($currentPage, ['routes.php', 'route.php'], true) ? 'text-brand-gold' : ''; ?>">Routes</a></li>
         <li><a href="/blog" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer <?php echo in_array($currentPage, ['blog.php', 'blog-post.php'], true) ? 'text-brand-gold' : ''; ?>">Blog</a></li>
         <li><a href="/about" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer <?php echo $currentPage === 'about.php' ? 'text-brand-gold' : ''; ?>">About</a></li>
         <li><a href="/faq" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer <?php echo $currentPage === 'faq.php' ? 'text-brand-gold' : ''; ?>">FAQ</a></li>
@@ -166,6 +167,7 @@ if (!empty($structuredData)) {
         <li><a href="/<?php echo e($c['slug']); ?>" class="block py-2.5 px-4 rounded-lg hover:bg-white/10 cursor-pointer text-sm"><?php echo e($c['name']); ?></a></li>
         <?php endforeach; ?>
         <li><a href="/boats" class="block py-2.5 px-2 rounded-lg hover:bg-white/10 cursor-pointer">Fleet</a></li>
+        <li><a href="/routes" class="block py-2.5 px-2 rounded-lg hover:bg-white/10 cursor-pointer">Routes</a></li>
         <li><a href="/blog" class="block py-2.5 px-2 rounded-lg hover:bg-white/10 cursor-pointer">Blog</a></li>
         <li><a href="/about" class="block py-2.5 px-2 rounded-lg hover:bg-white/10 cursor-pointer">About</a></li>
         <li><a href="/faq" class="block py-2.5 px-2 rounded-lg hover:bg-white/10 cursor-pointer">FAQ</a></li>

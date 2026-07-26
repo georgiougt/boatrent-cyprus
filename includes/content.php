@@ -353,6 +353,142 @@ function get_city_content(): array
     ];
 }
 
+/**
+ * Sailing routes — curated day itineraries with a map, keyed by slug.
+ * Each stop carries lon/lat so render_route_map() can plot it.
+ */
+function get_sailing_routes(): array
+{
+    return [
+        'limassol-akrotiri-bay' => [
+            'title'     => 'Limassol & Akrotiri Bay Day Cruise',
+            'city'      => 'limassol',
+            'depart'    => 'Limassol Marina',
+            'duration'  => 'Full day (~8 hrs)',
+            'distance'  => '~22 nautical miles',
+            'best_for'  => 'Swimming, sunbathing & a long lunch on board',
+            'boats'     => 'Motor yachts & catamarans',
+            'image'     => '/assets/scenery/coast-gold.webp',
+            'intro'     => [
+                'The classic Limassol day out: an easy loop along the south coast that packs in the best swimming on this stretch of shore without ever straying far from the marina. It works beautifully on a crewed motor yacht or a family catamaran, with plenty of time to anchor, swim and eat.',
+                'Because Limassol Marina sits in the middle of the coast, the skipper can flip the route to suit the wind — running west to Akrotiri or east to Governor\'s Beach first. Either way you\'re never more than a short cruise from a sheltered anchorage.',
+            ],
+            'stops' => [
+                ['name' => 'Limassol Marina', 'lon' => 33.04, 'lat' => 34.68, 'text' => 'Board and cast off from the heart of the city, cruising out past the breakwater into open water.'],
+                ['name' => "Lady's Mile", 'lon' => 33.00, 'lat' => 34.62, 'text' => 'Anchor over the pale, shallow sand-shelf off Akrotiri for the first swim in glowing turquoise water.'],
+                ['name' => 'Akrotiri Bay', 'lon' => 32.95, 'lat' => 34.57, 'text' => 'Drift into the sheltered bay below Cape Gata for a long lunch on board and time on the water toys.'],
+                ['name' => "Governor's Beach", 'lon' => 33.29, 'lat' => 34.70, 'text' => 'Track east to the dramatic white cliffs and dark sand of Governor\'s Beach for a final snorkel stop.'],
+                ['name' => 'Return to marina', 'lon' => 33.05, 'lat' => 34.675, 'text' => 'A gentle sunset cruise back to Limassol Marina as the light turns gold.'],
+            ],
+        ],
+        'ayia-napa-cape-greco-blue-lagoon' => [
+            'title'     => 'Cape Greco Sea Caves & Blue Lagoon',
+            'city'      => 'ayia-napa',
+            'depart'    => 'Ayia Napa Harbour',
+            'duration'  => 'Full or half day',
+            'distance'  => '~14 nautical miles',
+            'best_for'  => 'Sea caves, snorkelling & the brightest water in Cyprus',
+            'boats'     => 'Speedboats & group catamarans',
+            'image'     => '/assets/scenery/coast-blue.webp',
+            'intro'     => [
+                'The south-east corner has the most electric water on the island, and this route strings its highlights together into one unforgettable day. From the sculpted sea caves of Cape Greco to the neon shallows of the Blue Lagoon, it\'s all about swimming, snorkelling and jumping off the boat.',
+                'Fast self-drive speedboats zip between the coves, while sociable catamarans make it a party — sunset departures included. Every stop is within an easy cruise of Ayia Napa Harbour.',
+            ],
+            'stops' => [
+                ['name' => 'Ayia Napa Harbour', 'lon' => 33.98, 'lat' => 34.99, 'text' => 'Head out of the harbour toward the bright water and caves that line the Cape Greco headland.'],
+                ['name' => 'Cape Greco caves', 'lon' => 34.08, 'lat' => 34.96, 'text' => 'Nose in among the sea caves and the natural rock arch, swimming through crystal-clear water.'],
+                ['name' => 'Blue Lagoon', 'lon' => 34.07, 'lat' => 34.98, 'text' => 'Anchor over the glowing turquoise shallows for the main swim stop, snorkels and lunch on board.'],
+                ['name' => 'Konnos Bay', 'lon' => 34.07, 'lat' => 34.99, 'text' => 'Cruise to the sheltered horseshoe of Konnos Bay, one of the prettiest swimming spots on this coast.'],
+                ['name' => 'Nissi Beach', 'lon' => 33.95, 'lat' => 34.985, 'text' => 'Ease back west past the famous sands of Nissi Beach before returning to the harbour.'],
+            ],
+        ],
+        'paphos-sea-caves-aphrodite' => [
+            'title'     => "Paphos Sea Caves & Aphrodite's Rock",
+            'city'      => 'paphos',
+            'depart'    => 'Paphos Harbour',
+            'duration'  => 'Full day (~7 hrs)',
+            'distance'  => '~26 nautical miles',
+            'best_for'  => 'Myth, sea caves & the best sunset sailing in Cyprus',
+            'boats'     => 'Crewed yachts & motorboats',
+            'image'     => '/assets/scenery/sailing.webp',
+            'intro'     => [
+                'A cruise through Greek myth along a coast much of which has no road access at all. From the harbour below Paphos Castle you sail north to the crystal sea caves of Coral Bay and the protected turtle sands of Lara Bay, then south beneath Aphrodite\'s Rock.',
+                'The west-facing coast means this is also the finest sunset route on the island — many couples book it as an evening sail with drinks on board as the sun drops into the sea.',
+            ],
+            'stops' => [
+                ['name' => 'Paphos Harbour', 'lon' => 32.42, 'lat' => 34.75, 'text' => 'Slip out beneath the castle and set a course north along the archaeological coast.'],
+                ['name' => 'Coral Bay caves', 'lon' => 32.35, 'lat' => 34.86, 'text' => 'Anchor off the honeycomb of sea caves at Coral Bay for the first swim and snorkel.'],
+                ['name' => 'Lara Bay', 'lon' => 32.30, 'lat' => 34.93, 'text' => 'Push on to the wild, protected sands of Lara Bay — a turtle-nesting reserve — for lunch on board.'],
+                ['name' => "Aphrodite's Rock", 'lon' => 32.63, 'lat' => 34.66, 'text' => 'Turn south to drift beneath Petra tou Romiou, where legend says Aphrodite rose from the waves.'],
+                ['name' => 'Sunset sail home', 'lon' => 32.43, 'lat' => 34.74, 'text' => 'Ride the west-facing coast back to the harbour as the sky lights up.'],
+            ],
+        ],
+        'latsi-blue-lagoon-akamas' => [
+            'title'     => 'Latsi to the Blue Lagoon & Akamas',
+            'city'      => 'latsi',
+            'depart'    => 'Latsi Harbour',
+            'duration'  => 'Full day (~7 hrs)',
+            'distance'  => '~18 nautical miles',
+            'best_for'  => 'The famous Blue Lagoon, turtles & untouched coves',
+            'boats'     => 'Day cruisers & speedboats',
+            'image'     => '/assets/scenery/latsi.webp',
+            'intro'     => [
+                'The route to the most famous swim in Cyprus. From the little fishing harbour of Latsi you cruise the wild Akamas peninsula — a protected national park with almost no road access — to the glowing turquoise of the Blue Lagoon.',
+                'It feels more like an expedition than a resort day out: dramatic scenery, hidden coves and resident sea turtles. Arrive early or late on a private charter and you\'ll have the lagoon almost to yourself.',
+            ],
+            'stops' => [
+                ['name' => 'Latsi Harbour', 'lon' => 32.42, 'lat' => 35.04, 'text' => 'Leave the fishing harbour and turn along the wild Akamas coast, the scenery growing as you go.'],
+                ['name' => 'Blue Lagoon', 'lon' => 32.33, 'lat' => 35.075, 'text' => 'Drop anchor in the glowing turquoise for the main event — snorkelling, swimming and jumps off the boat.'],
+                ['name' => 'Akamas coves', 'lon' => 32.29, 'lat' => 35.02, 'text' => 'Cruise the protected coastline, stopping in hidden coves and sea caves for lunch on board.'],
+                ['name' => 'Manijin Island', 'lon' => 32.36, 'lat' => 35.06, 'text' => 'Pause by the little island of Manijin to snorkel and, with luck, spot a sea turtle.'],
+                ['name' => 'Return to Latsi', 'lon' => 32.42, 'lat' => 35.045, 'text' => 'A scenic cruise back along the peninsula to the harbour.'],
+            ],
+        ],
+        'larnaca-zenobia-coast' => [
+            'title'     => 'Larnaca & the Zenobia Coast',
+            'city'      => 'larnaca',
+            'depart'    => 'Larnaca Marina',
+            'duration'  => 'Half or full day',
+            'distance'  => '~12 nautical miles',
+            'best_for'  => 'Calm family cruising & the world-famous wreck',
+            'boats'     => 'Cruisers & catamarans',
+            'image'     => '/assets/scenery/larnaca.webp',
+            'intro'     => [
+                'The easy-going south-coast route, built around one of the world\'s great dive sites. Larnaca\'s bay is calm and shallow, so this is a relaxed day suited to families and first-time charterers — with a stop over the sunken ferry Zenobia as the centrepiece.',
+                'Snorkellers can peer down at the wreck while divers explore below, before the route ambles on to Mackenzie Beach and the quiet bays around Cape Kiti.',
+            ],
+            'stops' => [
+                ['name' => 'Larnaca Marina', 'lon' => 33.63, 'lat' => 34.92, 'text' => 'Board on the palm-lined seafront and head into the wide, sheltered bay.'],
+                ['name' => 'Zenobia wreck', 'lon' => 33.60, 'lat' => 34.89, 'text' => 'Anchor over the famous wreck — snorkel the shallows above the hull as the crew tells its story.'],
+                ['name' => 'Mackenzie Beach', 'lon' => 33.62, 'lat' => 34.90, 'text' => 'Cruise back toward the buzz of Mackenzie for lunch on board and a swim in the warm shallows.'],
+                ['name' => 'Cape Kiti', 'lon' => 33.57, 'lat' => 34.82, 'text' => 'Follow the salt-lake coast south to the quiet bays around Cape Kiti for a final, peaceful swim.'],
+                ['name' => 'Return to marina', 'lon' => 33.63, 'lat' => 34.915, 'text' => 'An unhurried cruise back across the bay to Larnaca Marina.'],
+            ],
+        ],
+        'protaras-fig-tree-bay' => [
+            'title'     => 'Protaras & Fig Tree Bay Family Cruise',
+            'city'      => 'protaras',
+            'depart'    => 'Protaras / Pernera',
+            'duration'  => 'Half or full day',
+            'distance'  => '~10 nautical miles',
+            'best_for'  => 'Calm, shallow bays & easy days with children',
+            'boats'     => 'Day boats & speedboats',
+            'image'     => '/assets/scenery/protaras.webp',
+            'intro'     => [
+                'The gentle side of the south-east corner. Sheltered, shallow bays and famously clear water make this the calmest of our routes — ideal for a relaxed day with younger children on board.',
+                'From the turquoise shallows of Fig Tree Bay the route drifts down to the Cape Greco headland, with easy snorkelling and quiet swim stops all the way.',
+            ],
+            'stops' => [
+                ['name' => 'Protaras / Pernera', 'lon' => 34.05, 'lat' => 35.02, 'text' => 'Set off from the sheltered shore into calm, shallow water — an easy, gentle start.'],
+                ['name' => 'Fig Tree Bay', 'lon' => 34.06, 'lat' => 35.01, 'text' => 'Anchor over the turquoise shallows for the first swim, with paddleboards and snorkels out.'],
+                ['name' => 'Green Bay', 'lon' => 34.075, 'lat' => 35.00, 'text' => 'Cruise to Green Bay, known for clear water and easy snorkelling close to the surface.'],
+                ['name' => 'Cape Greco', 'lon' => 34.08, 'lat' => 34.96, 'text' => 'Round toward the national-park headland for lunch on board and a swim in a protected cove.'],
+                ['name' => 'Konnos Bay', 'lon' => 34.07, 'lat' => 34.985, 'text' => 'Call in at the sheltered horseshoe of Konnos Bay for a last swim before the gentle run home.'],
+            ],
+        ],
+    ];
+}
+
 /** Single post by slug, or null. */
 function get_blog_post(string $slug): ?array
 {

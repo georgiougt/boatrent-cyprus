@@ -45,6 +45,7 @@ $segments = $path === '' ? [] : explode('/', $path);
 $pages = [
     ''        => 'index.php',
     'boats'   => 'boats.php',
+    'routes'  => 'routes.php',
     'about'   => 'about.php',
     'contact' => 'contact.php',
     'faq'     => 'faq.php',
@@ -72,6 +73,10 @@ if (count($segments) === 2 && $segments[0] === 'blog') {
 }
 if (count($segments) === 2 && $segments[0] === 'boat') {
     $run('boat.php', ['slug' => $segments[1]]);
+    return true;
+}
+if (count($segments) === 2 && $segments[0] === 'routes') {
+    $run('route.php', ['slug' => $segments[1]]);
     return true;
 }
 

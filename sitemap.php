@@ -18,6 +18,7 @@ $add = function (string $loc, string $changefreq, string $priority, ?string $las
 // Static pages
 $add($base . '/',         'weekly', '1.0');
 $add($base . '/boats',    'daily',  '0.9');
+$add($base . '/routes',   'weekly', '0.8');
 $add($base . '/about',    'monthly','0.6');
 $add($base . '/faq',      'monthly','0.6');
 $add($base . '/blog',     'weekly', '0.7');
@@ -31,6 +32,11 @@ foreach (get_cities() as $c) {
 // Boats
 foreach (get_boats() as $b) {
     $add($base . '/boat/' . $b['slug'], 'weekly', '0.7');
+}
+
+// Sailing routes
+foreach (array_keys(get_sailing_routes()) as $routeSlug) {
+    $add($base . '/routes/' . $routeSlug, 'monthly', '0.7');
 }
 
 // Blog posts

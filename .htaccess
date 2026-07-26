@@ -27,14 +27,16 @@ DirectoryIndex index.php
 
   # Static pages
   RewriteRule ^boats/?$   boats.php   [L,QSA]
+  RewriteRule ^routes/?$  routes.php  [L,QSA]
   RewriteRule ^about/?$   about.php   [L]
   RewriteRule ^contact/?$ contact.php [L,QSA]
   RewriteRule ^faq/?$     faq.php     [L]
   RewriteRule ^blog/?$    blog.php    [L]
 
   # Detail pages
-  RewriteRule ^blog/([A-Za-z0-9_-]+)/?$ blog-post.php?slug=$1 [L,QSA]
-  RewriteRule ^boat/([A-Za-z0-9_-]+)/?$ boat.php?slug=$1      [L,QSA]
+  RewriteRule ^blog/([A-Za-z0-9_-]+)/?$   blog-post.php?slug=$1 [L,QSA]
+  RewriteRule ^boat/([A-Za-z0-9_-]+)/?$   boat.php?slug=$1      [L,QSA]
+  RewriteRule ^routes/([A-Za-z0-9_-]+)/?$ route.php?slug=$1     [L,QSA]
 
   # Single segment -> city page (must stay last)
   RewriteRule ^([A-Za-z0-9_-]+)/?$ city.php?slug=$1 [L,QSA]

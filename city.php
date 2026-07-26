@@ -23,6 +23,15 @@ $pageImage = $city['image_url'];
 $canonical = base_url() . '/' . $city['slug'];
 $cityContent = get_city_content()[$city['slug']] ?? null;
 
+// The signature sailing route that departs this city (for a cross-link).
+$cityRoute = null;
+foreach (get_sailing_routes() as $rSlug => $r) {
+    if ($r['city'] === $city['slug']) {
+        $cityRoute = ['slug' => $rSlug] + $r;
+        break;
+    }
+}
+
 // Breadcrumb + (if we have editorial FAQs) a FAQPage — both emitted in <head>.
 $breadcrumbSchema = [
     '@context' => 'https://schema.org',
@@ -331,6 +340,26 @@ include __DIR__ . '/includes/header.php';
   </div>
 </section>
 <?php endif; ?>
+<?php endif; ?>
+
+<?php if ($cityRoute): ?>
+<!-- SIGNATURE ROUTE CROSS-LINK -->
+<section class="bg-brand-ink py-16 px-6">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+    <a href="/routes/<?php echo e($cityRoute['slug']); ?>" class="reveal block rounded-3xl overflow-hidden border border-white/10 bg-white/5 cursor-pointer">
+      <?php echo render_route_map($cityRoute['stops'], 'city-route-' . $cityRoute['slug']); ?>
+    </a>
+    <div class="reveal">
+      <p class="text-brand-goldL font-semibold uppercase tracking-[0.3em] text-xs mb-3">Sailing route from <?php echo e($city['name']); ?></p>
+      <h2 class="font-display text-3xl font-bold text-white mb-3"><?php echo e($cityRoute['title']); ?></h2>
+      <p class="text-white/70 leading-relaxed mb-6"><?php echo e($cityRoute['best_for']); ?> — a <?php echo e(strtolower($cityRoute['duration'])); ?> cruise covering <?php echo count($cityRoute['stops']); ?> stops along the coast.</p>
+      <a href="/routes/<?php echo e($cityRoute['slug']); ?>" class="inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-goldL text-brand-ink font-semibold px-6 py-3 rounded-full transition-colors duration-200 cursor-pointer">
+        See the full route &amp; map
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
 <?php endif; ?>
 
 <!-- OTHER DESTINATIONS -->
