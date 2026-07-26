@@ -7,7 +7,7 @@ include __DIR__ . '/includes/header.php';
 ?>
 
 <section class="relative pt-36 pb-20 px-6 overflow-hidden bg-brand-ink">
-  <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-25">
+  <img src="/assets/scenery/ayia-napa.webp" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-25">
   <div class="relative max-w-4xl mx-auto text-center reveal">
     <p class="text-brand-goldL font-semibold uppercase tracking-[0.3em] text-xs mb-4">Our story</p>
     <h1 class="font-display text-5xl sm:text-6xl font-bold text-white">Cyprus, by Sea</h1>
@@ -19,7 +19,7 @@ include __DIR__ . '/includes/header.php';
   <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
     <div class="reveal-left">
       <div class="rounded-3xl overflow-hidden aspect-[4/3] shadow-xl">
-        <img src="https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=1000&q=80" alt="Sailing yacht on calm Cyprus waters" class="w-full h-full object-cover">
+        <img src="/assets/scenery/sailing.webp" alt="Sailing yacht on calm Cyprus waters" class="w-full h-full object-cover">
       </div>
     </div>
     <div class="reveal">

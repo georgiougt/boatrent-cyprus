@@ -3,7 +3,7 @@
 ?>
 <article class="group flex flex-col rounded-2xl overflow-hidden bg-white border border-brand-navy/10 shadow-sm hover:shadow-xl transition-shadow duration-300">
   <a href="/boat/<?php echo e($boat['slug']); ?>" class="relative block h-52 overflow-hidden cursor-pointer">
-    <img src="<?php echo e($boat['image_url']); ?>" alt="<?php echo e($boat['name']); ?> — <?php echo e($boat['type']); ?> in <?php echo e($boat['city_name']); ?>" loading="lazy" class="card-img w-full h-full object-cover">
+    <img src="<?php echo e($boat['image_url']); ?>" alt="<?php echo e($boat['name']); ?> — <?php echo e($boat['type']); ?> in <?php echo e($boat['city_name']); ?>" loading="lazy" width="800" height="416" class="card-img w-full h-full object-cover">
     <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-brand-ink/85 text-white text-xs font-medium px-3 py-1.5 rounded-full backdrop-blur-sm">
       <svg class="w-3.5 h-3.5 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
       <?php echo e($boat['city_name']); ?>

@@ -48,12 +48,13 @@ $cityDayPrices = array_filter(array_map(fn($b) => (float) $b['price_day'], $city
 $cityPriceFrom = $cityDayPrices ? min($cityDayPrices) : 0;
 $citySeo       = get_city_seo()[$city['slug']] ?? null;
 
+$heroPreload = $city['image_url']; // LCP image
 include __DIR__ . '/includes/header.php';
 ?>
 
 <!-- CITY HERO -->
 <section class="relative h-[60vh] min-h-[420px] flex items-end overflow-hidden">
-  <img src="<?php echo e($city['image_url']); ?>" alt="<?php echo e($city['name']); ?> coastline, Cyprus" class="absolute inset-0 w-full h-full object-cover">
+  <img src="<?php echo e($city['image_url']); ?>" alt="<?php echo e($city['name']); ?> coastline, Cyprus" width="1600" height="900" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover">
   <div class="absolute inset-0 hero-overlay"></div>
   <div class="relative z-10 max-w-7xl mx-auto px-6 pb-12 w-full">
     <nav class="reveal text-white/70 text-sm mb-4 flex items-center gap-2" aria-label="Breadcrumb">

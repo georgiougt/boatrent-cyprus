@@ -22,7 +22,7 @@ include __DIR__ . '/includes/header.php';
 ?>
 
 <section class="relative pt-36 pb-16 px-6 bg-brand-ink overflow-hidden">
-  <img src="https://images.unsplash.com/photo-1469796466635-455ede028aca?auto=format&fit=crop&w=2000&q=80" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-20">
+  <img src="/assets/scenery/marina.webp" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-20">
   <div class="relative max-w-4xl mx-auto text-center reveal">
     <p class="text-brand-goldL font-semibold uppercase tracking-[0.3em] text-xs mb-4">Help &amp; answers</p>
     <h1 class="font-display text-5xl sm:text-6xl font-bold text-white">Frequently Asked Questions</h1>

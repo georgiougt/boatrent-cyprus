@@ -123,12 +123,12 @@ function init_schema(PDO $pdo): void
 function seed_data(PDO $pdo): void
 {
     $cities = [
-        ['Limassol', 'limassol', 'Cyprus\' cosmopolitan marina capital', 'Home to the island\'s largest marina, Limassol is the launchpad for luxury day cruises along the southern coast.', 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=80'],
-        ['Paphos', 'paphos', 'Mythical coves & golden sunsets', 'Sail the birthplace of Aphrodite, with crystal sea caves and quiet swimming bays just offshore.', 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80'],
-        ['Larnaca', 'larnaca', 'Relaxed shores & shipwreck dives', 'Calm waters and the famous Zenobia wreck make Larnaca a favourite for families and divers alike.', 'https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=80'],
-        ['Ayia Napa', 'ayia-napa', 'Turquoise bays & party cruises', 'The vibrant heart of the southeast — think neon-blue lagoons, sea caves and sunset party boats.', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80'],
-        ['Protaras', 'protaras', 'Calm coves & family days out', 'Sheltered, shallow bays like Fig Tree make Protaras ideal for easy, relaxed days on the water.', 'https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1200&q=80'],
-        ['Latsi', 'latsi', 'Untouched Akamas wilderness', 'Cruise from the quiet harbour of Latsi to the Blue Lagoon and the wild Akamas peninsula.', 'https://images.unsplash.com/photo-1500627964684-141351970a7f?auto=format&fit=crop&w=1200&q=80'],
+        ['Limassol', 'limassol', 'Cyprus\' cosmopolitan marina capital', 'Home to the island\'s largest marina, Limassol is the launchpad for luxury day cruises along the southern coast.', '/assets/scenery/yacht-hero.webp'],
+        ['Paphos', 'paphos', 'Mythical coves & golden sunsets', 'Sail the birthplace of Aphrodite, with crystal sea caves and quiet swimming bays just offshore.', '/assets/scenery/paphos.webp'],
+        ['Larnaca', 'larnaca', 'Relaxed shores & shipwreck dives', 'Calm waters and the famous Zenobia wreck make Larnaca a favourite for families and divers alike.', '/assets/scenery/larnaca.webp'],
+        ['Ayia Napa', 'ayia-napa', 'Turquoise bays & party cruises', 'The vibrant heart of the southeast — think neon-blue lagoons, sea caves and sunset party boats.', '/assets/scenery/ayia-napa.webp'],
+        ['Protaras', 'protaras', 'Calm coves & family days out', 'Sheltered, shallow bays like Fig Tree make Protaras ideal for easy, relaxed days on the water.', '/assets/scenery/protaras.webp'],
+        ['Latsi', 'latsi', 'Untouched Akamas wilderness', 'Cruise from the quiet harbour of Latsi to the Blue Lagoon and the wild Akamas peninsula.', '/assets/scenery/latsi.webp'],
     ];
     $cityStmt = $pdo->prepare('INSERT INTO cities (name, slug, tagline, description, image_url) VALUES (?, ?, ?, ?, ?)');
     foreach ($cities as $c) {

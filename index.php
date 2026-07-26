@@ -8,12 +8,13 @@ $featured = get_featured_boats(6);
 $types = get_boat_types();
 $totalBoats = (int) db()->query("SELECT COUNT(*) FROM boats WHERE status='active'")->fetchColumn();
 $canonical = base_url() . '/';
+$heroPreload = '/assets/scenery/yacht-hero.webp'; // LCP image
 include __DIR__ . '/includes/header.php';
 ?>
 
 <!-- FIRST-VISIT CINEMATIC INTRO (drone shot -> homepage) -->
 <div id="intro-overlay" aria-hidden="true">
-  <img class="intro-img" src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=2400&q=80" alt="">
+  <img class="intro-img" src="/assets/scenery/yacht-hero.webp" alt="" width="1600" height="900" fetchpriority="high">
   <!-- Optional: drop a clip at /videos/intro.mp4 and it plays automatically over the image -->
   <video class="intro-video" muted playsinline preload="auto" tabindex="-1">
     <source src="/videos/intro.mp4" type="video/mp4">
@@ -56,7 +57,7 @@ include __DIR__ . '/includes/header.php';
 
 <!-- HERO -->
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <img src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=2000&q=80" alt="Luxury yacht moored on turquoise Cyprus waters" class="absolute inset-0 w-full h-full object-cover">
+  <img src="/assets/scenery/yacht-hero.webp" alt="Luxury yacht moored on turquoise Cyprus waters" width="1600" height="900" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover">
   <div class="absolute inset-0 hero-overlay"></div>
 
   <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24 pb-16">

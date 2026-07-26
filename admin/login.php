@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <style>body{font-family:'Plus Jakarta Sans',sans-serif}</style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-6 relative overflow-hidden bg-brand-ink">
-  <img src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=2000&q=80" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-20">
+  <img src="/assets/scenery/coast-gold.webp" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-20">
   <div class="absolute inset-0 bg-gradient-to-br from-brand-ink/90 to-brand-navy/80"></div>
 
   <div class="relative w-full max-w-md">

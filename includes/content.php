@@ -58,7 +58,7 @@ function get_blog_posts(): array
             'author'   => 'The BoatRent Cyprus Team',
             'date'     => '2024-05-12',
             'read'     => 7,
-            'image'    => 'https://images.unsplash.com/photo-1500627964684-141351970a7f?auto=format&fit=crop&w=1400&q=80',
+            'image'    => '/assets/scenery/latsi.webp',
             'keywords' => 'cyprus boat trips, blue lagoon, sea caves, akamas, best beaches cyprus by boat',
             'body'     => '
 <p>Cyprus packs an astonishing amount of coastline into a small island, and the very best of it is only reachable by sea. Whether you are chartering a crewed yacht or taking the helm of a speedboat, these are the spots worth setting a course for.</p>
@@ -84,7 +84,7 @@ function get_blog_posts(): array
             'author'   => 'The BoatRent Cyprus Team',
             'date'     => '2024-05-28',
             'read'     => 6,
-            'image'    => 'https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=1400&q=80',
+            'image'    => '/assets/scenery/coast-gold.webp',
             'keywords' => 'yacht rental cyprus, catamaran hire, speedboat rental, which boat to rent',
             'body'     => '
 <p>The right boat makes all the difference. Here is how the three most popular options compare so you can pick with confidence.</p>
@@ -105,7 +105,7 @@ function get_blog_posts(): array
             'author'   => 'The BoatRent Cyprus Team',
             'date'     => '2024-06-09',
             'read'     => 5,
-            'image'    => 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1400&q=80',
+            'image'    => '/assets/scenery/paphos.webp',
             'keywords' => 'blue lagoon cyprus, latsi boat trip, akamas peninsula, cyprus snorkelling',
             'body'     => '
 <p>The Blue Lagoon is the single most photographed stretch of water in Cyprus, and the quiet harbour of Latsi is its natural gateway. Here is how to make the most of a day on the Akamas coast.</p>
@@ -131,7 +131,7 @@ function get_blog_posts(): array
             'author'   => 'The BoatRent Cyprus Team',
             'date'     => '2024-06-18',
             'read'     => 4,
-            'image'    => 'https://images.unsplash.com/photo-1593351415075-3bac9f45c877?auto=format&fit=crop&w=1400&q=80',
+            'image'    => '/assets/scenery/coast-blue.webp',
             'keywords' => 'boat licence cyprus, self drive boat hire, do i need a licence to rent a boat',
             'body'     => '
 <p>It is the most common question we are asked, and the good news is that the answer is usually reassuringly simple.</p>
@@ -152,7 +152,7 @@ function get_blog_posts(): array
             'author'   => 'The BoatRent Cyprus Team',
             'date'     => '2024-06-25',
             'read'     => 6,
-            'image'    => 'https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1400&q=80',
+            'image'    => '/assets/scenery/protaras.webp',
             'keywords' => 'best time to sail cyprus, cyprus weather sea temperature, when to visit cyprus boat',
             'body'     => '
 <p>Cyprus is one of the sunniest spots in the Mediterranean, with a long boating season that stretches well beyond the summer. Here is what to expect through the year.</p>
@@ -182,42 +182,42 @@ function get_city_seo(): array
             'departure'  => 'Limassol Marina & Old Port',
             'intro'      => 'As Cyprus\' largest coastal city and home to its biggest marina, Limassol is the natural place to rent a yacht or charter a boat on the south coast. From sleek motor yachts to family catamarans and self-drive speedboats, the Limassol fleet suits every occasion — a champagne sunset cruise, a swim stop at Lady\'s Mile, or a full day exploring Akrotiri Bay. Send one inquiry and we\'ll match you with a licensed local skipper.',
             'highlights' => ['Lady\'s Mile Beach', 'Akrotiri Bay & the Blue Flag coast', 'Limassol Marina waterfront', 'Governor\'s Beach white cliffs'],
-            'image'      => 'https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=1200&q=80',
+            'image'      => '/assets/scenery/coast-gold.webp',
         ],
         'paphos' => [
             'best_for'   => 'Sea caves & sunset sailing',
             'departure'  => 'Paphos Harbour',
             'intro'      => 'Rent a boat in Paphos and you sail straight into Greek myth — this is the legendary birthplace of Aphrodite. Charter a yacht or speedboat from the harbour to reach the crystal sea caves at Coral Bay, swim beneath Aphrodite\'s Rock, and drop anchor in quiet coves the coast road can\'t reach. With crewed yachts and self-drive options, Paphos charters work just as well for romantic escapes as for family adventures.',
             'highlights' => ['Coral Bay sea caves', 'Aphrodite\'s Rock (Petra tou Romiou)', 'Lara Bay turtle beach', 'Blue Lagoon day trips'],
-            'image'      => 'https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=1200&q=80',
+            'image'      => '/assets/scenery/sailing.webp',
         ],
         'larnaca' => [
             'best_for'   => 'Diving trips & family days out',
             'departure'  => 'Larnaca Marina',
             'intro'      => 'Larnaca\'s calm, shallow waters make it one of the easiest places in Cyprus to rent a boat — ideal for families and first-time charterers. Charter a yacht or motorboat from the marina to snorkel the famous Zenobia wreck, one of the world\'s top dive sites, or simply cruise the relaxed southern shoreline at your own pace. Crewed and self-drive boats are available right through the year.',
             'highlights' => ['The Zenobia wreck dive site', 'Mackenzie Beach', 'Cape Kiti & the salt-lake coast', 'Calm family swimming bays'],
-            'image'      => 'https://images.unsplash.com/photo-1500627964684-141351970a7f?auto=format&fit=crop&w=1200&q=80',
+            'image'      => '/assets/scenery/latsi.webp',
         ],
         'ayia-napa' => [
             'best_for'   => 'Sea caves, lagoons & party cruises',
             'departure'  => 'Ayia Napa Harbour',
             'intro'      => 'Ayia Napa is the vibrant heart of Cyprus boating, and renting a speedboat or yacht here puts the island\'s most electric-blue water at your feet. Charter a boat to weave through the Cape Greco sea caves, anchor over the neon shallows of the Blue Lagoon, or book a lively sunset party cruise. Fast self-drive speedboats and spacious group catamarans are the local favourites.',
             'highlights' => ['Cape Greco sea caves & arch', 'Blue Lagoon (Ayia Napa)', 'Konnos Bay', 'Nissi Beach'],
-            'image'      => 'https://images.unsplash.com/photo-1593351415075-3bac9f45c877?auto=format&fit=crop&w=1200&q=80',
+            'image'      => '/assets/scenery/coast-blue.webp',
         ],
         'protaras' => [
             'best_for'   => 'Calm family cruising',
             'departure'  => 'Protaras & Pernera',
             'intro'      => 'With its sheltered, shallow bays, Protaras is made for easy, relaxed days on the water — and renting a boat here couldn\'t be simpler. Charter a yacht or speedboat to reach Fig Tree Bay\'s turquoise shallows, snorkel around Cape Greco, or cruise the quiet coves north of the resort. The gentle seas make Protaras an especially good choice for families with younger children.',
             'highlights' => ['Fig Tree Bay', 'Cape Greco National Park', 'Konnos Bay', 'Green Bay snorkelling'],
-            'image'      => 'https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1200&q=80',
+            'image'      => '/assets/scenery/protaras.webp',
         ],
         'latsi' => [
             'best_for'   => 'Blue Lagoon & Akamas trips',
             'departure'  => 'Latsi Harbour',
             'intro'      => 'Tucked beneath the wild Akamas peninsula, Latsi is the gateway to the most famous swim spot in Cyprus. Rent a boat or charter a yacht from the little harbour and within the hour you are anchored in the glowing turquoise of the Blue Lagoon. The untouched Akamas coastline, resident sea turtles and string of hidden coves make every Latsi charter feel like a genuine expedition.',
             'highlights' => ['The Blue Lagoon', 'Akamas National Park coastline', 'Manijin Island', 'Sea-turtle spotting'],
-            'image'      => 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80',
+            'image'      => '/assets/scenery/paphos.webp',
         ],
     ];
 }

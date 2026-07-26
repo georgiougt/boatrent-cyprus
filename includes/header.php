@@ -10,6 +10,10 @@ $seoCanon   = $canonical ?? current_url();
 $seoRobots  = $robots ?? (site_is_live() ? 'index, follow' : 'noindex, nofollow');
 $seoOgType  = $ogType ?? 'website';
 $seoImage   = $pageImage ?? (base_url() . '/images/princess-30m/image-4.webp');
+// Social/scraper image URLs must be absolute — promote root-relative paths.
+if ($seoImage !== '' && $seoImage[0] === '/') {
+    $seoImage = base_url() . $seoImage;
+}
 $seoCanonPath = parse_url($seoCanon, PHP_URL_PATH) ?: '/';
 ?>
 <!DOCTYPE html>
@@ -95,6 +99,9 @@ if (!empty($structuredData)) {
 <!-- Self-hosted fonts (no third-party render-blocking requests) -->
 <link rel="preload" href="/assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<?php if (!empty($heroPreload)): // pages set $heroPreload to their LCP image ?>
+<link rel="preload" href="<?php echo e($heroPreload); ?>" as="image" fetchpriority="high">
+<?php endif; ?>
 
 <!-- Compiled Tailwind (built from tailwind.config.js via `npm run build:css`) -->
 <link rel="stylesheet" href="/css/tailwind.css">
