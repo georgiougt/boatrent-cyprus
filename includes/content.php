@@ -222,6 +222,137 @@ function get_city_seo(): array
     ];
 }
 
+/**
+ * Long-form landing content per city — prose, a sample one-day itinerary and
+ * FAQs. Powers the deep destination pages (and the per-city FAQPage schema).
+ * Keyed by city slug.
+ */
+function get_city_content(): array
+{
+    return [
+        'limassol' => [
+            'long' => [
+                'Limassol is the busiest charter base in Cyprus, and for good reason. The city\'s marina sits right in the centre of the south coast, so a day afloat can go in almost any direction — west toward the white cliffs of Governor\'s Beach, or south around the Akrotiri peninsula to the long, shallow shelf of Lady\'s Mile. Because the marina is a full-service superyacht harbour, the fleet here is the island\'s deepest: flybridge motor yachts for a champagne day out, roomy catamarans for families, and quick self-drive speedboats when you just want to find a quiet cove and swim.',
+                'Renting a boat in Limassol also means the shortest transfer from the city\'s hotels and the easiest provisioning — caterers, water toys and extra crew are all on hand at short notice. Most charters run as half-day (roughly four hours), full-day (about eight) or sunset cruises, with the crew tailoring the route to the wind and to what you want from the day. Whether you\'re marking a birthday, entertaining clients or simply escaping the heat, a Limassol charter is the simplest way onto the water on this coast.',
+            ],
+            'itinerary' => [
+                ['time' => '09:30', 'title' => 'Cast off from Limassol Marina', 'text' => 'Meet your skipper on the pontoon, stow your bags and head out past the breakwater with coffee in hand as the city skyline falls away behind you.'],
+                ['time' => '10:30', 'title' => 'Swim stop at Lady\'s Mile', 'text' => 'Anchor over the pale, shallow sand-shelf off Akrotiri where the water glows turquoise — the first swim, paddleboards out, and time on the water toys.'],
+                ['time' => '12:30', 'title' => 'Lunch in Akrotiri Bay', 'text' => 'Drift into the sheltered bay for a long lunch on board. Crewed charters serve a mezze spread here while you dive off the swim platform between courses.'],
+                ['time' => '15:00', 'title' => 'Cruise the Blue Flag coast', 'text' => 'Track east along the Blue Flag shoreline toward the dramatic white cliffs of Governor\'s Beach, with a final snorkel stop in a quiet cove.'],
+                ['time' => '18:00', 'title' => 'Sunset run back to the marina', 'text' => 'Turn for home as the light turns gold, arriving back at Limassol Marina with the harbour lights coming on.'],
+            ],
+            'faqs' => [
+                ['q' => 'How much does it cost to rent a boat in Limassol?', 'a' => 'Self-drive speedboats and smaller day boats start from a few hundred euro for a half day, while crewed motor yachts and catamarans run from around €1,800 for a full day up to €95,000 a week for a superyacht. Every listing shows its own rate — browse the Limassol fleet for live prices.'],
+                ['q' => 'Do I need a licence, or can I hire a skipper?', 'a' => 'Most of the Limassol fleet is crewed, so no licence is needed — a professional skipper handles the boat while you relax. A few smaller self-drive boats can be hired without a licence within harbour limits; larger self-drive vessels require a recognised boating licence.'],
+                ['q' => 'Where do charters depart from in Limassol?', 'a' => 'Almost all charters leave from Limassol Marina, with some traditional day boats departing the Old Port. Both are central and a short taxi from any city hotel; your exact meeting point is confirmed when you book.'],
+                ['q' => 'What will we see on the water?', 'a' => 'Typical Limassol day charters take in Lady\'s Mile, Akrotiri Bay and the Blue Flag coast toward Governor\'s Beach, with swim and snorkel stops along the way. Your skipper adjusts the route to the wind and to what you want from the day.'],
+                ['q' => 'When is the best time to charter in Limassol?', 'a' => 'The season runs year-round, but April to October brings the warmest, calmest seas. July and August are peak — book well ahead — while late spring and early autumn offer warm water with fewer crowds.'],
+            ],
+        ],
+        'paphos' => [
+            'long' => [
+                'Paphos rewards anyone who takes to the water. The harbour sits below the medieval castle and the Tombs of the Kings, and within minutes of leaving it you are cruising a coastline steeped in Greek myth — this is the legendary birthplace of Aphrodite. Head north and the shoreline breaks into the crystalline sea caves of Coral Bay and the wild, protected sands of Lara Bay; head south and you pass beneath Aphrodite\'s Rock, where the water is famously clear and deep.',
+                'The Paphos fleet leans toward crewed yachts and comfortable motorboats, with self-drive options for shorter coastal hops. Because much of this coast is a marine and turtle-nesting reserve, a boat is genuinely the best — often the only — way to reach its finest swimming spots. Charters here suit romantic sunset sails just as well as family adventures, and the west-facing coast means some of the best sunset cruising on the island.',
+            ],
+            'itinerary' => [
+                ['time' => '09:30', 'title' => 'Leave Paphos Harbour', 'text' => 'Slip out beneath Paphos Castle and the harbour front, setting a course north along the archaeological coast toward Coral Bay.'],
+                ['time' => '10:45', 'title' => 'Snorkel the Coral Bay sea caves', 'text' => 'Anchor off the honeycomb of sea caves and coves at Coral Bay for the first swim and snorkel in glass-clear water.'],
+                ['time' => '12:30', 'title' => 'Lunch off Lara Bay', 'text' => 'Push on to the wild, protected sands of Lara Bay — a turtle-nesting reserve — for lunch on board and a swim off the back of the boat.'],
+                ['time' => '15:00', 'title' => 'Cruise past Aphrodite\'s Rock', 'text' => 'Turn south down the coast to drift beneath Petra tou Romiou, the sea stack where legend says Aphrodite rose from the waves.'],
+                ['time' => '18:30', 'title' => 'Sunset sail home', 'text' => 'Ride the west-facing coast back to the harbour as the sky lights up — Paphos serves some of the best sunsets in Cyprus.'],
+            ],
+            'faqs' => [
+                ['q' => 'How much does it cost to rent a boat in Paphos?', 'a' => 'Prices depend on the boat and the length of charter. Self-drive day boats start from a few hundred euro, while crewed yachts and catamarans are typically hired by the half-day or full-day. Send an inquiry with your dates and group size and we\'ll match you with the right boat and a firm quote.'],
+                ['q' => 'Can I reach the sea caves and Lara Bay without a boat?', 'a' => 'Not easily — much of this coast is a protected reserve with no road access, so the sea caves at Coral Bay and the turtle sands of Lara Bay are best reached by boat. That\'s exactly what makes a Paphos charter special.'],
+                ['q' => 'Do I need a licence to hire a boat in Paphos?', 'a' => 'No — most charters here are crewed, so a licensed skipper takes care of everything. Small self-drive boats can be rented without a licence close to the harbour; larger self-drive vessels need a recognised boating licence.'],
+                ['q' => 'Is Paphos good for a sunset cruise?', 'a' => 'Yes — the coast faces west, so Paphos is one of the best places in Cyprus for a sunset sail. Many couples book an evening charter with drinks on board as the sun drops behind the sea.'],
+                ['q' => 'When is the best time to charter in Paphos?', 'a' => 'April through October offers warm, settled conditions. Peak summer is busiest and warmest; spring and autumn give you gentle seas, comfortable temperatures and quieter coves.'],
+            ],
+        ],
+        'larnaca' => [
+            'long' => [
+                'Larnaca is the easy-going choice on the south coast. The bay is calm and shallow, the marina sits right on the palm-lined seafront, and the sailing is relaxed — which makes it a favourite for families, first-time charterers and anyone who wants a gentle day rather than a fast one. It is also Cyprus\' diving capital: just offshore lies the Zenobia, a vast sunken ferry regularly ranked among the best wreck dives in the world.',
+                'The Larnaca fleet ranges from comfortable motor cruisers and catamarans to self-drive day boats, and many charters build in a stop over the Zenobia so snorkellers can peer down at the wreck while divers explore below. Beyond the wreck, the coast unfolds gently toward Cape Kiti and the salt-lake shore, dotted with quiet swimming bays. With its own international airport ten minutes away, Larnaca is also the most convenient base if you\'re short on time.',
+            ],
+            'itinerary' => [
+                ['time' => '09:30', 'title' => 'Depart Larnaca Marina', 'text' => 'Board on the seafront and head out into the wide, sheltered bay — calm water and an easy start to the day.'],
+                ['time' => '10:30', 'title' => 'Snorkel over the Zenobia', 'text' => 'Anchor above the famous wreck. Snorkellers look down over the shallows of the hull while the crew tells the story of the ship that sank in 1980.'],
+                ['time' => '12:30', 'title' => 'Lunch off Mackenzie Beach', 'text' => 'Cruise back toward the buzz of Mackenzie for lunch on board, with swimming and paddleboards in the warm shallows.'],
+                ['time' => '15:00', 'title' => 'Cruise to Cape Kiti', 'text' => 'Follow the salt-lake coast south to the quiet bays around Cape Kiti for a final, peaceful swim away from the crowds.'],
+                ['time' => '17:30', 'title' => 'Return to the marina', 'text' => 'An unhurried cruise back across the bay to Larnaca Marina rounds off the day.'],
+            ],
+            'faqs' => [
+                ['q' => 'How much does it cost to rent a boat in Larnaca?', 'a' => 'Rates vary with the boat and the length of the day. Self-drive day boats are the most affordable option, while crewed cruisers and catamarans are hired by the half or full day. Tell us your dates and group and we\'ll send exact prices.'],
+                ['q' => 'Can we see the Zenobia wreck on a boat trip?', 'a' => 'Yes. The wreck lies just off the marina and sits close enough to the surface that snorkellers can see it in good conditions, while certified divers can explore it fully. Many Larnaca charters include a stop over the site.'],
+                ['q' => 'Is Larnaca good for families?', 'a' => 'Very — the bay is calm and shallow, transfers are short, and the relaxed pace suits younger children. It\'s one of the easiest places in Cyprus to spend a first day on a boat.'],
+                ['q' => 'Do I need a licence to charter in Larnaca?', 'a' => 'No licence is needed for crewed charters, where a skipper runs the boat. Some small self-drive boats can be hired without one; larger self-drive vessels require a recognised boating licence.'],
+                ['q' => 'When is the best time to charter in Larnaca?', 'a' => 'The warm season runs April to October, with the calmest, warmest water in summer. Larnaca\'s sheltered bay stays comfortable even when other coasts get breezy, so it charters well right through the season.'],
+            ],
+        ],
+        'ayia-napa' => [
+            'long' => [
+                'Ayia Napa has the most electric water in Cyprus, and a boat is the best way to enjoy it. Leaving the harbour you\'re quickly among the sculpted sea caves and rock arches of Cape Greco, then out over the neon-blue shallows that give the local Blue Lagoon its name. The seabed here is pale sand and the sun is relentless, so the sea turns an almost unreal shade of turquoise — perfect for swimming, jumping off the boat and snorkelling.',
+                'The fleet reflects the resort: fast self-drive speedboats for zipping between coves, and big, sociable catamarans built for groups and celebrations. Sunset party cruises are an Ayia Napa institution, but the same coast is just as good for a laid-back family day of swim stops and cave-spotting. Whatever the vibe, the highlights — Cape Greco, the Blue Lagoon, Konnos Bay and Nissi Beach — are all within an easy cruise of the harbour.',
+            ],
+            'itinerary' => [
+                ['time' => '10:00', 'title' => 'Leave Ayia Napa Harbour', 'text' => 'Head east out of the harbour with the day\'s first stretch of coast — sea caves and bright water — opening up ahead.'],
+                ['time' => '10:45', 'title' => 'Explore the Cape Greco caves', 'text' => 'Nose in among the sea caves and the natural rock arch at Cape Greco, with time to swim through the clear water around them.'],
+                ['time' => '12:00', 'title' => 'Anchor at the Blue Lagoon', 'text' => 'Drop anchor over the glowing shallows of the Blue Lagoon for the main swim stop — snorkels, jumps off the boat and lunch on board.'],
+                ['time' => '14:30', 'title' => 'Swim at Konnos Bay', 'text' => 'Cruise to the sheltered horseshoe of Konnos Bay, one of the prettiest swimming spots on this coast.'],
+                ['time' => '16:30', 'title' => 'Cruise past Nissi Beach', 'text' => 'Ease back west past the famous sands of Nissi Beach before returning to the harbour — or stay out for a sunset party cruise.'],
+            ],
+            'faqs' => [
+                ['q' => 'How much does it cost to rent a boat in Ayia Napa?', 'a' => 'Self-drive speedboats are the most popular and affordable option for short hops, while group catamarans and crewed cruises are priced by the trip or the day. Prices depend on the boat and season — send your dates for a quote.'],
+                ['q' => 'Can I hire a speedboat to drive myself?', 'a' => 'Yes — self-drive speedboats are an Ayia Napa speciality. Smaller boats can often be hired without a licence within a set area; more powerful boats require a recognised boating licence. Skippered options are also available.'],
+                ['q' => 'Are sunset and party cruises available?', 'a' => 'They are — sociable catamaran party cruises, including sunset departures with music and drinks, are one of the most popular ways to get on the water in Ayia Napa. Private group charters can be arranged too.'],
+                ['q' => 'What are the best spots to visit by boat?', 'a' => 'The classics are the Cape Greco sea caves and arch, the Blue Lagoon, Konnos Bay and Nissi Beach — all within an easy cruise of the harbour and all with excellent swimming.'],
+                ['q' => 'When is the best time to charter in Ayia Napa?', 'a' => 'High summer (June to September) is the liveliest and warmest, ideal for swimming and party cruises. Late spring and early autumn are quieter but still warm and bright.'],
+            ],
+        ],
+        'protaras' => [
+            'long' => [
+                'Protaras is the gentle side of Cyprus\' south-east corner. Its bays are shallow and sheltered, the water is famously clear, and the whole area has a calmer, more family-friendly feel than neighbouring Ayia Napa. Renting a boat here usually starts from Protaras or nearby Pernera, and within minutes you\'re anchored over the turquoise shallows of Fig Tree Bay, one of the most photographed beaches on the island.',
+                'The local fleet favours easy, comfortable day boats and speedboats — the kind of vessels that suit a relaxed cruise with children on board. From Fig Tree Bay the coast leads down to the protected headland of Cape Greco and the pretty cove of Konnos Bay, with plenty of quiet spots to stop, swim and snorkel along the way. If you want a calm, unhurried day on beautiful water, Protaras is hard to beat.',
+            ],
+            'itinerary' => [
+                ['time' => '10:00', 'title' => 'Depart Protaras / Pernera', 'text' => 'Set off from the sheltered shore into calm, shallow water — an easy, gentle start well suited to families.'],
+                ['time' => '10:40', 'title' => 'Swim at Fig Tree Bay', 'text' => 'Anchor over the turquoise shallows of Fig Tree Bay for the first swim, with paddleboards and snorkels out.'],
+                ['time' => '12:15', 'title' => 'Snorkel at Green Bay', 'text' => 'Cruise to Green Bay, known for its clear water and easy snorkelling over rocks and seagrass close to the surface.'],
+                ['time' => '14:00', 'title' => 'Lunch off Cape Greco', 'text' => 'Round toward the Cape Greco National Park headland for lunch on board and a swim in a quiet, protected cove.'],
+                ['time' => '16:30', 'title' => 'Cruise back via Konnos Bay', 'text' => 'Call in at the sheltered horseshoe of Konnos Bay for a last swim before the gentle run home.'],
+            ],
+            'faqs' => [
+                ['q' => 'How much does it cost to rent a boat in Protaras?', 'a' => 'Self-drive day boats and speedboats are the most common and budget-friendly choices, with crewed options available too. The exact price depends on the boat, the season and the length of the day — send your details for a quote.'],
+                ['q' => 'Is Protaras suitable for young children?', 'a' => 'Ideal, in fact. The bays are shallow and sheltered and the pace is relaxed, which makes Protaras one of the best places in Cyprus to take younger children out on a boat.'],
+                ['q' => 'Where do boats depart from in Protaras?', 'a' => 'Charters typically leave from the Protaras shore or the small harbour at nearby Pernera. Both are close to the resort\'s hotels; your exact meeting point is confirmed when you book.'],
+                ['q' => 'Do I need a licence?', 'a' => 'No licence is needed for crewed or skippered charters. Small self-drive boats can often be hired without one within a set area; larger self-drive vessels need a recognised boating licence.'],
+                ['q' => 'When is the best time to charter in Protaras?', 'a' => 'April to October brings the warmest, calmest conditions. The sheltered bays here stay comfortable through the season, and spring and autumn are especially peaceful.'],
+            ],
+        ],
+        'latsi' => [
+            'long' => [
+                'Latsi is the launch point for the most famous swim in Cyprus. This small fishing harbour sits at the edge of the wild Akamas peninsula, and from it the glowing turquoise of the Blue Lagoon is less than an hour away by boat. Because the Akamas is a protected national park with almost no road access, chartering from Latsi is the way to reach a coastline of untouched coves, sea caves and resident sea turtles that most visitors never see.',
+                'Boats from Latsi range from crewed day cruisers to self-drive speedboats and traditional wooden boats, and nearly every trip builds around the Blue Lagoon and the Akamas coast. It\'s a more adventurous, expedition-like day than the busy resort coasts — quieter water, dramatic scenery and a real sense of getting away from it all. For nature lovers and anyone chasing that perfect turquoise photo, Latsi is the standout charter base in the west.',
+            ],
+            'itinerary' => [
+                ['time' => '09:30', 'title' => 'Cast off from Latsi Harbour', 'text' => 'Leave the little fishing harbour and turn along the wild Akamas coast, the scenery growing more dramatic with every mile.'],
+                ['time' => '10:30', 'title' => 'Anchor at the Blue Lagoon', 'text' => 'Drop anchor in the glowing turquoise of the Blue Lagoon — the main event, with snorkelling, swimming and jumps off the boat.'],
+                ['time' => '12:30', 'title' => 'Explore the Akamas coves', 'text' => 'Cruise the protected Akamas coastline, stopping in hidden coves and sea caves for lunch on board and quiet swims.'],
+                ['time' => '14:30', 'title' => 'Swim off Manijin Island', 'text' => 'Pause by the little island of Manijin, a good spot for snorkelling and, with luck, sighting a sea turtle.'],
+                ['time' => '16:30', 'title' => 'Return to Latsi', 'text' => 'A scenic cruise back along the peninsula to the harbour, salty and sun-tired in the best way.'],
+            ],
+            'faqs' => [
+                ['q' => 'How much does it cost to rent a boat in Latsi?', 'a' => 'Prices depend on the boat and the length of the trip. Self-drive boats and shared Blue Lagoon cruises are the most affordable; private crewed charters cost more but give you the coast at your own pace. Send your dates for a quote.'],
+                ['q' => 'Is the Blue Lagoon worth chartering a boat for?', 'a' => 'Absolutely — the Blue Lagoon and the surrounding Akamas coast have little or no road access, so a boat is the best way to reach them. Private charters also let you arrive early or late and enjoy the lagoon without the day-trip crowds.'],
+                ['q' => 'Might we see sea turtles?', 'a' => 'Often, yes. The Akamas coast is a nesting area for green and loggerhead turtles, and they\'re regularly spotted in the water around Latsi and Manijin Island, especially in the warmer months.'],
+                ['q' => 'Do I need a licence to charter from Latsi?', 'a' => 'No — crewed and skippered charters need no licence. Small self-drive boats can be hired without one in a set area; larger self-drive vessels require a recognised boating licence.'],
+                ['q' => 'When is the best time to charter in Latsi?', 'a' => 'May to October gives the warmest, calmest seas for the Akamas run. Midsummer is busiest at the Blue Lagoon, so late spring and early autumn are lovely times for a quieter trip.'],
+            ],
+        ],
+    ];
+}
+
 /** Single post by slug, or null. */
 function get_blog_post(string $slug): ?array
 {
