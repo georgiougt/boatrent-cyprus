@@ -165,7 +165,10 @@ echo json_ld([
         <!-- Description -->
         <div class="mt-10">
           <h2 class="font-display text-2xl font-semibold text-brand-ink mb-3">Rent the <?php echo e($boat['name']); ?> in <?php echo e($boat['city_name']); ?></h2>
-          <p class="text-brand-navy/75 leading-relaxed"><?php echo e($boat['description']); ?></p>
+          <?php // Descriptions are written in paragraphs; keep them as separate <p> blocks. ?>
+          <?php foreach (preg_split('/\R\s*\R/', trim((string) $boat['description'])) as $para): ?>
+          <p class="text-brand-navy/75 leading-relaxed mb-4"><?php echo e($para); ?></p>
+          <?php endforeach; ?>
         </div>
 
         <!-- Features -->
