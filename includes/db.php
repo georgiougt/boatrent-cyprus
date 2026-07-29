@@ -177,49 +177,68 @@ function insert_charter_yachts(PDO $pdo, string $jsonPath, int $cityId): int
         $cityBySlug[$row['slug']] = (int) $row['id'];
     }
 
-    $pdo->exec('DELETE FROM boats');
+    // Replace the fleet atomically. Without this, a bad record (e.g. a duplicate
+    // slug) would abort the loop after the DELETE had already run, leaving the
+    // site with no boats at all.
+    $ownTransaction = !$pdo->inTransaction();
+    if ($ownTransaction) {
+        $pdo->beginTransaction();
+    }
 
-    $stmt = $pdo->prepare("
-        INSERT INTO boats
-            (name, slug, city_id, type, capacity, length_m, cabins, year, crewed,
-             price_hour, price_day, description, features, image_url, gallery, featured,
-             status, builder, speed, beam, price_label, pricing, price_note)
-        VALUES
-            (:name, :slug, :city_id, :type, :capacity, :length_m, :cabins, :year, :crewed,
-             :price_hour, :price_day, :description, :features, :image_url, :gallery, :featured,
-             'active', :builder, :speed, :beam, :price_label, :pricing, :price_note)
-    ");
+    try {
+        $pdo->exec('DELETE FROM boats');
 
-    $count = 0;
-    foreach ($yachts as $y) {
-        $specs   = $y['specs'] ?? [];
-        $pricing = $y['detailedPricing'] ?? [];
-        $crew    = cy_int($specs['crew'] ?? null);
-        $stmt->execute([
-            ':name'        => $y['name'],
-            ':slug'        => $y['slug'] ?? slugify($y['name']),
-            ':city_id'     => $cityBySlug[$y['city'] ?? ''] ?? $cityId,
-            ':type'        => $y['type'] ?? 'Motor Yacht',
-            ':capacity'    => cy_int($y['capacity'] ?? null) ?? 1,
-            ':length_m'    => cy_length_m($y['length'] ?? null),
-            ':cabins'      => cy_int($specs['cabins'] ?? null) ?? 0,
-            ':year'        => cy_int($specs['year'] ?? null),
-            ':crewed'      => $crew && $crew > 0 ? 1 : 0,
-            ':price_hour'  => null,
-            ':price_day'   => cy_day_rate($pricing),
-            ':description' => $y['description'] ?? '',
-            ':features'    => json_encode($y['features'] ?? []),
-            ':image_url'   => $y['image'] ?? '',
-            ':gallery'     => json_encode($y['gallery'] ?? []),
-            ':featured'    => in_array($y['name'], $featuredNames, true) ? 1 : 0,
-            ':builder'     => $specs['builder'] ?? null,
-            ':speed'       => $y['speed'] ?? null,
-            ':beam'        => $specs['beam'] ?? null,
-            ':price_label' => $y['price'] ?? null,
-            ':pricing'     => json_encode($pricing),
-            ':price_note'  => $y['priceNote'] ?? null,
-        ]);
-        $count++;
+        $stmt = $pdo->prepare("
+            INSERT INTO boats
+                (name, slug, city_id, type, capacity, length_m, cabins, year, crewed,
+                 price_hour, price_day, description, features, image_url, gallery, featured,
+                 status, builder, speed, beam, price_label, pricing, price_note)
+            VALUES
+                (:name, :slug, :city_id, :type, :capacity, :length_m, :cabins, :year, :crewed,
+                 :price_hour, :price_day, :description, :features, :image_url, :gallery, :featured,
+                 'active', :builder, :speed, :beam, :price_label, :pricing, :price_note)
+        ");
+
+        $count = 0;
+        foreach ($yachts as $y) {
+            $specs   = $y['specs'] ?? [];
+            $pricing = $y['detailedPricing'] ?? [];
+            $crew    = cy_int($specs['crew'] ?? null);
+            $stmt->execute([
+                ':name'        => $y['name'],
+                ':slug'        => $y['slug'] ?? slugify($y['name']),
+                ':city_id'     => $cityBySlug[$y['city'] ?? ''] ?? $cityId,
+                ':type'        => $y['type'] ?? 'Motor Yacht',
+                ':capacity'    => cy_int($y['capacity'] ?? null) ?? 1,
+                ':length_m'    => cy_length_m($y['length'] ?? null),
+                ':cabins'      => cy_int($specs['cabins'] ?? null) ?? 0,
+                ':year'        => cy_int($specs['year'] ?? null),
+                ':crewed'      => $crew && $crew > 0 ? 1 : 0,
+                ':price_hour'  => null,
+                ':price_day'   => cy_day_rate($pricing),
+                ':description' => $y['description'] ?? '',
+                ':features'    => json_encode($y['features'] ?? []),
+                ':image_url'   => $y['image'] ?? '',
+                ':gallery'     => json_encode($y['gallery'] ?? []),
+                ':featured'    => in_array($y['name'], $featuredNames, true) ? 1 : 0,
+                ':builder'     => $specs['builder'] ?? null,
+                ':speed'       => $y['speed'] ?? null,
+                ':beam'        => $specs['beam'] ?? null,
+                ':price_label' => $y['price'] ?? null,
+                ':pricing'     => json_encode($pricing),
+                ':price_note'  => $y['priceNote'] ?? null,
+            ]);
+            $count++;
+        }
+    } catch (Throwable $e) {
+        if ($ownTransaction) {
+            $pdo->rollBack();
+        }
+        throw $e;
+    }
+
+    if ($ownTransaction) {
+        $pdo->commit();
     }
     return $count;
 }
