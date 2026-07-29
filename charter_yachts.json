@@ -682,7 +682,7 @@
     ]
   },
   {
-    "id": 22,
+    "id": 16,
     "name": "Princess 62",
     "type": "Motor Yacht",
     "length": "62 ft",
@@ -762,7 +762,7 @@
     ]
   },
   {
-    "id": 23,
+    "id": 17,
     "name": "Cranchi Fifty 8 Fly",
     "type": "Motor Yacht",
     "length": "58 ft",
@@ -804,5 +804,1217 @@
       "/images/cranchi-fifty-8-fly/image-11.webp",
       "/images/cranchi-fifty-8-fly/image-12.webp"
     ]
+  },
+  {
+    "id": 18,
+    "name": "Azimut 42",
+    "slug": "azimut-42",
+    "city": "ayia-napa",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "11 Guests",
+    "length": "12.8m",
+    "price": "€2,500 / day",
+    "priceNote": "",
+    "description": "Charter the Azimut 42, a 12.8m motor yacht based in Ayia napa. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/azimut-42/image-1.webp",
+    "gallery": [
+      "/images/azimut-42/image-1.webp"
+    ],
+    "features": [
+      "Fuel Cost",
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "Underwater Scooter",
+      "SUP",
+      "Sparkling Wine / Prosecco",
+      "Local Beer",
+      "Soft Drinks & Water",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€800",
+      "3 Hours": "€1,200",
+      "4 Hours": "€1,500",
+      "5 Hours": "€1,800",
+      "6 Hours": "€2,000",
+      "7 Hours": "€2,300",
+      "8 Hours": "€2,500",
+      "Overnight": "€4,200",
+      "Weekly Charter": "€22,000",
+      "24 Hours": "€4,200"
+    },
+    "specs": {
+      "cabins": "2",
+      "crew": "2",
+      "builder": "Azimut",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/azimut-42"
+  },
+  {
+    "id": 19,
+    "name": "Princess 61",
+    "slug": "princess-61",
+    "city": "ayia-napa",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "24 Guests",
+    "length": "19M",
+    "price": "€4,000 / day",
+    "priceNote": "",
+    "description": "Charter the Princess 61, a 19M motor yacht based in Ayia napa. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/princess-61/image-1.webp",
+    "gallery": [
+      "/images/princess-61/image-1.webp"
+    ],
+    "features": [
+      "Fuel Cost",
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "Underwater Scooter",
+      "SUP",
+      "Sparkling Wine / Prosecco",
+      "Local Beer",
+      "Soft Drinks & Water",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€1,200",
+      "3 Hours": "€1,800",
+      "4 Hours": "€2,300",
+      "5 Hours": "€2,800",
+      "6 Hours": "€3,300",
+      "7 Hours": "€3,700",
+      "8 Hours": "€4,000",
+      "Overnight": "€5,800",
+      "Weekly Charter": "€30,000",
+      "24 Hours": "€5,800"
+    },
+    "specs": {
+      "cabins": "3",
+      "crew": "3",
+      "builder": "Princess",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/princess-61"
+  },
+  {
+    "id": 20,
+    "name": "Sea Ray 37.5",
+    "slug": "sea-ray-375",
+    "city": "ayia-napa",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "11 Guests",
+    "length": "11.2m",
+    "price": "€1,900 / day",
+    "priceNote": "",
+    "description": "Charter the Sea Ray 37.5, a 11.2m motor yacht based in Ayia napa. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/sea-ray-375/image-1.webp",
+    "gallery": [
+      "/images/sea-ray-375/image-1.webp"
+    ],
+    "features": [
+      "Fuel Cost",
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "Underwater Scooter",
+      "SUP",
+      "Sparkling Wine / Prosecco",
+      "Local Beer",
+      "Soft Drinks & Water",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€500",
+      "3 Hours": "€750",
+      "4 Hours": "€1,000",
+      "5 Hours": "€1,250",
+      "6 Hours": "€1,500",
+      "7 Hours": "€1,750",
+      "8 Hours": "€1,900"
+    },
+    "specs": {
+      "cabins": "2",
+      "crew": "2",
+      "builder": "Sea Ray",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/sea-ray-375"
+  },
+  {
+    "id": 21,
+    "name": "Sea Ray 63",
+    "slug": "sea-ray-63",
+    "city": "ayia-napa",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "22 Guests",
+    "length": "20M",
+    "price": "€3,800 / day",
+    "priceNote": "",
+    "description": "Charter the Sea Ray 63, a 20M motor yacht based in Ayia napa. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/sea-ray-63/image-1.webp",
+    "gallery": [
+      "/images/sea-ray-63/image-1.webp"
+    ],
+    "features": [
+      "Fuel Cost",
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "Underwater Scooter",
+      "SUP",
+      "Sparkling Wine / Prosecco",
+      "Local Beer",
+      "Soft Drinks & Water",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€1,000",
+      "3 Hours": "€1,500",
+      "4 Hours": "€2,000",
+      "5 Hours": "€2,500",
+      "6 Hours": "€2,900",
+      "7 Hours": "€3,400",
+      "8 Hours": "€3,800",
+      "Overnight": "€5,500",
+      "24 Hours": "€5,500"
+    },
+    "specs": {
+      "cabins": "2",
+      "crew": "3",
+      "builder": "Sea Ray",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/sea-ray-63"
+  },
+  {
+    "id": 22,
+    "name": "Sea Ray 45.5",
+    "slug": "sea-ray-455",
+    "city": "ayia-napa",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "16 Guests",
+    "length": "14M",
+    "price": "€1,900 / day",
+    "priceNote": "",
+    "description": "Charter the Sea Ray 45.5, a 14M motor yacht based in Ayia napa. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/sea-ray-455/image-1.webp",
+    "gallery": [
+      "/images/sea-ray-455/image-1.webp"
+    ],
+    "features": [
+      "Fuel Cost",
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Underwater Scooter",
+      "SUP",
+      "Sparkling Wine / Prosecco",
+      "Local Beer",
+      "Soft Drinks & Water",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€600",
+      "3 Hours": "€850",
+      "4 Hours": "€1,000",
+      "5 Hours": "€1,250",
+      "6 Hours": "€1,450",
+      "7 Hours": "€1,650",
+      "8 Hours": "€1,900"
+    },
+    "specs": {
+      "cabins": "2",
+      "crew": "2",
+      "builder": "Sea Ray",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/sea-ray-455"
+  },
+  {
+    "id": 23,
+    "name": "Azimut 46",
+    "slug": "azimut-46",
+    "city": "ayia-napa",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "20 Guests",
+    "length": "14.5M",
+    "price": "€2,500 / day",
+    "priceNote": "",
+    "description": "Charter the Azimut 46, a 14.5M motor yacht based in Ayia napa. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/azimut-46/image-1.webp",
+    "gallery": [
+      "/images/azimut-46/image-1.webp"
+    ],
+    "features": [
+      "Fuel Cost",
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "Soft Drinks & Water",
+      "Transfer",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€800",
+      "3 Hours": "€1,200",
+      "4 Hours": "€1,500",
+      "5 Hours": "€1,800",
+      "6 Hours": "€2,000",
+      "7 Hours": "€2,250",
+      "8 Hours": "€2,500",
+      "Overnight": "€3,800",
+      "24 Hours": "€3,800"
+    },
+    "specs": {
+      "cabins": "2",
+      "crew": "2",
+      "builder": "Azimut",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/azimut-46"
+  },
+  {
+    "id": 24,
+    "name": "Azimut 62",
+    "slug": "azimut-62",
+    "city": "ayia-napa",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "15 Guests",
+    "length": "20M",
+    "price": "€4,100 / day",
+    "priceNote": "",
+    "description": "Charter the Azimut 62, a 20M motor yacht based in Ayia napa. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/azimut-62/image-1.webp",
+    "gallery": [
+      "/images/azimut-62/image-1.webp"
+    ],
+    "features": [
+      "Fuel Cost",
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "SUP",
+      "Sparkling Wine / Prosecco",
+      "Local Beer",
+      "Soft Drinks & Water",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "3 Hours": "€1,900",
+      "4 Hours": "€2,500",
+      "5 Hours": "€3,000",
+      "6 Hours": "€3,400",
+      "7 Hours": "€3,800",
+      "8 Hours": "€4,100",
+      "Overnight": "€6,500",
+      "24 Hours": "€6,500"
+    },
+    "specs": {
+      "cabins": "3",
+      "crew": "3",
+      "builder": "Azimut",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/azimut-62"
+  },
+  {
+    "id": 25,
+    "name": "Napa Blue",
+    "slug": "napa-blue",
+    "city": "ayia-napa",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "50 Guests",
+    "length": "21M",
+    "price": "€5,000 / day",
+    "priceNote": "",
+    "description": "Charter the Napa Blue, a 21M motor yacht based in Ayia napa. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/napa-blue/image-1.webp",
+    "gallery": [
+      "/images/napa-blue/image-1.webp"
+    ],
+    "features": [
+      "Fuel Cost",
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Soft Drinks & Water"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€1,600",
+      "3 Hours": "€2,300",
+      "4 Hours": "€2,900",
+      "5 Hours": "€3,400",
+      "6 Hours": "€4,000",
+      "7 Hours": "€4,500",
+      "8 Hours": "€5,000",
+      "Overnight": "€7,500",
+      "24 Hours": "€7,500"
+    },
+    "specs": {
+      "cabins": "2",
+      "crew": "5",
+      "builder": "",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/napa-blue"
+  },
+  {
+    "id": 26,
+    "name": "Ferreti 592",
+    "slug": "ferreti-892",
+    "city": "protaras",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "25 Guests",
+    "length": "18.5M",
+    "price": "€4,700 / day",
+    "priceNote": "",
+    "description": "Charter the Ferreti 592, a 18.5M motor yacht based in Protaras. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/ferreti-892/image-1.webp",
+    "gallery": [
+      "/images/ferreti-892/image-1.webp"
+    ],
+    "features": [
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "Underwater Scooter",
+      "SUP",
+      "Sparkling Wine / Prosecco",
+      "Local Beer",
+      "Soft Drinks & Water",
+      "Fuel Cost",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€1,400",
+      "3 Hours": "€2,100",
+      "4 Hours": "€2,700",
+      "5 Hours": "€3,300",
+      "6 Hours": "€3,800",
+      "7 Hours": "€4,200",
+      "8 Hours": "€4,700",
+      "Overnight": "€6,800",
+      "Weekly Charter": "€38,000",
+      "24 Hours": "€6,800"
+    },
+    "specs": {
+      "cabins": "3",
+      "crew": "3",
+      "builder": "Ferretti",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/ferreti-892"
+  },
+  {
+    "id": 27,
+    "name": "Sunseeker 50",
+    "slug": "sunseeker-50",
+    "city": "limassol",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "12 Guests",
+    "length": "16M",
+    "price": "€1,800 / day",
+    "priceNote": "",
+    "description": "Charter the Sunseeker 50, a 16M motor yacht based in Limassol. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/sunseeker-50/image-1.webp",
+    "gallery": [
+      "/images/sunseeker-50/image-1.webp"
+    ],
+    "features": [
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "SUP",
+      "Soft Drinks & Water",
+      "Fuel Cost"
+    ],
+    "detailedPricing": {
+      "3 Hours": "€900",
+      "4 Hours": "€1,200",
+      "5 Hours": "€1,400",
+      "6 Hours": "€1,600",
+      "7 Hours": "€1,700",
+      "8 Hours": "€1,800"
+    },
+    "specs": {
+      "cabins": "2",
+      "crew": "2",
+      "builder": "Sunseeker",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/sunseeker-50"
+  },
+  {
+    "id": 28,
+    "name": "Sea Ray 62",
+    "slug": "sea-ray-62",
+    "city": "latsi",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "12 Guests",
+    "length": "18M",
+    "price": "€4,500 / day",
+    "priceNote": "",
+    "description": "Charter the Sea Ray 62, a 18M motor yacht based in Latchi. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/sea-ray-62/image-1.webp",
+    "gallery": [
+      "/images/sea-ray-62/image-1.webp"
+    ],
+    "features": [
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Soft Drinks & Water",
+      "Fuel Cost",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€1,700",
+      "3 Hours": "€2,400",
+      "4 Hours": "€3,100",
+      "5 Hours": "€3,700",
+      "6 Hours": "€4,100",
+      "Overnight": "€4,500",
+      "24 Hours": "€4,500"
+    },
+    "specs": {
+      "cabins": "2",
+      "crew": "2",
+      "builder": "Sea Ray",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/sea-ray-62"
+  },
+  {
+    "id": 29,
+    "name": "Sunseeker Manhattan 54",
+    "slug": "sunseeker-manhattan-54",
+    "city": "latsi",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "16 Guests",
+    "length": "16M",
+    "price": "€3,800 / day",
+    "priceNote": "",
+    "description": "Charter the Sunseeker Manhattan 54, a 16M motor yacht based in Latchi. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/sunseeker-manhattan-54/image-1.webp",
+    "gallery": [
+      "/images/sunseeker-manhattan-54/image-1.webp"
+    ],
+    "features": [
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "Sparkling Wine / Prosecco",
+      "Local Beer",
+      "Soft Drinks & Water",
+      "Fuel Cost",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€1,300",
+      "3 Hours": "€1,800",
+      "4 Hours": "€2,300",
+      "5 Hours": "€2,750",
+      "6 Hours": "€3,200",
+      "7 Hours": "€3,500",
+      "8 Hours": "€3,800",
+      "Overnight": "€5,000",
+      "24 Hours": "€5,000"
+    },
+    "specs": {
+      "cabins": "2",
+      "crew": "2",
+      "builder": "Sunseeker",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/sunseeker-manhattan-54"
+  },
+  {
+    "id": 30,
+    "name": "Sea Ray 52",
+    "slug": "sea-ray-52",
+    "city": "latsi",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "20 Guests",
+    "length": "16M",
+    "price": "€3,200 / day",
+    "priceNote": "",
+    "description": "Charter the Sea Ray 52, a 16M motor yacht based in Latchi. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/sea-ray-52/image-1.webp",
+    "gallery": [
+      "/images/sea-ray-52/image-1.webp"
+    ],
+    "features": [
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "Soft Drinks & Water",
+      "Transfer",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€1,500",
+      "3 Hours": "€2,250",
+      "4 Hours": "€2,600",
+      "6 Hours": "€2,890",
+      "Overnight": "€3,200",
+      "24 Hours": "€3,200"
+    },
+    "specs": {
+      "cabins": "2",
+      "crew": "2",
+      "builder": "Sea Ray",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/sea-ray-52"
+  },
+  {
+    "id": 31,
+    "name": "Sunseeker 50 Destiny",
+    "slug": "sunseeker-50-destiny",
+    "city": "paphos",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "20 Guests",
+    "length": "16M",
+    "price": "€2,400 / 6 hours",
+    "priceNote": "",
+    "description": "Charter the Sunseeker 50 Destiny, a 16M motor yacht based in Paphos. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/sunseeker-50-destiny/image-1.webp",
+    "gallery": [
+      "/images/sunseeker-50-destiny/image-1.webp"
+    ],
+    "features": [
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "Fuel Cost"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€800",
+      "3 Hours": "€1,200",
+      "4 Hours": "€1,600",
+      "5 Hours": "€2,000",
+      "6 Hours": "€2,400"
+    },
+    "specs": {
+      "cabins": "2",
+      "crew": "2",
+      "builder": "Sunseeker",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/sunseeker-50-destiny"
+  },
+  {
+    "id": 32,
+    "name": "Ocean Dream",
+    "slug": "ocean-dream",
+    "city": "paphos",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "22 Guests",
+    "length": "20M",
+    "price": "€5,100 / day",
+    "priceNote": "",
+    "description": "Charter the Ocean Dream, a 20M motor yacht based in Paphos. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/ocean-dream/image-1.webp",
+    "gallery": [
+      "/images/ocean-dream/image-1.webp"
+    ],
+    "features": [
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "Fuel Cost"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€1,500",
+      "3 Hours": "€2,100",
+      "4 Hours": "€2,300",
+      "5 Hours": "€2,700",
+      "6 Hours": "€3,100",
+      "Overnight": "€5,100",
+      "24 Hours": "€5,100"
+    },
+    "specs": {
+      "cabins": "3",
+      "crew": "2",
+      "builder": "",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/ocean-dream"
+  },
+  {
+    "id": 33,
+    "name": "Kurosivo IV",
+    "slug": "kurosivo-iv",
+    "city": "paphos",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "35 Guests",
+    "length": "22M",
+    "price": "€2,000 / 6 hours",
+    "priceNote": "",
+    "description": "Charter the Kurosivo IV, a 22M motor yacht based in Paphos. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/kurosivo-iv/image-1.webp",
+    "gallery": [
+      "/images/kurosivo-iv/image-1.webp"
+    ],
+    "features": [
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Fuel Cost"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€720",
+      "3 Hours": "€1,000",
+      "4 Hours": "€1,300",
+      "5 Hours": "€1,600",
+      "6 Hours": "€2,000"
+    },
+    "specs": {
+      "cabins": "None",
+      "crew": "2",
+      "builder": "",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/kurosivo-iv"
+  },
+  {
+    "id": 34,
+    "name": "Latchi Icon",
+    "slug": "latchi-icon",
+    "city": "latsi",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "16 Guests",
+    "length": "12.5M",
+    "price": "€1,295 / 6 hours",
+    "priceNote": "",
+    "description": "Charter the Latchi Icon, a 12.5M motor yacht based in Latchi. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/latchi-icon/image-1.webp",
+    "gallery": [
+      "/images/latchi-icon/image-1.webp"
+    ],
+    "features": [
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "Sparkling Wine / Prosecco",
+      "Local Beer",
+      "Soft Drinks & Water",
+      "Fuel Cost",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€695",
+      "3 Hours": "€840",
+      "4 Hours": "€980",
+      "5 Hours": "€1,150",
+      "6 Hours": "€1,295"
+    },
+    "specs": {
+      "cabins": "1",
+      "crew": "1",
+      "builder": "",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/latchi-icon"
+  },
+  {
+    "id": 35,
+    "name": "Rodman 38",
+    "slug": "rodman-38",
+    "city": "latsi",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "15 Guests",
+    "length": "12M",
+    "price": "€1,680 / 6 hours",
+    "priceNote": "",
+    "description": "Charter the Rodman 38, a 12M motor yacht based in Latchi. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/rodman-38/image-1.webp",
+    "gallery": [
+      "/images/rodman-38/image-1.webp"
+    ],
+    "features": [
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "Fuel Cost",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "3 Hours": "€1,050",
+      "4 Hours": "€1,300",
+      "6 Hours": "€1,680"
+    },
+    "specs": {
+      "cabins": "1",
+      "crew": "2",
+      "builder": "Rodman",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/rodman-38"
+  },
+  {
+    "id": 36,
+    "name": "Ferreti 67",
+    "slug": "ferreti-67",
+    "city": "protaras",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "35 Guests",
+    "length": "20M",
+    "price": "€5,100 / day",
+    "priceNote": "",
+    "description": "Charter the Ferreti 67, a 20M motor yacht based in Protaras. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/ferreti-67/image-1.webp",
+    "gallery": [
+      "/images/ferreti-67/image-1.webp"
+    ],
+    "features": [
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "Fuel Cost"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€1,500",
+      "3 Hours": "€1,900",
+      "4 Hours": "€2,300",
+      "5 Hours": "€2,700",
+      "6 Hours": "€3,100",
+      "Overnight": "€5,100",
+      "24 Hours": "€5,100"
+    },
+    "specs": {
+      "cabins": "3",
+      "crew": "3",
+      "builder": "Ferretti",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/ferreti-67"
+  },
+  {
+    "id": 37,
+    "name": "ELYSIAN BLUE",
+    "slug": "elysian-blue",
+    "city": "ayia-napa",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "10 Guests",
+    "length": "13M",
+    "price": "€2,500 / day",
+    "priceNote": "",
+    "description": "Charter the ELYSIAN BLUE, a 13M motor yacht based in Ayia napa. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/elysian-blue/image-1.webp",
+    "gallery": [
+      "/images/elysian-blue/image-1.webp"
+    ],
+    "features": [
+      "Fuel Cost",
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "SUP",
+      "Sparkling Wine / Prosecco",
+      "Local Beer",
+      "Soft Drinks & Water",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€800",
+      "3 Hours": "€1,200",
+      "4 Hours": "€1,500",
+      "5 Hours": "€1,800",
+      "6 Hours": "€2,100",
+      "7 Hours": "€2,300",
+      "8 Hours": "€2,500",
+      "Overnight": "€3,500",
+      "24 Hours": "€3,500"
+    },
+    "specs": {
+      "cabins": "2",
+      "crew": "2",
+      "builder": "",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/elysian-blue"
+  },
+  {
+    "id": 38,
+    "name": "Azimut 46.",
+    "slug": "azimut-465",
+    "city": "protaras",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "16 Guests",
+    "length": "14M",
+    "price": "€3,200 / day",
+    "priceNote": "",
+    "description": "Charter the Azimut 46., a 14M motor yacht based in Protaras. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/azimut-465/image-1.webp",
+    "gallery": [
+      "/images/azimut-465/image-1.webp"
+    ],
+    "features": [
+      "Fuel Cost",
+      "Experienced Captain",
+      "Towels",
+      "Underwater Scooter",
+      "SUP",
+      "Sparkling Wine / Prosecco",
+      "Local Beer",
+      "Soft Drinks & Water",
+      "Food",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€1,000",
+      "3 Hours": "€1,450",
+      "4 Hours": "€1,900",
+      "5 Hours": "€2,300",
+      "6 Hours": "€2,600",
+      "7 Hours": "€2,950",
+      "8 Hours": "€3,200"
+    },
+    "specs": {
+      "cabins": "2",
+      "crew": "2",
+      "builder": "Azimut",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/azimut-465"
+  },
+  {
+    "id": 39,
+    "name": "Sea Ray 45.6",
+    "slug": "sea-ray-456",
+    "city": "ayia-napa",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "14 Guests",
+    "length": "14M",
+    "price": "€2,100 / day",
+    "priceNote": "",
+    "description": "Charter the Sea Ray 45.6, a 14M motor yacht based in Ayia napa. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/sea-ray-456/image-1.webp",
+    "gallery": [
+      "/images/sea-ray-456/image-1.webp"
+    ],
+    "features": [
+      "Fuel Cost",
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "Underwater Scooter",
+      "SUP",
+      "Sparkling Wine / Prosecco",
+      "Soft Drinks & Water",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€700",
+      "3 Hours": "€1,050",
+      "4 Hours": "€1,300",
+      "5 Hours": "€1,500",
+      "6 Hours": "€1,700",
+      "7 Hours": "€1,850",
+      "8 Hours": "€2,100"
+    },
+    "specs": {
+      "cabins": "2",
+      "crew": "2",
+      "builder": "Sea Ray",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/sea-ray-456"
+  },
+  {
+    "id": 40,
+    "name": "AG Queen",
+    "slug": "ag-queen",
+    "city": "ayia-napa",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "10 Guests",
+    "length": "11M",
+    "price": "€3,600 / day",
+    "priceNote": "",
+    "description": "Charter the AG Queen, a 11M motor yacht based in Ayia napa. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/ag-queen/image-1.webp",
+    "gallery": [
+      "/images/ag-queen/image-1.webp"
+    ],
+    "features": [
+      "Fuel Cost",
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "SUP",
+      "Sparkling Wine / Prosecco",
+      "Soft Drinks & Water",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "4 Hours": "€1,790",
+      "6 Hours": "€2,190",
+      "Overnight": "€3,600",
+      "Weekly Charter": "€13,900",
+      "24 Hours": "€3,600"
+    },
+    "specs": {
+      "cabins": "4",
+      "crew": "2",
+      "builder": "",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/ag-queen"
+  },
+  {
+    "id": 41,
+    "name": "Galeon 375 GTO",
+    "slug": "galeon-375-gto",
+    "city": "ayia-napa",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "12 Guests",
+    "length": "13M",
+    "price": "€2,200 / day",
+    "priceNote": "",
+    "description": "Charter the Galeon 375 GTO, a 13M motor yacht based in Ayia napa. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/galeon-375-gto/image-1.webp",
+    "gallery": [
+      "/images/galeon-375-gto/image-1.webp"
+    ],
+    "features": [
+      "Fuel Cost",
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "Underwater Scooter",
+      "Sparkling Wine / Prosecco",
+      "Local Beer",
+      "Soft Drinks & Water",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€700",
+      "3 Hours": "€1,000",
+      "4 Hours": "€1,300",
+      "5 Hours": "€1,600",
+      "6 Hours": "€1,800",
+      "7 Hours": "€2,000",
+      "8 Hours": "€2,200"
+    },
+    "specs": {
+      "cabins": "2",
+      "crew": "2",
+      "builder": "Galeon",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/galeon-375-gto"
+  },
+  {
+    "id": 42,
+    "name": "Sea Ray 32",
+    "slug": "sea-ray-32",
+    "city": "ayia-napa",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "11 Guests",
+    "length": "10.5M",
+    "price": "€2,100 / day",
+    "priceNote": "",
+    "description": "Charter the Sea Ray 32, a 10.5M motor yacht based in Ayia napa. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/sea-ray-32/image-1.webp",
+    "gallery": [
+      "/images/sea-ray-32/image-1.webp"
+    ],
+    "features": [
+      "Fuel Cost",
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "Underwater Scooter",
+      "Sparkling Wine / Prosecco",
+      "Local Beer",
+      "Soft Drinks & Water",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€600",
+      "3 Hours": "€900",
+      "4 Hours": "€1,200",
+      "5 Hours": "€1,500",
+      "6 Hours": "€1,700",
+      "7 Hours": "€1,900",
+      "8 Hours": "€2,100"
+    },
+    "specs": {
+      "cabins": "2",
+      "crew": "2",
+      "builder": "Sea Ray",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/sea-ray-32"
+  },
+  {
+    "id": 43,
+    "name": "Azimut 55",
+    "slug": "azimut-55",
+    "city": "larnaca",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "20 Guests",
+    "length": "16M",
+    "price": "€3,900 / day",
+    "priceNote": "",
+    "description": "Charter the Azimut 55, a 16M motor yacht based in Larnaca. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/azimut-55/image-1.webp",
+    "gallery": [
+      "/images/azimut-55/image-1.webp"
+    ],
+    "features": [
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "Soft Drinks & Water",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "4 Hours": "€3,000",
+      "6 Hours": "€3,500",
+      "Overnight": "€3,900",
+      "24 Hours": "€3,900"
+    },
+    "specs": {
+      "cabins": "3",
+      "crew": "2",
+      "builder": "Azimut",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/azimut-55"
+  },
+  {
+    "id": 44,
+    "name": "Calypso",
+    "slug": "calypso",
+    "city": "larnaca",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "20 Guests",
+    "length": "14M",
+    "price": "€1,600 / day",
+    "priceNote": "",
+    "description": "Charter the Calypso, a 14M motor yacht based in Larnaca. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/calypso/image-1.webp",
+    "gallery": [
+      "/images/calypso/image-1.webp"
+    ],
+    "features": [
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Fuel Cost"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€400",
+      "3 Hours": "€600",
+      "4 Hours": "€800",
+      "5 Hours": "€1,000",
+      "6 Hours": "€1,200",
+      "7 Hours": "€1,400",
+      "8 Hours": "€1,600"
+    },
+    "specs": {
+      "cabins": "None",
+      "crew": "2",
+      "builder": "",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/calypso"
+  },
+  {
+    "id": 45,
+    "name": "Sea Ray SLX 400",
+    "slug": "sea-ray-slx-400",
+    "city": "ayia-napa",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "16 Guests",
+    "length": "13M",
+    "price": "€2,050 / day",
+    "priceNote": "",
+    "description": "Charter the Sea Ray SLX 400, a 13M motor yacht based in Ayia napa. Rent this boat in Cyprus for a day cruise or private charter with an experienced captain — sunbathing, swimming and snorkelling along the coast, with water toys and refreshments included.",
+    "image": "/images/sea-ray-slx-400/image-1.webp",
+    "gallery": [
+      "/images/sea-ray-slx-400/image-1.webp"
+    ],
+    "features": [
+      "Fuel Cost",
+      "Experienced Captain",
+      "Snorkeling Masks",
+      "Towels",
+      "Underwater Scooter",
+      "Sparkling Wine / Prosecco",
+      "Local Beer",
+      "Soft Drinks & Water",
+      "Seasonal Fruits"
+    ],
+    "detailedPricing": {
+      "3 Hours": "€850",
+      "4 Hours": "€1,150",
+      "5 Hours": "€1,450",
+      "6 Hours": "€1,650",
+      "7 Hours": "€1,850",
+      "8 Hours": "€2,050"
+    },
+    "specs": {
+      "cabins": "1",
+      "crew": "2",
+      "builder": "Sea Ray",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://rentyachtsincyprus.com/en/yacht/sea-ray-slx-400"
   }
 ]

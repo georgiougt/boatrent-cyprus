@@ -170,6 +170,13 @@ function insert_charter_yachts(PDO $pdo, string $jsonPath, int $cityId): int
         'Private Yacht 110ft', 'Sunseeker Manhattan 56', 'Azimut 27 Grande',
     ];
 
+    // Map city slugs -> ids so a record can name its own home port ("city" slug).
+    // Records without a "city" fall back to the passed default (Limassol).
+    $cityBySlug = [];
+    foreach ($pdo->query('SELECT id, slug FROM cities') as $row) {
+        $cityBySlug[$row['slug']] = (int) $row['id'];
+    }
+
     $pdo->exec('DELETE FROM boats');
 
     $stmt = $pdo->prepare("
@@ -190,8 +197,8 @@ function insert_charter_yachts(PDO $pdo, string $jsonPath, int $cityId): int
         $crew    = cy_int($specs['crew'] ?? null);
         $stmt->execute([
             ':name'        => $y['name'],
-            ':slug'        => slugify($y['name']),
-            ':city_id'     => $cityId,
+            ':slug'        => $y['slug'] ?? slugify($y['name']),
+            ':city_id'     => $cityBySlug[$y['city'] ?? ''] ?? $cityId,
             ':type'        => $y['type'] ?? 'Motor Yacht',
             ':capacity'    => cy_int($y['capacity'] ?? null) ?? 1,
             ':length_m'    => cy_length_m($y['length'] ?? null),
@@ -199,7 +206,7 @@ function insert_charter_yachts(PDO $pdo, string $jsonPath, int $cityId): int
             ':year'        => cy_int($specs['year'] ?? null),
             ':crewed'      => $crew && $crew > 0 ? 1 : 0,
             ':price_hour'  => null,
-            ':price_day'   => cy_price_num($pricing['fullDay'] ?? null),
+            ':price_day'   => cy_day_rate($pricing),
             ':description' => $y['description'] ?? '',
             ':features'    => json_encode($y['features'] ?? []),
             ':image_url'   => $y['image'] ?? '',
@@ -237,6 +244,21 @@ function cy_length_m(?string $s): ?float
         $v *= 0.3048;
     }
     return round($v, 1);
+}
+
+/**
+ * Pick a representative "per day" rate from a pricing map for sorting/filtering.
+ * Charter yachts use a "fullDay" key; the day-charter fleet lists hourly rates,
+ * so fall back through a full day's worth of hours before giving up.
+ */
+function cy_day_rate(array $pricing): float
+{
+    foreach (['fullDay', '8 Hours', '24 Hours', 'Overnight', '7 Hours', '6 Hours'] as $key) {
+        if (!empty($pricing[$key])) {
+            return cy_price_num($pricing[$key]);
+        }
+    }
+    return 0.0;
 }
 
 /** Parse a euro price string to a number ("€11,900" → 11900.0, "Upon Request" → 0). */
