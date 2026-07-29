@@ -160,46 +160,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!d.getAttribute('min')) d.setAttribute('min', today);
   });
 
-  /* ---------------- Custom cursor: rotating ship's wheel (fine pointers, motion-ok) ---------------- */
-  (function () {
-    const fine = window.matchMedia && matchMedia('(pointer: fine)').matches;
-    const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!fine || reduce) return; // touch devices & reduced-motion keep the native cursor
-
-    const WHEEL =
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">' +
-      '<circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.4"/>' +
-      '<line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/>' +
-      '<line x1="4.9" y1="4.9" x2="19.1" y2="19.1"/><line x1="19.1" y1="4.9" x2="4.9" y2="19.1"/>' +
-      '</svg>';
-
-    const dot = document.createElement('div'); dot.id = 'cursor-dot';
-    const wheel = document.createElement('div'); wheel.id = 'cursor-wheel'; wheel.innerHTML = WHEEL;
-    document.body.appendChild(dot);
-    document.body.appendChild(wheel);
-    document.documentElement.classList.add('has-custom-cursor');
-
-    let mx = innerWidth / 2, my = innerHeight / 2, wx = mx, wy = my, shown = false;
-    const interactiveSel = 'a, button, input, textarea, select, label, summary, [role="button"], .cursor-pointer';
-
-    addEventListener('mousemove', (e) => {
-      mx = e.clientX; my = e.clientY;
-      dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
-      if (!shown) { shown = true; dot.style.opacity = '1'; wheel.style.opacity = '1'; }
-      const hit = e.target.closest && e.target.closest(interactiveSel);
-      wheel.classList.toggle('is-hover', !!hit);
-    }, { passive: true });
-
-    (function loop() {
-      wx += (mx - wx) * 0.2; wy += (my - wy) * 0.2;
-      wheel.style.transform = `translate(${wx}px, ${wy}px) translate(-50%, -50%)`;
-      requestAnimationFrame(loop);
-    })();
-
-    document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; wheel.style.opacity = '0'; shown = false; });
-    document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; wheel.style.opacity = '1'; shown = true; });
-    addEventListener('mousedown', () => wheel.classList.add('is-down'));
-    addEventListener('mouseup', () => wheel.classList.remove('is-down'));
-  })();
-
 });
