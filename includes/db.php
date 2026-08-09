@@ -94,6 +94,26 @@ function init_schema(PDO $pdo): void
             username      TEXT NOT NULL UNIQUE,
             password_hash TEXT NOT NULL
         );
+
+        CREATE TABLE IF NOT EXISTS reels (
+            id           INTEGER PRIMARY KEY AUTOINCREMENT,
+            guest_name   TEXT NOT NULL,
+            guest_email  TEXT,
+            location     TEXT,
+            boat_name    TEXT,
+            caption      TEXT,
+            video_path   TEXT NOT NULL,      -- web path, e.g. /uploads/reels/ab12.mp4
+            poster_path  TEXT,               -- optional still captured in the browser
+            mime         TEXT,
+            filesize     INTEGER NOT NULL DEFAULT 0,
+            status       TEXT NOT NULL DEFAULT 'pending',  -- pending | approved | rejected
+            on_home      INTEGER NOT NULL DEFAULT 0,       -- show in the homepage reel strip
+            sort_order   INTEGER NOT NULL DEFAULT 0,
+            ip           TEXT,
+            created_at   TEXT NOT NULL DEFAULT (datetime('now'))
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_reels_home ON reels (status, on_home, sort_order);
     ");
 
     // Migrate older databases: add charter-yacht columns if they don't exist yet.

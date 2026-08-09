@@ -32,6 +32,7 @@ DirectoryIndex index.php
   RewriteRule ^contact/?$ contact.php [L,QSA]
   RewriteRule ^faq/?$     faq.php     [L]
   RewriteRule ^blog/?$    blog.php    [L]
+  RewriteRule ^share-your-reel/?$ share-reel.php [L,QSA]
 
   # Detail pages
   RewriteRule ^blog/([A-Za-z0-9_-]+)/?$   blog-post.php?slug=$1 [L,QSA]

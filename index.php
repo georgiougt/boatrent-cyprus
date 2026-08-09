@@ -15,10 +15,16 @@ include __DIR__ . '/includes/header.php';
 <!-- FIRST-VISIT CINEMATIC INTRO (drone shot -> homepage) -->
 <div id="intro-overlay" aria-hidden="true">
   <img class="intro-img" src="/assets/scenery/yacht-hero.webp" alt="" width="1600" height="900" fetchpriority="high">
-  <!-- Optional: drop a clip at /videos/intro.mp4 and it plays automatically over the image -->
+  <!-- Optional: drop a clip at /videos/intro.mp4 and it plays automatically over
+       the image. Only rendered when that file actually exists — otherwise the
+       browser requests it on every visit and gets a full HTML 404 back (~19 KB
+       wasted per view, plus a 404 in the access log). The intro script already
+       handles the element being absent. -->
+  <?php if (is_file(__DIR__ . '/videos/intro.mp4')): ?>
   <video class="intro-video" muted playsinline preload="auto" tabindex="-1">
     <source src="/videos/intro.mp4" type="video/mp4">
   </video>
+  <?php endif; ?>
   <div class="intro-vignette"></div>
   <div class="intro-content">
     <span class="intro-mark">
@@ -129,6 +135,8 @@ include __DIR__ . '/includes/header.php';
   </div>
 </section>
 
+<?php include __DIR__ . '/includes/reels-section.php'; ?>
+
 <!-- STATS -->
 <section class="bg-brand-sand pt-6 pb-14 px-6">
   <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center reveal-stagger">
@@ -151,7 +159,7 @@ include __DIR__ . '/includes/header.php';
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger">
       <?php foreach ($cities as $c): $cnt = count_boats_in_city((int) $c['id']); ?>
       <a href="/<?php echo e($c['slug']); ?>" class="group relative block rounded-2xl overflow-hidden h-72 cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-300">
-        <img src="<?php echo e($c['image_url']); ?>" alt="Boat rentals in <?php echo e($c['name']); ?>, Cyprus" loading="lazy" class="card-img w-full h-full object-cover">
+        <img src="<?php echo e(city_cover_image($c)); ?>" alt="Yacht charter in <?php echo e($c['name']); ?>, Cyprus" loading="lazy" width="800" height="576" class="card-img w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-brand-ink/90 via-brand-ink/30 to-transparent"></div>
         <div class="absolute bottom-0 left-0 right-0 p-6">
           <div class="flex items-center justify-between">

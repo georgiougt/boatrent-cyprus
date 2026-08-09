@@ -151,6 +151,26 @@ function get_city(string $slug): ?array
     return $city ?: null;
 }
 
+/**
+ * Cover photo for a destination card — a yacht that actually operates out of
+ * that town, rather than generic coastline:
+ *
+ *   Limassol  Cranchi Fifty 8 Fly    Ayia Napa  Azimut 62
+ *   Paphos    Ocean Dream            Protaras   Ferreti 67
+ *   Larnaca   Azimut 55              Latsi      Sea Ray 62
+ *
+ * These live in images/destinations/ pre-cropped to the card's 800x576. The
+ * originals are 1600-1920px wide, so serving them raw would cost ~1.3 MB for
+ * pixels the browser only crops away; cropped they total ~350 KB. Regenerate
+ * with the snippet in README.md. Falls back to the city's own scenery photo if
+ * a file is missing, so a bad path degrades instead of breaking the card.
+ */
+function city_cover_image(array $city): string
+{
+    $path = '/images/destinations/' . ($city['slug'] ?? '') . '.webp';
+    return is_file(__DIR__ . '/..' . $path) ? $path : (string) ($city['image_url'] ?? '');
+}
+
 function count_boats_in_city(int $cityId): int
 {
     $stmt = db()->prepare("SELECT COUNT(*) FROM boats WHERE city_id = ? AND status = 'active'");
@@ -431,4 +451,90 @@ function get_routes(): array
 function get_route(string $slug): ?array
 {
     return get_sailing_routes()[$slug] ?? null;
+}
+
+/* ---------------- Guest reels ---------------- */
+
+/** Absolute path of the folder guest reel uploads live in. */
+function reels_dir(): string
+{
+    return __DIR__ . '/../uploads/reels';
+}
+
+/** Parse a php.ini shorthand size ("64M", "2G", "8388608") into bytes. */
+function ini_bytes(string $key): int
+{
+    $raw = trim((string) ini_get($key));
+    if ($raw === '') {
+        return 0;
+    }
+    $value = (int) $raw;
+    switch (strtolower(substr($raw, -1))) {
+        case 'g': $value *= 1024; // fall through
+        case 'm': $value *= 1024; // fall through
+        case 'k': $value *= 1024;
+    }
+    return $value;
+}
+
+/**
+ * Largest reel the server will actually accept: our own cap, but never more
+ * than PHP's upload_max_filesize / post_max_size allow.
+ */
+function reel_max_bytes(): int
+{
+    $limits = array_filter([
+        REEL_MAX_MB * 1024 * 1024,
+        ini_bytes('upload_max_filesize'),
+        ini_bytes('post_max_size'),
+    ]);
+    return $limits ? (int) min($limits) : REEL_MAX_MB * 1024 * 1024;
+}
+
+/** Format a byte count for humans ("48.5 MB"). */
+function human_bytes(int $bytes): string
+{
+    if ($bytes >= 1024 * 1024 * 1024) {
+        return rtrim(rtrim(number_format($bytes / 1073741824, 1), '0'), '.') . ' GB';
+    }
+    if ($bytes >= 1024 * 1024) {
+        return rtrim(rtrim(number_format($bytes / 1048576, 1), '0'), '.') . ' MB';
+    }
+    return max(1, (int) round($bytes / 1024)) . ' KB';
+}
+
+/** Approved reels the admin has picked for the homepage strip. */
+function get_home_reels(int $limit = 12): array
+{
+    $stmt = db()->prepare(
+        "SELECT * FROM reels
+         WHERE status = 'approved' AND on_home = 1
+         ORDER BY sort_order ASC, created_at DESC
+         LIMIT :limit"
+    );
+    $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
+
+/** How many submissions are still waiting for a decision. */
+function count_pending_reels(): int
+{
+    return (int) db()->query("SELECT COUNT(*) FROM reels WHERE status = 'pending'")->fetchColumn();
+}
+
+/** Delete a reel's files from disk (video + captured poster). Safe to call twice. */
+function delete_reel_files(array $reel): void
+{
+    $root = realpath(__DIR__ . '/..');
+    foreach ([$reel['video_path'] ?? '', $reel['poster_path'] ?? ''] as $webPath) {
+        if (!$webPath) {
+            continue;
+        }
+        $file = realpath($root . $webPath);
+        // Only ever unlink inside /uploads — never follow a path out of it.
+        if ($file && is_file($file) && strpos($file, $root . '/uploads/') === 0) {
+            @unlink($file);
+        }
+    }
 }

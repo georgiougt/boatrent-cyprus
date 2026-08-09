@@ -111,6 +111,43 @@ body { overflow-x: hidden; }
 }
 #lightbox.open { opacity: 1; visibility: visible; }
 
+/* Guest reels — horizontal strip below the hero */
+.reel-track {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(22,57,90,.28) transparent;
+  scroll-padding-left: 1.5rem;
+}
+.reel-track::-webkit-scrollbar { height: 6px; }
+.reel-track::-webkit-scrollbar-track { background: transparent; }
+.reel-track::-webkit-scrollbar-thumb { background: rgba(22,57,90,.22); border-radius: 6px; }
+.reel-track::-webkit-scrollbar-thumb:hover { background: rgba(22,57,90,.4); }
+
+.reel-card { transition: transform .35s ease, box-shadow .35s ease; }
+.reel-card:hover { transform: translateY(-4px); }
+.reel-card:focus-visible { outline: 3px solid #12A4C9; outline-offset: 3px; }
+
+/* Reel player (portrait video, so it's sized off the viewport height) */
+#reel-lightbox {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(13,26,51,.96);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transition: opacity .3s ease;
+}
+#reel-lightbox.open { opacity: 1; visibility: visible; }
+.reel-stage { display: flex; flex-direction: column; align-items: center; max-width: 100%; }
+.reel-player {
+  max-height: 72vh;
+  max-width: min(92vw, 420px);
+  width: auto;
+  border-radius: 1rem;
+  background: #0D1A33;
+  box-shadow: 0 24px 60px -20px rgba(0,0,0,.7);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reel-card:hover { transform: none; }
+}
+
 /* Blog article typography */
 .prose-cyprus { color: #16395A; line-height: 1.75; font-size: 1.0625rem; }
 .prose-cyprus p { margin: 0 0 1.25rem; }

@@ -6,7 +6,7 @@
  * Maps clean URLs to the underlying scripts:
  *   /                -> index.php
  *   /boats           -> boats.php
- *   /about /contact /faq /blog
+ *   /about /contact /faq /blog /share-your-reel
  *   /blog/{slug}     -> blog-post.php
  *   /boat/{slug}     -> boat.php
  *   /{city}          -> city.php
@@ -50,6 +50,7 @@ $pages = [
     'contact' => 'contact.php',
     'faq'     => 'faq.php',
     'blog'    => 'blog.php',
+    'share-your-reel' => 'share-reel.php',
 ];
 
 if (array_key_exists($path, $pages)) {

@@ -4,7 +4,11 @@
     {
       "name": "boatrent",
       "runtimeExecutable": "php",
-      "runtimeArgs": ["-S", "localhost:8021", "-t", ".", "router.php"],
+      "runtimeArgs": [
+        "-d", "upload_max_filesize=80M",
+        "-d", "post_max_size=88M",
+        "-S", "localhost:8021", "-t", ".", "router.php"
+      ],
       "port": 8021
     }
   ]

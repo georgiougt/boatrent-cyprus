@@ -23,6 +23,7 @@ $add($base . '/about',    'monthly','0.6');
 $add($base . '/faq',      'monthly','0.6');
 $add($base . '/blog',     'weekly', '0.7');
 $add($base . '/contact',  'yearly', '0.5');
+$add($base . '/share-your-reel', 'monthly', '0.4');
 
 // Cities
 foreach (get_cities() as $c) {

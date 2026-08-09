@@ -1,0 +1,51 @@
+# Guest uploads: serve media, never execute anything.
+# Anyone can POST a file into this folder, so treat all of it as inert data.
+
+# Strip any script handler that might otherwise pick up a file here.
+RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .php8 .phps .cgi .pl .py .shtml
+RemoveType .php .phtml .php3 .php4 .php5 .php7 .php8 .phps .cgi .pl .py .shtml
+AddType text/plain .php .phtml .php3 .php4 .php5 .php7 .php8 .phps .cgi .pl .py .html .htm .shtml
+
+Options -ExecCGI -Indexes
+
+# Belt and braces on hosts running mod_php (guarded — the directive is unknown
+# to PHP-FPM/FastCGI setups and would 500 the whole folder if left bare).
+<IfModule mod_php.c>
+  php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+  php_flag engine off
+</IfModule>
+
+# Whitelist: only the media types the uploader accepts may be requested at all.
+<FilesMatch "\.(mp4|m4v|mov|webm|jpg|jpeg)$">
+  Require all granted
+</FilesMatch>
+<FilesMatch "^(?!.*\.(mp4|m4v|mov|webm|jpg|jpeg)$).*$">
+  Require all denied
+</FilesMatch>
+
+# --- Caching ---
+# Every file here is written once under a random, never-reused name
+# (submit-reel.php), so a URL's bytes can never change. That makes these safe to
+# cache forever: repeat visitors re-use the poster instead of re-downloading it,
+# and a CDN in front of the site serves the video without touching the origin.
+#
+# ⚠️ The flip side of `immutable`: never overwrite a file in place — browsers and
+# CDNs won't re-fetch it for a year. To change a reel, upload a new one (it gets
+# a new filename) and delete the old one in /admin → Reels.
+<FilesMatch "\.(mp4|m4v|mov|webm|jpg|jpeg)$">
+  <IfModule mod_headers.c>
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </IfModule>
+  <IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 year"
+  </IfModule>
+</FilesMatch>
+
+# Byte-range requests let the player seek and start mid-file instead of pulling
+# the whole clip. On by default for static files; stated here so it isn't lost.
+<IfModule mod_headers.c>
+  Header set Accept-Ranges bytes
+</IfModule>

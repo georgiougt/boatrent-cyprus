@@ -47,5 +47,7 @@ function admin_stats(): array
         'active'     => (int) $pdo->query("SELECT COUNT(*) FROM boats WHERE status='active'")->fetchColumn(),
         'inquiries'  => (int) $pdo->query('SELECT COUNT(*) FROM inquiries')->fetchColumn(),
         'new'        => (int) $pdo->query("SELECT COUNT(*) FROM inquiries WHERE status='new'")->fetchColumn(),
+        'reels'      => (int) $pdo->query('SELECT COUNT(*) FROM reels')->fetchColumn(),
+        'reelsNew'   => (int) $pdo->query("SELECT COUNT(*) FROM reels WHERE status='pending'")->fetchColumn(),
     ];
 }

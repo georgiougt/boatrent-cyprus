@@ -4,6 +4,11 @@
 /data/*.sqlite3
 /data/*.db
 
+# Guest reel uploads — user content, never committed. The folder's .htaccess
+# (which stops anything in there being executed) IS tracked.
+/uploads/reels/*
+!/uploads/reels/.gitkeep
+
 # OS / editor cruft
 .DS_Store
 Thumbs.db

@@ -56,6 +56,33 @@ function business(): array
 }
 
 /**
+ * Guest reels — the biggest video a customer may upload as a testimonial.
+ *
+ * Kept deliberately low: shared hosting can't transcode, so whatever a guest
+ * uploads is byte-for-byte what every visitor then downloads. 25 MB comfortably
+ * fits a trimmed 1080p clip of ~30 seconds; raising it mostly lets raw 4K phone
+ * footage through, which is 10x heavier than it needs to be. See the ffmpeg
+ * recipe in README.md for re-compressing reels before featuring them.
+ *
+ * ⚠️ PHP itself caps uploads via `upload_max_filesize` / `post_max_size`. The
+ * bundled .user.ini raises those on PHP-FPM/CGI hosts (Hostinger included);
+ * reel_max_bytes() always uses whichever limit is lowest, so the number shown
+ * on the upload form is the number the server will actually accept.
+ */
+const REEL_MAX_MB = 25;
+
+/** Video formats accepted from guests: mime => file extension. */
+function reel_allowed_types(): array
+{
+    return [
+        'video/mp4'       => 'mp4',
+        'video/quicktime' => 'mov',
+        'video/webm'      => 'webm',
+        'video/x-m4v'     => 'm4v',
+    ];
+}
+
+/**
  * Site locales for hreflang. English is live; Russian & Greek are planned
  * (large Cyprus charter markets) — add their prefixes here and create the
  * localized routes to switch hreflang on. Only locales flagged `live` are

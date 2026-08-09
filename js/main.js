@@ -126,6 +126,181 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowRight') showImage(idx + 1, true);
   });
 
+  /* ---------------- Guest reels: strip + player ---------------- */
+  const reelTrack = document.querySelector('[data-reel-track]');
+  const reelCards = [...document.querySelectorAll('[data-reel-open]')];
+  const reelBox = document.getElementById('reel-lightbox');
+  const reelPlayer = document.getElementById('reel-player');
+
+  // Arrows nudge the strip by roughly one card.
+  document.querySelectorAll('[data-reel-scroll]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (!reelTrack) return;
+      const card = reelTrack.querySelector('li');
+      const step = (card ? card.offsetWidth + 20 : 240) * 2;
+      reelTrack.scrollBy({ left: step * Number(btn.getAttribute('data-reel-scroll')), behavior: 'smooth' });
+    });
+  });
+
+  if (reelBox && reelPlayer && reelCards.length) {
+    const reelCaption = document.getElementById('reel-caption');
+    const reelName = document.getElementById('reel-name');
+    const reelMeta = document.getElementById('reel-meta');
+    let reelIdx = 0;
+
+    const setText = (el, value) => {
+      if (!el) return;
+      el.textContent = value || '';
+      el.classList.toggle('hidden', !value);
+    };
+
+    const showReel = (i) => {
+      reelIdx = (i + reelCards.length) % reelCards.length;
+      const card = reelCards[reelIdx];
+      reelPlayer.src = card.getAttribute('data-reel-src');
+      reelPlayer.load();
+      setText(reelCaption, card.getAttribute('data-reel-caption'));
+      setText(reelName, card.getAttribute('data-reel-name'));
+      setText(reelMeta, card.getAttribute('data-reel-meta'));
+      const p = reelPlayer.play();
+      if (p && p.catch) p.catch(() => {});
+    };
+
+    const closeReel = () => {
+      reelBox.classList.remove('open');
+      reelPlayer.pause();
+      reelPlayer.removeAttribute('src');
+      reelPlayer.load();
+      document.body.style.overflow = '';
+    };
+
+    reelCards.forEach((card, i) => card.addEventListener('click', () => {
+      showReel(i);
+      reelBox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }));
+
+    document.getElementById('reel-close')?.addEventListener('click', closeReel);
+    document.getElementById('reel-prev')?.addEventListener('click', () => showReel(reelIdx - 1));
+    document.getElementById('reel-next')?.addEventListener('click', () => showReel(reelIdx + 1));
+    reelBox.addEventListener('click', (e) => { if (e.target === reelBox) closeReel(); });
+    document.addEventListener('keydown', (e) => {
+      if (!reelBox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeReel();
+      if (e.key === 'ArrowLeft') showReel(reelIdx - 1);
+      if (e.key === 'ArrowRight') showReel(reelIdx + 1);
+    });
+  }
+
+  /* ---------------- Guest reels: upload form ---------------- */
+  const reelForm = document.querySelector('[data-reel-form]');
+  if (reelForm) {
+    const fileInput = reelForm.querySelector('input[type="file"]');
+    const dropZone = reelForm.querySelector('[data-reel-drop]');
+    const fileLabel = reelForm.querySelector('[data-reel-label]');
+    const errorEl = reelForm.querySelector('[data-reel-error]');
+    const previewWrap = reelForm.querySelector('[data-reel-preview]');
+    const previewVideo = previewWrap && previewWrap.querySelector('video');
+    const posterField = reelForm.querySelector('[data-reel-poster]');
+    const submitBtn = reelForm.querySelector('[data-reel-submit]');
+    const submitLabel = reelForm.querySelector('[data-reel-submit-label]');
+    const maxBytes = Number(reelForm.querySelector('input[name="MAX_FILE_SIZE"]')?.value) || 0;
+
+    const mb = (bytes) => (bytes / 1048576).toFixed(1).replace(/\.0$/, '') + ' MB';
+    const showError = (msg) => {
+      if (!errorEl) return;
+      errorEl.textContent = msg || '';
+      errorEl.classList.toggle('hidden', !msg);
+    };
+
+    // Grab a still from the chosen video so the homepage grid can show an image
+    // instead of loading every reel at once. Best effort — the server treats
+    // the poster as optional and falls back to the video's first frame.
+    const capturePoster = (file) => {
+      if (!posterField || typeof URL === 'undefined') return;
+      posterField.value = '';
+      const url = URL.createObjectURL(file);
+      const probe = document.createElement('video');
+      probe.muted = true;
+      probe.playsInline = true;
+      probe.preload = 'metadata';
+      const cleanup = () => { URL.revokeObjectURL(url); probe.removeAttribute('src'); };
+
+      probe.addEventListener('loadeddata', () => {
+        // A frame a second in beats frame zero, which is often a black fade-in.
+        probe.currentTime = Math.min(1, (probe.duration || 2) / 2);
+      });
+      probe.addEventListener('seeked', () => {
+        try {
+          const h = Math.min(probe.videoHeight || 720, 720);
+          const scale = h / (probe.videoHeight || h);
+          const canvas = document.createElement('canvas');
+          canvas.width = Math.round((probe.videoWidth || 405) * scale);
+          canvas.height = Math.round(h);
+          canvas.getContext('2d').drawImage(probe, 0, 0, canvas.width, canvas.height);
+          const data = canvas.toDataURL('image/jpeg', 0.72);
+          if (data.indexOf('data:image/jpeg') === 0 && data.length < 500000) posterField.value = data;
+        } catch (err) { /* tainted canvas or unsupported codec — skip the poster */ }
+        cleanup();
+      });
+      probe.addEventListener('error', cleanup);
+      probe.src = url;
+      // iOS needs a play() nudge before it will decode a frame.
+      const p = probe.play && probe.play();
+      if (p && p.catch) p.catch(() => {});
+    };
+
+    const handleFile = (file) => {
+      if (!file) return;
+      if (maxBytes && file.size > maxBytes) {
+        showError('That video is ' + mb(file.size) + '. Please trim it to ' + mb(maxBytes) + ' or less before uploading.');
+        fileInput.value = '';
+        if (fileLabel) fileLabel.textContent = 'Tap to choose a video';
+        previewWrap?.classList.add('hidden');
+        return;
+      }
+      showError('');
+      if (fileLabel) fileLabel.textContent = file.name + ' · ' + mb(file.size);
+      if (previewVideo) {
+        previewVideo.src = URL.createObjectURL(file);
+        previewWrap.classList.remove('hidden');
+      }
+      capturePoster(file);
+    };
+
+    fileInput?.addEventListener('change', () => handleFile(fileInput.files[0]));
+
+    ['dragenter', 'dragover'].forEach(ev => dropZone?.addEventListener(ev, (e) => {
+      e.preventDefault();
+      dropZone.classList.add('border-brand-aqua');
+    }));
+    ['dragleave', 'drop'].forEach(ev => dropZone?.addEventListener(ev, (e) => {
+      e.preventDefault();
+      dropZone.classList.remove('border-brand-aqua');
+    }));
+    dropZone?.addEventListener('drop', (e) => {
+      const file = e.dataTransfer?.files?.[0];
+      if (!file || !fileInput) return;
+      const dt = new DataTransfer();
+      dt.items.add(file);
+      fileInput.files = dt.files;
+      handleFile(file);
+    });
+
+    // Uploads take a while — say so instead of letting the page look frozen.
+    reelForm.addEventListener('submit', (e) => {
+      if (!reelForm.checkValidity()) return;
+      const file = fileInput?.files[0];
+      if (file && maxBytes && file.size > maxBytes) {
+        e.preventDefault();
+        showError('That video is ' + mb(file.size) + '. Please trim it to ' + mb(maxBytes) + ' or less before uploading.');
+        return;
+      }
+      if (submitBtn) submitBtn.disabled = true;
+      if (submitLabel) submitLabel.textContent = 'Uploading…';
+    });
+  }
+
   /* ---------------- Client-side form validation ---------------- */
   document.querySelectorAll('form[data-validate]').forEach(form => {
     form.addEventListener('submit', (e) => {

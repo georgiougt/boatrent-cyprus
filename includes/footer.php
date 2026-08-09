@@ -47,6 +47,7 @@
           <li><a href="/blog" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer">Blog</a></li>
           <li><a href="/faq" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer">FAQ</a></li>
           <li><a href="/contact" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer">Contact</a></li>
+          <li><a href="/share-your-reel" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer">Share Your Reel</a></li>
           <li><a href="/admin/login.php" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer">Owner Login</a></li>
         </ul>
       </div>

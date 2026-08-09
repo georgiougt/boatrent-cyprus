@@ -22,6 +22,7 @@ module.exports = {
     'ring-brand-gold',
     'border-red-500',
     'ring-red-500',
+    'border-brand-aqua',
     'is-visible',
     'open',
     'scrolled',
