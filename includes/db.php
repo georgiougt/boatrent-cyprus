@@ -235,7 +235,7 @@ function insert_charter_yachts(PDO $pdo, string $jsonPath, int $cityId): int
                 ':year'        => cy_int($specs['year'] ?? null),
                 ':crewed'      => $crew && $crew > 0 ? 1 : 0,
                 ':price_hour'  => null,
-                ':price_day'   => cy_day_rate($pricing),
+                ':price_day'   => cy_day_rate($pricing, $y['price'] ?? null),
                 ':description' => $y['description'] ?? '',
                 ':features'    => json_encode($y['features'] ?? []),
                 ':image_url'   => $y['image'] ?? '',
@@ -286,18 +286,108 @@ function cy_length_m(?string $s): ?float
 }
 
 /**
- * Pick a representative "per day" rate from a pricing map for sorting/filtering.
- * Charter yachts use a "fullDay" key; the day-charter fleet lists hourly rates,
- * so fall back through a full day's worth of hours before giving up.
+ * Comparable per-day price for a boat. Never displayed — cards and detail
+ * pages print `price_label` verbatim — but it drives price sorting and the
+ * price filter on /boats.
+ *
+ * The headline label is the source of truth wherever it parses, because a
+ * visitor filtering "under €4,000 a day" is comparing against the number on
+ * the card. Operators don't agree on what "a day" means (some price it as
+ * their 8-hour block, others as their 24-hour rate) so deriving it from the
+ * rate table instead would leave the sort disagreeing with the card. Labels in
+ * other units are scaled: "€95,000 / week" sorts as a nightly figure.
+ *
+ * The rate table is the fallback for boats whose label carries no number
+ * ("Upon Request"). There, "a day" is the longest daytime block on offer, and
+ * overnight / 24-hour / weekly products are used only when nothing shorter
+ * exists.
+ *
+ * The previous version matched a fixed list of literal keys and ignored the
+ * label entirely, which had three consequences worth remembering:
+ *  - It was case-sensitive, so the 14 records keyed "overnight" never matched
+ *    while the 15 keyed "Overnight" did.
+ *  - Weekly-only yachts matched nothing and sorted at 0 — the €95,000/week
+ *    Princess 30M ranked as the cheapest boat on the site.
+ *  - Boats whose label came from a different product than the matched key
+ *    sorted on a number the visitor never saw.
  */
-function cy_day_rate(array $pricing): float
+function cy_day_rate(array $pricing, ?string $priceLabel = null): float
 {
-    foreach (['fullDay', '8 Hours', '24 Hours', 'Overnight', '7 Hours', '6 Hours'] as $key) {
-        if (!empty($pricing[$key])) {
-            return cy_price_num($pricing[$key]);
+    // 1. Whatever the card advertises, normalised to a day.
+    if ($priceLabel !== null && preg_match('/([\d][\d,]*(?:\.\d+)?)/', $priceLabel, $m)) {
+        $amount = (float) str_replace(',', '', $m[1]);
+        if ($amount > 0) {
+            if (preg_match('/\bweek/i', $priceLabel)) {
+                return round($amount / 7, 2);
+            }
+            if (preg_match('/\bmonth/i', $priceLabel)) {
+                return round($amount / 30, 2);
+            }
+            return $amount;
         }
     }
-    return 0.0;
+
+    // 2. No usable label — fall back to the rate table.
+    return cy_day_rate_from_pricing($pricing);
+}
+
+/** Longest daytime block a boat sells, falling back through its other products. */
+function cy_day_rate_from_pricing(array $pricing): float
+{
+    // Normalise: case-insensitive keys, numeric values, drop what won't parse
+    // (e.g. "Upon Request" -> 0).
+    $rates = [];
+    foreach ($pricing as $key => $value) {
+        $num = cy_price_num(is_scalar($value) ? (string) $value : null);
+        if ($num > 0) {
+            $rates[strtolower(trim((string) $key))] = $num;
+        }
+    }
+    if (!$rates) {
+        return 0.0;
+    }
+
+    if (isset($rates['fullday'])) {
+        return $rates['fullday'];
+    }
+
+    // Longest daytime block on offer: "8 Hours" beats "6 Hours" beats "4 Hours".
+    $best = 0.0;
+    $bestHours = 0;
+    foreach ($rates as $key => $num) {
+        if (preg_match('/^(\d+)\s*hours?$/', $key, $m)) {
+            $hours = (int) $m[1];
+            if ($hours <= 12 && $hours > $bestHours) {
+                $bestHours = $hours;
+                $best = $num;
+            }
+        }
+    }
+    if ($best > 0) {
+        return $best;
+    }
+
+    // Nothing shorter than a full day and night on offer.
+    foreach (['overnight', '24 hours'] as $key) {
+        if (isset($rates[$key])) {
+            return $rates[$key];
+        }
+    }
+
+    // Weekly-only yachts: scale to a nightly figure so they sort on the same
+    // axis as everything else instead of dropping out.
+    foreach (['weekly', 'weekly charter'] as $key) {
+        if (isset($rates[$key])) {
+            return round($rates[$key] / 7, 2);
+        }
+    }
+
+    if (isset($rates['halfday'])) {
+        return $rates['halfday'];
+    }
+
+    // Anything left ("other", one-off packages) beats sorting at zero.
+    return (float) max($rates);
 }
 
 /** Parse a euro price string to a number ("€11,900" → 11900.0, "Upon Request" → 0). */

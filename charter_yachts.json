@@ -2272,5 +2272,194 @@
       "year": ""
     },
     "source_url": "https://www.seapassionyachting.com/yachting-charters-cyprus/sea-ray-425/"
+  },
+  {
+    "id": 51,
+    "name": "Invictus TT46",
+    "slug": "invictus-tt46",
+    "city": "limassol",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "10 Guests",
+    "length": "14M",
+    "speed": "26 Knots",
+    "price": "€2,900 / day",
+    "priceNote": "Additional hours are charged at €300 each.",
+    "description": "Happiness is an Invictus TT46, launched in 2022 and looking every bit of it: a black hull, teak underfoot and tan leather across the cockpit, closer to a piece of industrial design than a conventional charter boat. Fourteen metres takes ten guests, with stabilisers to hold the ride flat at anchor and an outdoor galley so lunch happens on deck rather than somewhere below. She settles at twenty knots and has twenty-six when you want them. Two cabins and a bathroom make an overnight practical, and the helm is laid out around a full-width glass display. Half days, full days and overnights all run from Limassol, with extra hours added by arrangement if the afternoon is going well.",
+    "image": "/images/invictus-tt46/image-1.webp",
+    "gallery": [
+      "/images/invictus-tt46/image-1.webp",
+      "/images/invictus-tt46/image-2.webp",
+      "/images/invictus-tt46/image-3.webp",
+      "/images/invictus-tt46/image-4.webp",
+      "/images/invictus-tt46/image-5.webp",
+      "/images/invictus-tt46/image-6.webp",
+      "/images/invictus-tt46/image-7.webp"
+    ],
+    "features": [
+      "Stabilisers",
+      "Outdoor Galley",
+      "Skipper Aboard",
+      "Aft & Bow Sunpads",
+      "Teak Decking",
+      "Two Cabins"
+    ],
+    "detailedPricing": {
+      "halfDay": "€2,500",
+      "fullDay": "€2,900",
+      "overnight": "€3,300"
+    },
+    "specs": {
+      "cabins": "2",
+      "crew": "1",
+      "builder": "Invictus Yachts",
+      "beam": "",
+      "year": "2022"
+    },
+    "source_url": "https://www.yacht-shore.com/yacht-charter/invictus-tt46/"
+  },
+  {
+    "id": 52,
+    "name": "Fairline Squadron 75",
+    "slug": "fairline-squadron-75",
+    "city": "limassol",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "15 Guests",
+    "length": "23M",
+    "speed": "30 Knots",
+    "price": "€6,300 / day",
+    "priceNote": "Extra hours and low-season rates are quoted on request.",
+    "description": "A Fairline Squadron 75 is a big British flybridge yacht, and the appeal here is space rather than speed: twenty-three metres, fifteen guests, and enough deck to keep everyone apart when they want to be. The flybridge has its own helm, sun loungers and a dining table under a bimini. The aft deck seats eight around a teak table, and the saloon behind it is glazed the full width of the boat. Three cabins and three bathrooms take the party below, with separate crew quarters aft so the crew come and go without walking through the accommodation. A hydraulic platform drops at the stern for swimming. She cruises at twenty-two knots and has thirty when needed. Half days, full days, overnights and whole weeks all run from Limassol.",
+    "image": "/images/fairline-squadron-75/image-1.webp",
+    "gallery": [
+      "/images/fairline-squadron-75/image-1.webp",
+      "/images/fairline-squadron-75/image-2.webp",
+      "/images/fairline-squadron-75/image-3.webp",
+      "/images/fairline-squadron-75/image-4.webp",
+      "/images/fairline-squadron-75/image-5.webp",
+      "/images/fairline-squadron-75/image-6.webp",
+      "/images/fairline-squadron-75/image-7.webp"
+    ],
+    "features": [
+      "Professional Crew",
+      "Flybridge with Helm & Dining",
+      "Hydraulic Swim Platform",
+      "Panoramic Saloon",
+      "Air Conditioning Throughout",
+      "Alfresco Aft Dining",
+      "Three Bathrooms",
+      "Teak Decking"
+    ],
+    "detailedPricing": {
+      "halfDay": "€5,900",
+      "fullDay": "€6,300",
+      "overnight": "€7,000",
+      "weekly": "€42,000"
+    },
+    "specs": {
+      "cabins": "3",
+      "crew": "2",
+      "builder": "Fairline Yachts",
+      "beam": "",
+      "year": "2008"
+    },
+    "source_url": "https://www.yacht-shore.com/yacht-charter/fairline-75/"
+  },
+  {
+    "id": 53,
+    "name": "Sail Away",
+    "slug": "sail-away",
+    "city": "limassol",
+    "type": "Catamaran",
+    "category": "charter",
+    "capacity": "80 Guests",
+    "length": "55 ft",
+    "price": "€1,700 / day",
+    "priceNote": "Additional hours are charged at €250. The three-hour slot runs as a sunset cruise.",
+    "description": "Sail Away is the answer when the group is far too big for a yacht. She is a 55-foot sailing catamaran working out of Limassol Old Port, and she carries up to eighty people across two wide hulls — one end laid out with benches and tables around a shaded bar, the other left clear for sunbathing and, once the music starts, dancing. A swimming ladder drops off the back so nobody has to jump, and there is snorkelling gear and a canoe aboard for anyone who wants to get away from the speakers for a while. Two marine toilets, sound that reaches the whole deck, and a crew who run this trip several times a week. Take three hours for the sunset run or six for a full day along the coast.",
+    "image": "/images/sail-away/image-1.webp",
+    "gallery": [
+      "/images/sail-away/image-1.webp",
+      "/images/sail-away/image-2.webp",
+      "/images/sail-away/image-3.webp",
+      "/images/sail-away/image-4.webp",
+      "/images/sail-away/image-5.webp",
+      "/images/sail-away/image-6.webp",
+      "/images/sail-away/image-7.webp",
+      "/images/sail-away/image-8.webp",
+      "/images/sail-away/image-9.webp",
+      "/images/sail-away/image-10.webp"
+    ],
+    "features": [
+      "Experienced Crew",
+      "Shaded Stocked Bar",
+      "Sound System Throughout",
+      "Swimming Ladder",
+      "Snorkelling & Canoeing",
+      "Open Sun Decks",
+      "Two Marine Toilets"
+    ],
+    "detailedPricing": {
+      "3 Hours": "€1,200",
+      "4 Hours": "€1,400",
+      "5 Hours": "€1,550",
+      "6 Hours": "€1,700"
+    },
+    "specs": {
+      "cabins": "",
+      "crew": "",
+      "builder": "",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://relax-cruises.net/yacht/catamaran-sail-away/"
+  },
+  {
+    "id": 54,
+    "name": "Salone",
+    "slug": "salone",
+    "city": "limassol",
+    "type": "Catamaran",
+    "category": "charter",
+    "capacity": "150 Guests",
+    "length": "31M",
+    "price": "€3,950 / day",
+    "priceNote": "Rates cover up to 150 guests. Additional hours are charged at €400. The three-hour slot runs as a sunset cruise. Capacity rises to 250 while alongside.",
+    "description": "Salone is the largest boat in the fleet by a wide margin: a thirty-one metre power catamaran, thirteen across the beam, licensed for a hundred and fifty guests underway and two hundred and fifty while she is alongside. The first deck is a 220-square-metre air-conditioned saloon, laid out with round tables and linen for weddings and company dinners, with a galley and a bar behind it. The top deck is sun beds and shaded seating. There are two swimming ladders, showers and four WCs including an accessible one. Built in 2015 and running year round out of Limassol Old Port — three hours for a sunset party, or six for a full day.",
+    "image": "/images/salone/image-1.webp",
+    "gallery": [
+      "/images/salone/image-1.webp",
+      "/images/salone/image-2.webp",
+      "/images/salone/image-3.webp",
+      "/images/salone/image-4.webp",
+      "/images/salone/image-5.webp",
+      "/images/salone/image-6.webp",
+      "/images/salone/image-7.webp"
+    ],
+    "features": [
+      "220 m² Air-Conditioned Saloon",
+      "Bar & Surround Sound",
+      "Onboard Wi-Fi",
+      "Dining Area & Galley",
+      "Four WCs incl. Accessible",
+      "Two Swimming Ladders",
+      "Showers",
+      "Upper-Deck Sun Beds"
+    ],
+    "detailedPricing": {
+      "3 Hours": "€3,050",
+      "4 Hours": "€3,350",
+      "5 Hours": "€3,650",
+      "6 Hours": "€3,950"
+    },
+    "specs": {
+      "cabins": "",
+      "crew": "",
+      "builder": "",
+      "beam": "13 m",
+      "year": "2015"
+    },
+    "source_url": "https://relax-cruises.net/yacht/power-catamaran-salone/"
   }
 ]
