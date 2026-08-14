@@ -2559,5 +2559,56 @@
       "year": ""
     },
     "source_url": ""
+  },
+  {
+    "id": 57,
+    "name": "Indian Summer",
+    "slug": "indian-summer",
+    "city": "limassol",
+    "type": "Sailing Yacht",
+    "category": "charter",
+    "capacity": "8 Guests",
+    "length": "51 ft",
+    "price": "From €600",
+    "priceNote": "Hourly rates shown, professional skipper included. Full days from €2,300 (24 hours), up to €7,500 for a week aboard. A hostess/host can be added at €100 per day.",
+    "description": "Indian Summer is a Bavaria Cruiser 51 — fifteen and a half metres of German-built monohull kept at St. Raphael Marina and skippered for you, so the day is spent on the rail with a drink in hand rather than trimming sheets yourself. She takes eight for a coastal sail out of Limassol and sleeps the same across three double cabins, with two heads and separate showers below. The cockpit is where the day happens: twin wheels aft, a folding teak platform that drops to the water for swimming, and long benches around a table that seats the whole group for lunch under the bimini. A modern rig and a deep keel give her proper manners when the afternoon breeze fills in, with enough sail to make the most of it and a skipper who knows the coast. Below, the saloon is bright and full-height, wrapped in mahogany, with a real galley — three-burner stove, oven, fridge and freezer — for staying out overnight or feeding a crowd. Two-hour sunset runs through to a full week aboard, every charter with a professional skipper and a hostess on the longer days.",
+    "image": "/images/indian-summer/image-1.webp",
+    "gallery": [
+      "/images/indian-summer/image-1.webp",
+      "/images/indian-summer/image-2.webp",
+      "/images/indian-summer/image-3.webp",
+      "/images/indian-summer/image-4.webp",
+      "/images/indian-summer/image-5.webp",
+      "/images/indian-summer/image-6.webp",
+      "/images/indian-summer/image-7.webp",
+      "/images/indian-summer/image-8.webp"
+    ],
+    "features": [
+      "Professional Skipper Included",
+      "Three Double Cabins",
+      "Twin-Wheel Cockpit",
+      "Folding Teak Swim Platform",
+      "Full-Height Mahogany Saloon",
+      "Galley with Oven, Fridge & Freezer",
+      "Two Heads with Separate Showers",
+      "Bimini-Shaded Cockpit Dining"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€600",
+      "3 Hours": "€750",
+      "4 Hours": "€900",
+      "5 Hours": "€1,000",
+      "6 Hours": "€1,100",
+      "7 Hours": "€1,200",
+      "8 Hours": "€1,300"
+    },
+    "specs": {
+      "cabins": "3",
+      "crew": "1",
+      "builder": "Bavaria",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": ""
   }
 ]
