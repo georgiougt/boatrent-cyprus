@@ -2461,5 +2461,103 @@
       "year": "2015"
     },
     "source_url": "https://relax-cruises.net/yacht/power-catamaran-salone/"
+  },
+  {
+    "id": 55,
+    "name": "Zircon",
+    "slug": "zircon",
+    "city": "limassol",
+    "type": "Sailing Yacht",
+    "category": "charter",
+    "capacity": "15 Guests",
+    "length": "50 ft",
+    "price": "€850 / day",
+    "priceNote": "Rates carry up to 15 guests for coastal cruising; offshore trips are limited to 4. The full day with an overnight is €1,300 for up to 6 guests. Catering, a chef, diving, fishing, SUP and sailing lessons can be added on request.",
+    "description": "Zircon is the sailing boat in the fleet — a fifty-foot monohull refitted for Relax Cruises in 2018, and the one to take when the point of the day is actually sailing rather than a party. She holds fifteen for a coastal cruise, or four for an offshore passage, and sleeps six across three cabins with three heads and a cockpit shower. The cockpit runs to twin wheels and a bimini over teak; the saloon below seats eight and has a proper galley for staying out overnight. A tall rig and big sails give her real pace when the wind is up, and a wing keel lets her tuck close in to a beach that deeper boats have to admire from a distance. Two- and three-hour sunset sails, half and full days, or a night at anchor — all from Limassol Old Port.",
+    "image": "/images/zircon/image-1.webp",
+    "gallery": [
+      "/images/zircon/image-1.webp",
+      "/images/zircon/image-2.webp",
+      "/images/zircon/image-3.webp",
+      "/images/zircon/image-4.webp",
+      "/images/zircon/image-5.webp",
+      "/images/zircon/image-6.webp",
+      "/images/zircon/image-7.webp"
+    ],
+    "features": [
+      "Tall Rig & Full Sail Wardrobe",
+      "Twin-Wheel Cockpit",
+      "Large Swimming Platform",
+      "Shallow-Draft Wing Keel",
+      "Saloon Seats Eight",
+      "Galley for Overnighting",
+      "Three Cabins, Three Heads",
+      "Sailing Lessons on Request"
+    ],
+    "detailedPricing": {
+      "2 Hours": "€430",
+      "3 Hours": "€550",
+      "4 Hours": "€700",
+      "5 Hours": "€750",
+      "6 Hours": "€850"
+    },
+    "specs": {
+      "cabins": "3",
+      "crew": "",
+      "builder": "",
+      "beam": "",
+      "year": ""
+    },
+    "source_url": "https://relax-cruises.net/yacht/sailing-yacht-zircon/"
+  },
+  {
+    "id": 56,
+    "name": "Cranchi Zaffiro 36",
+    "slug": "cranchi-zaffiro-36",
+    "city": "latsi",
+    "type": "Motor Yacht",
+    "category": "charter",
+    "capacity": "10 Guests",
+    "length": "12M",
+    "speed": "33 Knots",
+    "price": "€1,500",
+    "priceNote": "From €1,500 for 4 hours. Captain and crew included.",
+    "description": "The Cranchi Zaffiro 36 is an Italian day-cruiser — twelve metres of it, four across the beam, with the clean lines Cranchi is known for and a full refit in 2026. She takes ten guests out of Latsi with a captain and crew aboard, which makes her a genuine sit-back day rather than a boat you have to run yourself. Twin Volvo Penta D4 260s cruise her at around twenty-five knots and push to thirty-three when the water is flat, so the Blue Lagoon and the Akamas coast are an easy morning away. The cockpit has a teak table that seats the group for lunch and converts to a sunpad, with more sunbeds forward and a huge swimming platform aft for getting in and out of the water. Below there is a cabin, a galley with two fridges and an espresso machine, and air conditioning throughout. Bow thruster and a hydraulic gangway for the marina; GPS plotter, autopilot and fishfinder for the day; WiFi, a Bluetooth sound system and snorkelling gear for everyone aboard.",
+    "image": "/images/cranchi-zaffiro-36/image-1.webp",
+    "gallery": [
+      "/images/cranchi-zaffiro-36/image-1.webp",
+      "/images/cranchi-zaffiro-36/image-2.webp",
+      "/images/cranchi-zaffiro-36/image-3.webp",
+      "/images/cranchi-zaffiro-36/image-4.webp",
+      "/images/cranchi-zaffiro-36/image-5.webp",
+      "/images/cranchi-zaffiro-36/image-6.webp",
+      "/images/cranchi-zaffiro-36/image-7.webp",
+      "/images/cranchi-zaffiro-36/image-8.webp"
+    ],
+    "features": [
+      "Captain & Crew Included",
+      "Twin Volvo Penta D4 260 hp",
+      "Huge Swimming Platform",
+      "Air Conditioning",
+      "Convertible Cockpit Sunpad",
+      "Two Refrigerators",
+      "Espresso Machine",
+      "Onboard WiFi & Bluetooth Stereo",
+      "Bow Thruster & Hydraulic Gangway",
+      "GPS Plotter, Autopilot & Fishfinder",
+      "Snorkelling Equipment"
+    ],
+    "detailedPricing": {
+      "fourHours": "€1,500",
+      "sixHours": "€1,900"
+    },
+    "specs": {
+      "cabins": "1",
+      "crew": "2",
+      "builder": "Cranchi",
+      "beam": "4 m",
+      "year": ""
+    },
+    "source_url": ""
   }
 ]

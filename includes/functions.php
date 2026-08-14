@@ -77,6 +77,7 @@ function pricing_row_label(string $key): string
         'twoHours'    => '2 hours',
         'threeHours'  => '3 hours',
         'fourHours'   => '4 hours',
+        'sixHours'    => '6 hours',
         'other'       => 'Other',
     ];
     return $labels[$key] ?? ucfirst(preg_replace('/(?<!^)([A-Z])/', ' $1', $key));
