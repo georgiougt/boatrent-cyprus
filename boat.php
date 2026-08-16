@@ -110,7 +110,7 @@ echo json_ld([
           <img id="boat-main-img" src="<?php echo e($gallery[0]); ?>" alt="<?php echo e($boat['name']); ?>" class="w-full h-full object-cover cursor-zoom-in">
         </div>
         <?php if (count($gallery) > 1): ?>
-        <div class="grid grid-cols-4 gap-3 mt-3">
+        <div class="grid grid-cols-3 sm:grid-cols-4 gap-3 mt-3">
           <?php foreach ($gallery as $i => $g): ?>
           <button type="button" data-thumb="<?php echo e($g); ?>" class="rounded-xl overflow-hidden aspect-[4/3] cursor-pointer <?php echo $i === 0 ? 'ring-2 ring-brand-gold' : ''; ?>">
             <img src="<?php echo e($g); ?>" alt="<?php echo e($boat['name']); ?> photo <?php echo $i + 1; ?>" loading="lazy" class="w-full h-full object-cover">

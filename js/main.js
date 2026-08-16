@@ -39,7 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach(en => {
         if (en.isIntersecting) { en.target.classList.add('is-visible'); obs.unobserve(en.target); }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+      // threshold must stay 0: a ratio threshold is unreachable once an element
+      // is taller than viewport/threshold (a 1-column city grid of 28 boats is
+      // ~12000px), which left every card stuck at opacity 0 but still clickable.
+      // The negative bottom margin keeps the "reveal just after it enters" feel.
+    }, { threshold: 0, rootMargin: '0px 0px -50px 0px' });
     targets.forEach(t => obs.observe(t));
   } else {
     targets.forEach(t => t.classList.add('is-visible'));

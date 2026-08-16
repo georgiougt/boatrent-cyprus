@@ -26,6 +26,22 @@ body { overflow-x: hidden; }
 
 ::selection { background: #12A4C9; color: #0D1A33; }
 
+/* ---------- Mobile form fields ----------
+   iOS Safari auto-zooms the page whenever a focused field is under 16px,
+   so bump the fields (not the surrounding text) on phone widths. */
+@media (max-width: 639px) {
+  input, select, textarea { font-size: 16px !important; }
+}
+
+/* ---------- Narrow-screen overflow guard ----------
+   Grid and flex children default to `min-width: auto`, so a wide item — a
+   <select> sized by its longest option, a long email address — can push the
+   whole track past the viewport and scroll the page sideways. */
+select { min-width: 0; }
+@media (max-width: 1023px) {
+  .grid > *, form > * { min-width: 0; }
+}
+
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -47,6 +63,12 @@ body { overflow-x: hidden; }
 .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity .7s ease-out, transform .7s ease-out; }
 .reveal-right.is-visible { opacity: 1; transform: translateX(0); }
 
+/* Below lg the columns are stacked full-width, so a ±40px horizontal offset
+   hangs off the viewport and scrolls the page sideways until the reveal fires.
+   Slide these in vertically instead. */
+@media (max-width: 1023px) {
+  .reveal-left, .reveal-right { transform: translateY(36px); }
+}
 .reveal-stagger > * { opacity: 0; transform: translateY(30px); transition: opacity .6s ease-out, transform .6s ease-out; }
 .reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
 .reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 80ms; }
@@ -94,8 +116,15 @@ body { overflow-x: hidden; }
 .section-wave .wave-svg--front path { fill: var(--wave-fill); }
 
 /* Hero gradient overlay */
+/* The base gradient is at its thinnest (.35) around 40% height — exactly where the
+   eyebrow and headline sit, and exactly where the yacht's white hull is brightest,
+   leaving the aqua eyebrow at ~1.2:1. Rather than darken the whole hero, a feathered
+   scrim sits behind the text block only; the image stays open around it. */
 .hero-overlay {
-  background: linear-gradient(180deg, rgba(13,26,51,.55) 0%, rgba(13,26,51,.35) 40%, rgba(13,26,51,.92) 100%);
+  background:
+    radial-gradient(ellipse 105% 55% at 50% 28%,
+      rgba(13,26,51,.84) 0%, rgba(13,26,51,.60) 45%, rgba(13,26,51,0) 88%),
+    linear-gradient(180deg, rgba(13,26,51,.55) 0%, rgba(13,26,51,.35) 40%, rgba(13,26,51,.92) 100%);
 }
 
 /* Boat card image zoom handled by Tailwind group hover; keep ratio stable */
@@ -229,9 +258,13 @@ html.intro-lock, html.intro-lock body { overflow: hidden !important; height: 100
 
 /* ---------- Premium CTA buttons: gradient + subtle motion ---------- */
 /* Scoped to real buttons/links so badges, chips and avatars stay flat. */
+/* Zero-specificity so Tailwind's positioning utilities (.fixed, .absolute, .sticky)
+   still win — the sheen only needs *a* containing block, not `relative` specifically. */
+:where(a.bg-brand-gold, button.bg-brand-gold, a.bg-brand-navy, button.bg-brand-navy) {
+  position: relative;
+}
 a.bg-brand-gold, button.bg-brand-gold,
 a.bg-brand-navy, button.bg-brand-navy {
-  position: relative;
   overflow: hidden;
   isolation: isolate;
   background-size: 200% 200%;

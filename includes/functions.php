@@ -524,6 +524,118 @@ function count_pending_reels(): int
     return (int) db()->query("SELECT COUNT(*) FROM reels WHERE status = 'pending'")->fetchColumn();
 }
 
+/**
+ * Load the house reels from data/reels.json into the reels table.
+ *
+ * Guest reels live only in the gitignored database and /uploads, so they never
+ * survive a deploy. The reels shipped with the site instead keep their media in
+ * the tracked /assets/reels and their rows in this manifest, so they can be
+ * restored the same way the fleet is restored from charter_yachts.json.
+ *
+ * Matched on video_path, so re-importing refreshes the seeded rows rather than
+ * duplicating them. Guest submissions are never read or written here — unlike
+ * the fleet import, this does not replace the table.
+ *
+ * @return array{imported:int,updated:int,removed:int,missing:string[]}
+ */
+function import_seed_reels(PDO $pdo, string $jsonPath): array
+{
+    $decoded = json_decode((string) file_get_contents($jsonPath), true);
+    if (!is_array($decoded)) {
+        throw new RuntimeException('reels.json could not be parsed.');
+    }
+
+    $root = realpath(__DIR__ . '/..');
+    $result = ['imported' => 0, 'updated' => 0, 'removed' => 0, 'missing' => []];
+
+    $find = $pdo->prepare('SELECT id FROM reels WHERE video_path = ?');
+    $update = $pdo->prepare(
+        'UPDATE reels
+            SET guest_name = ?, location = ?, boat_name = ?, caption = ?, poster_path = ?,
+                mime = ?, filesize = ?, status = ?, on_home = ?, sort_order = ?
+          WHERE id = ?'
+    );
+    $insert = $pdo->prepare(
+        'INSERT INTO reels
+            (guest_name, location, boat_name, caption, video_path, poster_path,
+             mime, filesize, status, on_home, sort_order, ip)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, \'seed\')'
+    );
+
+    $ownTransaction = !$pdo->inTransaction();
+    if ($ownTransaction) {
+        $pdo->beginTransaction();
+    }
+
+    try {
+        foreach ($decoded as $reel) {
+            $videoPath = (string) ($reel['video_path'] ?? '');
+            if ($videoPath === '') {
+                continue;
+            }
+
+            // A row pointing at a file that isn't on the server renders as a dead
+            // card, which is the very failure this importer exists to prevent.
+            if (!is_file($root . $videoPath)) {
+                $result['missing'][] = $videoPath;
+                continue;
+            }
+
+            $fields = [
+                $reel['guest_name'] ?? 'BoatRent Cyprus',
+                $reel['location'] ?? null,
+                $reel['boat_name'] ?? null,
+                $reel['caption'] ?? null,
+                $reel['poster_path'] ?? null,
+                $reel['mime'] ?? 'video/mp4',
+                (int) ($reel['filesize'] ?? 0),
+                $reel['status'] ?? 'approved',
+                (int) ($reel['on_home'] ?? 1),
+                (int) ($reel['sort_order'] ?? 0),
+            ];
+
+            $find->execute([$videoPath]);
+            $existingId = $find->fetchColumn();
+
+            if ($existingId !== false) {
+                $update->execute(array_merge($fields, [(int) $existingId]));
+                $result['updated']++;
+            } else {
+                array_splice($fields, 4, 0, [$videoPath]);
+                $insert->execute($fields);
+                $result['imported']++;
+            }
+        }
+
+        // The manifest is the whole truth for seeded reels, so a row that used to
+        // be seeded but is no longer listed is dropped — otherwise renaming or
+        // retiring a house reel would leave the old card on the homepage forever.
+        // Guest submissions (ip <> 'seed') are never considered. Files are left
+        // on disk; /assets media is tracked, and orphans under /uploads are inert.
+        $keep = array_values(array_filter(array_map(
+            static fn($r) => $r['video_path'] ?? null,
+            $decoded
+        )));
+        if ($keep) {
+            $in = implode(',', array_fill(0, count($keep), '?'));
+            $del = $pdo->prepare("DELETE FROM reels WHERE ip = 'seed' AND video_path NOT IN ({$in})");
+            $del->execute($keep);
+            $result['removed'] = $del->rowCount();
+        }
+
+        if ($ownTransaction) {
+            $pdo->commit();
+        }
+    } catch (Throwable $e) {
+        if ($ownTransaction && $pdo->inTransaction()) {
+            $pdo->rollBack();
+        }
+        throw $e;
+    }
+
+    return $result;
+}
+
 /** Delete a reel's files from disk (video + captured poster). Safe to call twice. */
 function delete_reel_files(array $reel): void
 {

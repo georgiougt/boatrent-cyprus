@@ -159,7 +159,7 @@ if (!empty($structuredData)) {
       </button>
     </nav>
 
-    <div id="mobile-menu" class="lg:hidden hidden mt-2 rounded-2xl border border-white/10 bg-brand-ink/95 backdrop-blur-md px-4 py-4 shadow-xl">
+    <div id="mobile-menu" class="lg:hidden hidden mt-2 max-h-[calc(100dvh-7.5rem)] overflow-y-auto overscroll-contain rounded-2xl border border-white/10 bg-brand-ink/95 backdrop-blur-md px-4 py-4 shadow-xl">
       <ul class="flex flex-col gap-1 text-white/90 font-medium">
         <li><a href="/" class="block py-2.5 px-2 rounded-lg hover:bg-white/10 cursor-pointer">Home</a></li>
         <li class="py-1 px-2 text-xs uppercase tracking-wide text-white/40">Destinations</li>
