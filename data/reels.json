@@ -1,0 +1,41 @@
+[
+    {
+        "guest_name": "BoatRent Cyprus",
+        "location": null,
+        "boat_name": null,
+        "caption": null,
+        "video_path": "/assets/reels/20260809-4492a36521fa1f54.mp4",
+        "poster_path": "/assets/reels/20260809-4492a36521fa1f54.jpg",
+        "mime": "video/mp4",
+        "filesize": 6548831,
+        "status": "approved",
+        "on_home": 1,
+        "sort_order": 1
+    },
+    {
+        "guest_name": "BoatRent Cyprus",
+        "location": null,
+        "boat_name": null,
+        "caption": null,
+        "video_path": "/assets/reels/20260809-b79c9c3f9aebc60a.mp4",
+        "poster_path": "/assets/reels/20260809-b79c9c3f9aebc60a.jpg",
+        "mime": "video/mp4",
+        "filesize": 6975048,
+        "status": "approved",
+        "on_home": 1,
+        "sort_order": 2
+    },
+    {
+        "guest_name": "BoatRent Cyprus",
+        "location": null,
+        "boat_name": null,
+        "caption": null,
+        "video_path": "/assets/reels/20260809-237cdfb5cdc50a9d.mp4",
+        "poster_path": "/assets/reels/20260809-237cdfb5cdc50a9d.jpg",
+        "mime": "video/mp4",
+        "filesize": 4843141,
+        "status": "approved",
+        "on_home": 1,
+        "sort_order": 3
+    }
+]
