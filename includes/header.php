@@ -127,7 +127,7 @@ if (!empty($structuredData)) {
       <ul class="hidden lg:flex items-center gap-7 text-sm font-medium text-white/80">
         <li><a href="/" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer <?php echo $currentPage === 'index.php' ? 'text-brand-gold' : ''; ?>">Home</a></li>
         <li class="relative group">
-          <button type="button" class="flex items-center gap-1 hover:text-brand-gold transition-colors duration-200 cursor-pointer <?php echo $currentPage === 'city.php' ? 'text-brand-gold' : ''; ?>">
+          <button type="button" class="flex items-center gap-1 hover:text-brand-gold transition-colors duration-200 cursor-pointer <?php echo in_array($currentPage, ['city.php', 'east-mediterranean.php'], true) ? 'text-brand-gold' : ''; ?>">
             Destinations
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
           </button>
@@ -136,6 +136,15 @@ if (!empty($structuredData)) {
               <?php foreach ($navCities as $c): ?>
               <a href="/<?php echo e($c['slug']); ?>" class="block px-3 py-2 rounded-lg text-brand-navy hover:bg-brand-foam hover:text-brand-aquaD transition-colors duration-200 cursor-pointer text-sm"><?php echo e($c['name']); ?></a>
               <?php endforeach; ?>
+              <div class="my-2 border-t border-brand-navy/10"></div>
+              <a href="/east-mediterranean" class="block px-3 py-2 rounded-lg text-brand-navy hover:bg-brand-foam hover:text-brand-aquaD transition-colors duration-200 cursor-pointer text-sm">
+                East Mediterranean
+                <span class="block text-xs text-brand-navy/45">Greece, Turkey &amp; beyond — on request</span>
+              </a>
+              <a href="/east-mediterranean" class="block px-3 py-2 rounded-lg text-brand-navy hover:bg-brand-foam hover:text-brand-aquaD transition-colors duration-200 cursor-pointer text-sm">
+                Other destinations
+                <span class="block text-xs text-brand-navy/45">Tell us where — we'll see what we can do</span>
+              </a>
             </div>
           </div>
         </li>
@@ -166,6 +175,8 @@ if (!empty($structuredData)) {
         <?php foreach ($navCities as $c): ?>
         <li><a href="/<?php echo e($c['slug']); ?>" class="block py-2.5 px-4 rounded-lg hover:bg-white/10 cursor-pointer text-sm"><?php echo e($c['name']); ?></a></li>
         <?php endforeach; ?>
+        <li><a href="/east-mediterranean" class="block py-2.5 px-4 rounded-lg hover:bg-white/10 cursor-pointer text-sm">East Mediterranean</a></li>
+        <li><a href="/east-mediterranean" class="block py-2.5 px-4 rounded-lg hover:bg-white/10 cursor-pointer text-sm">Other destinations</a></li>
         <li><a href="/boats" class="block py-2.5 px-2 rounded-lg hover:bg-white/10 cursor-pointer">Fleet</a></li>
         <li><a href="/routes" class="block py-2.5 px-2 rounded-lg hover:bg-white/10 cursor-pointer">Routes</a></li>
         <li><a href="/blog" class="block py-2.5 px-2 rounded-lg hover:bg-white/10 cursor-pointer">Blog</a></li>

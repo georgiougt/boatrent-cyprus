@@ -175,6 +175,22 @@ include __DIR__ . '/includes/header.php';
       </a>
       <?php endforeach; ?>
     </div>
+
+    <!-- Sailing outside Cyprus is inquiry-only: no listings, so this is a band
+         under the grid rather than a seventh card with a fake boat count. -->
+    <a href="/east-mediterranean" class="reveal group mt-6 flex flex-col sm:flex-row sm:items-center gap-5 rounded-2xl border border-brand-navy/10 bg-white p-7 hover:border-brand-aqua/50 hover:shadow-lg transition-all duration-300 cursor-pointer">
+      <span class="h-12 w-12 shrink-0 rounded-xl bg-brand-aqua/10 flex items-center justify-center text-brand-aquaD">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18zM3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18 15 15 0 010-18z"/></svg>
+      </span>
+      <span class="flex-1">
+        <span class="block font-display text-xl font-semibold text-brand-ink">East Mediterranean &amp; other destinations</span>
+        <span class="block text-brand-navy/60 text-sm mt-1">Greece, Turkey, the Levant or somewhere else entirely — tell us what you have in mind and we'll see what we can arrange.</span>
+      </span>
+      <span class="inline-flex items-center gap-1.5 text-brand-aquaD font-semibold text-sm shrink-0">
+        Talk to us
+        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </span>
+    </a>
   </div>
 </section>
 

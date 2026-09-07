@@ -6,7 +6,7 @@
  * Maps clean URLs to the underlying scripts:
  *   /                -> index.php
  *   /boats           -> boats.php
- *   /about /contact /faq /blog /share-your-reel
+ *   /about /contact /faq /blog /share-your-reel /east-mediterranean
  *   /blog/{slug}     -> blog-post.php
  *   /boat/{slug}     -> boat.php
  *   /{city}          -> city.php
@@ -51,6 +51,9 @@ $pages = [
     'faq'     => 'faq.php',
     'blog'    => 'blog.php',
     'share-your-reel' => 'share-reel.php',
+    // Enquiry-only destination page — must sit here, ahead of the single-segment
+    // city fallback below, or it would be resolved as an unknown city slug.
+    'east-mediterranean' => 'east-mediterranean.php',
 ];
 
 if (array_key_exists($path, $pages)) {

@@ -373,6 +373,10 @@ include __DIR__ . '/includes/header.php';
         <?php echo e($c['name']); ?>
       </a>
       <?php endforeach; ?>
+      <a href="/east-mediterranean" class="inline-flex items-center gap-2 bg-brand-foam hover:bg-brand-aqua/20 border border-brand-aqua/30 text-brand-aquaD font-medium text-sm px-5 py-2.5 rounded-full transition-colors duration-200 cursor-pointer">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18zM3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18 15 15 0 010-18z"/></svg>
+        East Mediterranean &amp; beyond
+      </a>
     </div>
   </div>
 </section>

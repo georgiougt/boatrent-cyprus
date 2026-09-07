@@ -92,9 +92,16 @@ include __DIR__ . '/includes/header.php';
             <label for="city" class="block text-sm font-medium text-brand-navy/70 mb-1.5">Destination <span class="text-brand-navy/40">(optional)</span></label>
             <select id="city" name="city" class="w-full bg-brand-sand border border-brand-navy/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-aqua cursor-pointer">
               <option value="">No preference</option>
-              <?php foreach (get_cities() as $c): ?>
-              <option value="<?php echo e($c['name']); ?>"><?php echo e($c['name']); ?></option>
-              <?php endforeach; ?>
+              <optgroup label="Cyprus">
+                <?php foreach (get_cities() as $c): ?>
+                <option value="<?php echo e($c['name']); ?>"<?php echo (($old['city'] ?? '') === $c['name']) ? ' selected' : ''; ?>><?php echo e($c['name']); ?></option>
+                <?php endforeach; ?>
+              </optgroup>
+              <optgroup label="Elsewhere (on request)">
+                <?php foreach (['East Mediterranean', 'Greek Islands', 'Turkish Riviera', 'Other / not sure yet'] as $extra): ?>
+                <option value="<?php echo e($extra); ?>"<?php echo (($old['city'] ?? '') === $extra) ? ' selected' : ''; ?>><?php echo e($extra); ?></option>
+                <?php endforeach; ?>
+              </optgroup>
             </select>
           </div>
           <div class="sm:col-span-2">

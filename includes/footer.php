@@ -36,6 +36,8 @@
           <?php foreach (get_cities() as $c): ?>
           <li><a href="/<?php echo e($c['slug']); ?>" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer"><?php echo e($c['name']); ?></a></li>
           <?php endforeach; ?>
+          <li class="pt-1"><a href="/east-mediterranean" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer">East Mediterranean</a></li>
+          <li><a href="/east-mediterranean" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer">Other destinations</a></li>
         </ul>
       </div>
 
