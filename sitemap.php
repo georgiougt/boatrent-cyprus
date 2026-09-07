@@ -25,6 +25,9 @@ $add($base . '/blog',     'weekly', '0.7');
 $add($base . '/contact',  'yearly', '0.5');
 $add($base . '/share-your-reel', 'monthly', '0.4');
 $add($base . '/east-mediterranean', 'monthly', '0.7');
+$add($base . '/privacy', 'yearly', '0.3');
+$add($base . '/cookies', 'yearly', '0.3');
+$add($base . '/terms',   'yearly', '0.3');
 
 // Cities
 foreach (get_cities() as $c) {

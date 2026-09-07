@@ -66,7 +66,12 @@
 
     <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
       <p>&copy; <?php echo date('Y'); ?> BoatRent Cyprus. All rights reserved.</p>
-      <p>Charters operated by licensed local partners across Cyprus.</p>
+      <nav aria-label="Legal" class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+        <a href="/privacy" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer">Privacy Policy</a>
+        <a href="/cookies" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer">Cookie Policy</a>
+        <a href="/terms" class="hover:text-brand-gold transition-colors duration-200 cursor-pointer">Terms &amp; Conditions</a>
+      </nav>
+      <p class="text-center sm:text-right">Charters operated by licensed local partners across Cyprus.</p>
     </div>
   </div>
 </footer>

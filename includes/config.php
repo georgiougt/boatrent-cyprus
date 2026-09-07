@@ -56,6 +56,53 @@ function business(): array
 }
 
 /**
+ * Legal identity of the business, shown on the privacy, cookie and terms pages.
+ *
+ * The EU e-Commerce Directive (and Cyprus Law 156(I)/2004 implementing it)
+ * requires a trader to publish its registered name, geographic address,
+ * registration and VAT numbers in a directly accessible form — the footer's
+ * trading name is not enough on its own.
+ *
+ * ⚠️ EVERY "TODO" BELOW MUST BE FILLED IN BEFORE GO-LIVE. While any of them is
+ * still a placeholder the legal pages show a warning banner on non-production
+ * hosts (see legal_entity_incomplete()).
+ */
+function legal_entity(): array
+{
+    return [
+        'registeredName' => '',              // TODO: e.g. "Boatrent Cyprus Ltd"
+        'regNumber'      => '',              // TODO: Registrar of Companies number, e.g. HE 123456
+        'vatNumber'      => '',              // TODO: VAT number, e.g. CY10123456X — or '' if not registered
+        'address'        => '',              // TODO: full registered address incl. postcode
+        'email'          => 'hello@boatrentcyprus.com',   // TODO: monitored inbox
+        'privacyEmail'   => 'hello@boatrentcyprus.com',   // TODO: inbox for data-protection requests
+        'phone'          => '+357 25 000 000',            // TODO: real phone
+        // Optional: charter/travel licence details, if the business holds one.
+        'licence'        => '',              // TODO: e.g. "Deputy Ministry of Tourism licence no. 1234"
+    ];
+}
+
+/** Which legal_entity() fields are still placeholders. Empty array = ready. */
+function legal_entity_incomplete(): array
+{
+    $required = ['registeredName', 'regNumber', 'address'];
+    $missing = [];
+    foreach ($required as $key) {
+        if (trim((string) (legal_entity()[$key] ?? '')) === '') {
+            $missing[] = $key;
+        }
+    }
+    return $missing;
+}
+
+/**
+ * Date the legal pages were last substantively revised. Bump it by hand
+ * whenever the wording changes — GDPR Art 12 expects users to be able to see
+ * which version they are reading.
+ */
+const LEGAL_LAST_UPDATED = '2026-09-07';
+
+/**
  * Guest reels — the biggest video a customer may upload as a testimonial.
  *
  * Kept deliberately low: shared hosting can't transcode, so whatever a guest

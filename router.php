@@ -7,6 +7,7 @@
  *   /                -> index.php
  *   /boats           -> boats.php
  *   /about /contact /faq /blog /share-your-reel /east-mediterranean
+ *   /privacy /cookies /terms
  *   /blog/{slug}     -> blog-post.php
  *   /boat/{slug}     -> boat.php
  *   /{city}          -> city.php
@@ -54,6 +55,9 @@ $pages = [
     // Enquiry-only destination page — must sit here, ahead of the single-segment
     // city fallback below, or it would be resolved as an unknown city slug.
     'east-mediterranean' => 'east-mediterranean.php',
+    'privacy' => 'privacy.php',
+    'cookies' => 'cookies.php',
+    'terms'   => 'terms.php',
 ];
 
 if (array_key_exists($path, $pages)) {

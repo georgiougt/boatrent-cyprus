@@ -110,6 +110,7 @@ include __DIR__ . '/includes/header.php';
             <p data-error-for="message" class="hidden text-red-600 text-xs mt-1">Please enter a message.</p>
           </div>
           <div class="sm:col-span-2">
+            <p class="text-xs text-brand-navy/45 mb-4">By sending this message you agree to us handling your details as described in our <a href="/privacy" class="underline hover:text-brand-aquaD cursor-pointer">Privacy Policy</a>. Where your message is about a specific boat, we pass it to that boat's operator so they can reply.</p>
             <button type="submit" class="inline-flex items-center justify-center gap-2 bg-brand-gold hover:bg-brand-goldL text-brand-ink font-semibold px-8 py-3.5 rounded-full transition-colors duration-200 cursor-pointer">
               Send Message
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>

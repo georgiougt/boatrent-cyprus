@@ -276,6 +276,7 @@ echo json_ld([
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </button>
             <p class="text-center text-xs text-brand-navy/45">Free to inquire · No obligation</p>
+            <p class="text-center text-xs text-brand-navy/40 leading-relaxed">We pass your details to the licensed operator of this boat so they can quote. See our <a href="/privacy" class="underline hover:text-brand-aquaD cursor-pointer">Privacy Policy</a>.</p>
           </form>
         </div>
       </div>

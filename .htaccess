@@ -34,6 +34,9 @@ DirectoryIndex index.php
   RewriteRule ^blog/?$    blog.php    [L]
   RewriteRule ^share-your-reel/?$ share-reel.php [L,QSA]
   RewriteRule ^east-mediterranean/?$ east-mediterranean.php [L]
+  RewriteRule ^privacy/?$  privacy.php  [L]
+  RewriteRule ^cookies/?$  cookies.php  [L]
+  RewriteRule ^terms/?$    terms.php    [L]
 
   # Detail pages
   RewriteRule ^blog/([A-Za-z0-9_-]+)/?$   blog-post.php?slug=$1 [L,QSA]

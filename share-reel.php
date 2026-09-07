@@ -120,8 +120,11 @@ include __DIR__ . '/includes/header.php';
           <div class="sm:col-span-2">
             <label class="flex items-start gap-3 text-sm text-brand-navy/70 cursor-pointer">
               <input type="checkbox" name="consent" value="1" required class="mt-0.5 h-4 w-4 shrink-0 rounded border-brand-navy/25 text-brand-aqua focus:ring-brand-aqua cursor-pointer">
-              <span>This is my own video and I'm happy for BoatRent Cyprus to publish it on the website and social channels.</span>
+              <span>This is my own video, everyone recognisable in it is happy to appear, and BoatRent Cyprus may publish it on the website and social channels. I can ask for it to be taken down at any time.</span>
             </label>
+            <!-- Links live outside the <label>: inside it, clicking one would
+                 navigate away *and* toggle the checkbox. -->
+            <p class="text-xs text-brand-navy/45 mt-2 pl-7">Full detail in our <a href="/terms#user-content" class="underline hover:text-brand-aquaD cursor-pointer">Terms</a> and <a href="/privacy" class="underline hover:text-brand-aquaD cursor-pointer">Privacy Policy</a>.</p>
           </div>
 
           <div class="sm:col-span-2">

@@ -317,3 +317,74 @@ a.bg-brand-navy:active, button.bg-brand-navy:active { transform: translateY(0); 
   }
   .reveal, .reveal-left, .reveal-right, .reveal-stagger > * { opacity: 1 !important; transform: none !important; }
 }
+
+/* ---------- Legal documents (privacy / cookies / terms) ----------
+   Tailwind's typography plugin isn't installed, so the long-form prose on the
+   legal pages is styled here rather than by tagging every <p> and <li> in the
+   markup — those documents are edited as prose and shouldn't need class soup. */
+.legal-prose { color: #16395A; font-size: 0.9375rem; line-height: 1.75; }
+.legal-prose h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0D1A33;
+  margin: 2.75rem 0 1rem;
+  scroll-margin-top: 7rem;   /* clears the fixed header when jumping to an anchor */
+}
+.legal-prose h2:first-child { margin-top: 0; }
+.legal-prose .legal-num { color: #1ECEB6; margin-right: .35rem; }
+.legal-prose h3 {
+  font-weight: 700;
+  color: #0D1A33;
+  font-size: 1rem;
+  margin: 1.75rem 0 .5rem;
+  scroll-margin-top: 7rem;
+}
+.legal-prose p { margin: 0 0 1rem; }
+.legal-prose ul, .legal-prose ol { margin: 0 0 1rem; padding-left: 1.25rem; }
+.legal-prose ul { list-style: disc; }
+.legal-prose ol { list-style: decimal; }
+.legal-prose li { margin-bottom: .45rem; }
+.legal-prose li::marker { color: #1ECEB6; }
+.legal-prose a { color: #0C7A6E; text-decoration: underline; text-underline-offset: 2px; }
+.legal-prose a:hover { color: #12A4C9; }
+.legal-prose strong { color: #0D1A33; font-weight: 600; }
+.legal-prose code { font-size: .85em; background: #E7F7FA; padding: .1rem .3rem; border-radius: .25rem; }
+
+/* Callout for the points that most often cause disputes. */
+.legal-prose .legal-note {
+  background: #E7F7FA;
+  border-left: 3px solid #1ECEB6;
+  border-radius: .5rem;
+  padding: .9rem 1.1rem;
+  margin: 0 0 1.25rem;
+}
+.legal-prose .legal-note p:last-child { margin-bottom: 0; }
+
+/* Definition list used for the registered-trader details. */
+.legal-prose .legal-dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: .4rem 1.25rem;
+  margin: 0 0 1.25rem;
+}
+.legal-prose .legal-dl dt { color: #16395A; opacity: .65; }
+.legal-prose .legal-dl dd { color: #0D1A33; margin: 0; }
+@media (max-width: 480px) {
+  .legal-prose .legal-dl { grid-template-columns: 1fr; gap: 0 0; }
+  .legal-prose .legal-dl dt { margin-top: .6rem; font-size: .8125rem; }
+}
+
+/* Cookie table — scrolls inside itself rather than widening the page. */
+.legal-table-wrap { overflow-x: auto; margin: 0 0 1.25rem; }
+.legal-prose table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: .875rem; }
+.legal-prose thead th {
+  text-align: left;
+  background: #E7F7FA;
+  color: #0D1A33;
+  font-weight: 600;
+  padding: .6rem .75rem;
+  white-space: nowrap;
+}
+.legal-prose tbody td { padding: .6rem .75rem; border-top: 1px solid rgba(22,57,90,.12); vertical-align: top; }
+.legal-prose tbody td:first-child { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .8125rem; color: #0D1A33; white-space: nowrap; }
