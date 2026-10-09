@@ -49,7 +49,11 @@ include __DIR__ . '/includes/header.php';
     <?php foreach ($routes as $slug => $r): ?>
     <article class="group flex flex-col rounded-3xl overflow-hidden bg-white border border-brand-navy/10 shadow-sm hover:shadow-xl transition-shadow duration-300">
       <a href="/routes/<?php echo e($slug); ?>" class="block relative bg-brand-foam cursor-pointer">
+        <?php if (!empty($r['map'])): ?>
+        <img src="<?php echo e($r['map']); ?>" alt="Map of the <?php echo e($r['title']); ?> route with numbered stops" width="1600" height="1000" loading="lazy" class="block w-full h-auto">
+        <?php else: ?>
         <?php echo render_route_map($r['stops'], 'hub-' . $slug); ?>
+        <?php endif; ?>
       </a>
       <div class="flex flex-col flex-1 p-6 sm:p-7">
         <span class="inline-flex items-center gap-1.5 text-brand-aquaD text-xs font-semibold uppercase tracking-[0.15em] mb-2">
