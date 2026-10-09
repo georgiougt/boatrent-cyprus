@@ -347,7 +347,11 @@ include __DIR__ . '/includes/header.php';
 <section class="bg-brand-ink py-16 px-6">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
     <a href="/routes/<?php echo e($cityRoute['slug']); ?>" class="reveal block rounded-3xl overflow-hidden border border-white/10 bg-white/5 cursor-pointer">
+      <?php if (!empty($cityRoute['map'])): ?>
+      <img src="<?php echo e($cityRoute['map']); ?>" alt="Map of the <?php echo e($cityRoute['title']); ?> route with numbered stops" width="1600" height="1000" loading="lazy" class="block w-full h-auto">
+      <?php else: ?>
       <?php echo render_route_map($cityRoute['stops'], 'city-route-' . $cityRoute['slug']); ?>
+      <?php endif; ?>
     </a>
     <div class="reveal">
       <p class="text-brand-goldL font-semibold uppercase tracking-[0.3em] text-xs mb-3">Sailing route from <?php echo e($city['name']); ?></p>

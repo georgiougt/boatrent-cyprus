@@ -369,6 +369,7 @@ function get_sailing_routes(): array
             'best_for'  => 'Swimming, sunbathing & a long lunch on board',
             'boats'     => 'Motor yachts & catamarans',
             'image'     => '/assets/scenery/coast-gold.webp',
+            'map'       => '/images/routes/limassol.webp',
             'intro'     => [
                 'The classic Limassol day out: an easy loop along the south coast that packs in the best swimming on this stretch of shore without ever straying far from the marina. It works beautifully on a crewed motor yacht or a family catamaran, with plenty of time to anchor, swim and eat.',
                 'Because Limassol Marina sits in the middle of the coast, the skipper can flip the route to suit the wind — running west to Akrotiri or east to Governor\'s Beach first. Either way you\'re never more than a short cruise from a sheltered anchorage.',
@@ -390,6 +391,7 @@ function get_sailing_routes(): array
             'best_for'  => 'Sea caves, snorkelling & the brightest water in Cyprus',
             'boats'     => 'Speedboats & group catamarans',
             'image'     => '/assets/scenery/coast-blue.webp',
+            'map'       => '/images/routes/ayia-napa.webp',
             'intro'     => [
                 'The south-east corner has the most electric water on the island, and this route strings its highlights together into one unforgettable day. From the sculpted sea caves of Cape Greco to the neon shallows of the Blue Lagoon, it\'s all about swimming, snorkelling and jumping off the boat.',
                 'Fast self-drive speedboats zip between the coves, while sociable catamarans make it a party — sunset departures included. Every stop is within an easy cruise of Ayia Napa Harbour.',
@@ -411,6 +413,7 @@ function get_sailing_routes(): array
             'best_for'  => 'Myth, sea caves & the best sunset sailing in Cyprus',
             'boats'     => 'Crewed yachts & motorboats',
             'image'     => '/assets/scenery/sailing.webp',
+            'map'       => '/images/routes/paphos.webp',
             'intro'     => [
                 'A cruise through Greek myth along a coast much of which has no road access at all. From the harbour below Paphos Castle you sail north to the crystal sea caves of Coral Bay and the protected turtle sands of Lara Bay, then south beneath Aphrodite\'s Rock.',
                 'The west-facing coast means this is also the finest sunset route on the island — many couples book it as an evening sail with drinks on board as the sun drops into the sea.',
@@ -432,6 +435,7 @@ function get_sailing_routes(): array
             'best_for'  => 'The famous Blue Lagoon, turtles & untouched coves',
             'boats'     => 'Day cruisers & speedboats',
             'image'     => '/assets/scenery/latsi.webp',
+            'map'       => '/images/routes/latsi.webp',
             'intro'     => [
                 'The route to the most famous swim in Cyprus. From the little fishing harbour of Latsi you cruise the wild Akamas peninsula — a protected national park with almost no road access — to the glowing turquoise of the Blue Lagoon.',
                 'It feels more like an expedition than a resort day out: dramatic scenery, hidden coves and resident sea turtles. Arrive early or late on a private charter and you\'ll have the lagoon almost to yourself.',
@@ -453,6 +457,7 @@ function get_sailing_routes(): array
             'best_for'  => 'Calm family cruising & the world-famous wreck',
             'boats'     => 'Cruisers & catamarans',
             'image'     => '/assets/scenery/larnaca.webp',
+            'map'       => '/images/routes/larnaca.webp',
             'intro'     => [
                 'The easy-going south-coast route, built around one of the world\'s great dive sites. Larnaca\'s bay is calm and shallow, so this is a relaxed day suited to families and first-time charterers — with a stop over the sunken ferry Zenobia as the centrepiece.',
                 'Snorkellers can peer down at the wreck while divers explore below, before the route ambles on to Mackenzie Beach and the quiet bays around Cape Kiti.',
@@ -474,6 +479,7 @@ function get_sailing_routes(): array
             'best_for'  => 'Calm, shallow bays & easy days with children',
             'boats'     => 'Day boats & speedboats',
             'image'     => '/assets/scenery/protaras.webp',
+            'map'       => '/images/routes/protaras.webp',
             'intro'     => [
                 'The gentle side of the south-east corner. Sheltered, shallow bays and famously clear water make this the calmest of our routes — ideal for a relaxed day with younger children on board.',
                 'From the turquoise shallows of Fig Tree Bay the route drifts down to the Cape Greco headland, with easy snorkelling and quiet swim stops all the way.',

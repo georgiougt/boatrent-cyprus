@@ -103,7 +103,13 @@ include __DIR__ . '/includes/header.php';
   <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
     <!-- Map -->
     <div class="reveal lg:sticky lg:top-24 rounded-3xl overflow-hidden border border-brand-navy/10 shadow-sm bg-white">
+      <?php if (!empty($route['map'])): ?>
+      <a href="<?php echo e($route['map']); ?>" target="_blank" rel="noopener" class="block cursor-zoom-in" aria-label="Open the full-size route map">
+        <img src="<?php echo e($route['map']); ?>" alt="Map of the <?php echo e($route['title']); ?> route with numbered stops" width="1600" height="1000" loading="lazy" class="block w-full h-auto">
+      </a>
+      <?php else: ?>
       <?php echo render_route_map($route['stops'], 'route-' . $slug); ?>
+      <?php endif; ?>
     </div>
     <!-- Narrative + stops -->
     <div class="reveal">
